@@ -1,0 +1,33 @@
+
+.navContainer{
+    display: flex;
+.logo{
+    width: 100%;
+  }
+
+.nav{
+    // the toggle__button class is styled in globals.scss as it is dynamic
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+  }
+}
+@media all and (min-width: 361px){
+    .navContainer{
+    flex-direction: column-reverse;
+    .logo{
+        display: flex;
+    justify-content: center;
+    }
+    .nav{
+        position: static;
+    }
+}
+}
+
+  
