@@ -4,6 +4,9 @@
   0% {
     transform: translateX(100%)
   }
+  80%{
+    transform: translateX(-5%);
+  }
 
   100% {
     transform: translateX(0);
@@ -30,22 +33,22 @@
 
     a:nth-child(1) {
       @include navLink;
-      animation: navLoader 850ms ease-in 50ms forwards
+      animation: navLoader 600ms ease-in  forwards
     }
 
     a:nth-child(2) {
       @include navLink;
-      animation: navLoader 850ms ease-in 200ms forwards;
+      animation: navLoader 600ms ease-in 50ms forwards;
     }
 
     a:nth-child(3) {
       @include navLink;
-      animation: navLoader 850ms ease-in 350ms forwards;
+      animation: navLoader 600ms ease-in 100ms forwards;
     }
 
     a:nth-child(4) {
       @include navLink;
-      animation: navLoader 850ms ease-in 500ms forwards;
+      animation: navLoader 600ms ease-in 150ms forwards;
     }
   }
 }
