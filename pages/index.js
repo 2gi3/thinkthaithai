@@ -13,12 +13,45 @@ export default function Home() {
         <meta name="description" content="Learn thai" />
         <link rel="icon" href="/logo.webp" />
       </Head>
+      {/* <div className={styles.background}>
+            </div> */}
       <div className={styles.container}>
-        <h1>Home page</h1>
-        <p>Labore nisi consectetur occaecat do. Lorem cupidatat tempor fugiat excepteur laborum occaecat incididunt laboris reprehenderit adipisicing. Duis duis veniam in consectetur ipsum laborum consectetur. Qui proident consectetur cupidatat velit laborum. Ut anim sint voluptate cupidatat do mollit irure cillum ullamco.</p>
-        <p>Deserunt eiusmod eiusmod sunt nulla occaecat qui. Voluptate ipsum proident sunt duis. Et id ipsum aliqua magna sunt est sit elit reprehenderit. Proident labore pariatur aliquip ea magna pariatur nisi. Eiusmod id Lorem Lorem qui eiusmod fugiat fugiat laboris.</p>
-        <Link href='/students'><a>Students list</a></Link>
+      <div className={styles.titleContainer}>
+      <div className={styles.logo}>
+                <Image src='/logo.webp' width='180' height='90' />
+            </div>
+      <ul className={styles.features}>
+        <li className={styles.list}>One on one Thai lessons</li>
+        <li className={styles.list}>Custom-tailored experience</li>
+        <li className={styles.list}>learning materials included</li>
+      </ul>
+     <Link href='/#'><button className={styles.button} >Book a free trial lesson</button></Link>
       </div>
+        <div className={styles.imageContainer}>
+          <div className={styles.imageBigContainer}>
+            <div className={styles.imageBig}>
+              <Image className={styles.image} src='/phone.png' width='100' height='100' />
+            </div>
+            <div className={styles.imageBig}>
+              <Image className={styles.image}src='/computer.png' width='100' height='100' />
+            </div>
+            <div className={styles.imageBig}>
+              <Image className={styles.image}src='/tablet.png' width='120' height='100' />
+            </div>
+          </div>
+          <div className={styles.imageSmallContainer}>
+          <div className={styles.imageSmall}>
+            <Image src='/ipod.png' width='50' height='50' />
+          </div>
+          <div className={styles.imageSmall}>
+            <Image src='/ear.png' width='50' height='50' />
+          </div>
+          <div className={styles.imageSmall}>
+            <Image src='/listen.png' width='50' height='50' />
+          </div>
+        </div>
+      </div>
+    </div>
     </>
   )
 }

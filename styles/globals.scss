@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@400;500;600;700&display=swap');
+// gluten has more weights but no more styles
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@400;500;700;900&display=swap');
+// grandstand has a big choice of weights and styles
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@400;500;700;900&display=swap');
 @import "_mixins.scss";
 
 @keyframes navLoader {
@@ -24,9 +29,12 @@
   color: white;
 
   &+.links {
+    position: absolute;
+    top: 78px;
     overflow: hidden;
     margin-right: -10px;
     min-width: 250px;
+    z-index: 99;
     a{      
       border-bottom: 1px solid lightgray;
     }
@@ -78,20 +86,21 @@ footer {
   align-items: center;
   background-color: azure;
   border-top: 1px solid lightgray;
-  position: absolute;
-  bottom: 0;
 }
 
-@media all and (min-width: 361px) {
+@include desktop() {
   .toggle__button--opened {
     display: none;
 
     &+.links {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       width: 100vw;
       border-bottom: 1px solid lightgray;
+      box-shadow: 1px 1px 1px lightgray;
+      margin-right: 0;
       a{
+        margin: 0 5vw;
         border-bottom: none;
       }
     }
@@ -102,10 +111,12 @@ footer {
 
     &+.links {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       width: 100vw;
-      border-bottom: 1px solid lightgray;  
+      border-bottom: 1px solid lightgray; 
+      box-shadow: 1px 1px 1px lightgray; 
       a{
+        margin: 0 5vw;
         border-bottom: none;
       }
     }

@@ -1,121 +1,226 @@
 @import "mixins";
 
-.container {
-  background-color: rgba(247, 202, 202, 0.747);
-  h1{
-    background-color: aqua;
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 
-// .main {
-//   min-height: 100vh;
-//   padding: 4rem 0;
-//   flex: 1;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
+@keyframes reverseSpin {
+  0% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+  70%{
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes bigPic1 {
+  0%{
+    transform: translateX(-10%)
+    scale(0.8);
+    opacity: 0.6;
+    
+  }
+  100%{
+    transform: translateX(0%)
+    scale(1);
+    opacity: 0.8;
+  }
+}
+@keyframes bigPic2 {
+  0%{
+    transform: scale(0.5);
+    opacity: 0.6;
+    
+  }
+  100%{
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+@keyframes bigPic3 {
+  0%{
+    transform: translateX(10%)
+    scale(0.8);
+    opacity: 0.6;
+    
+  }
+  100%{
+    transform: translateX(0%)
+    scale(1);
+    opacity: 0.8;
+  }
+}
+
+// .background{
+//   position: absolute;
+//   z-index: -1;
+//   width: 100vw;
+//   height: 100vh;
+//   opacity: 0.2;
+//   background-image: url('../public/thaiBeachWatermark.jpg');
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   background-position: center;
 // }
 
-// .footer {
-//   display: flex;
-//   flex: 1;
-//   padding: 2rem 0;
-//   border-top: 1px solid #eaeaea;
-//   justify-content: center;
-//   align-items: center;
-// }
+.container {
+  display: flex;
+  flex-flow: column-reverse;
 
-// .footer a {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-grow: 1;
-// }
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    .logo{
+      display: none;
+    }
+    .features{
+      font-family: lemonada;
+      font-weight: 500;
+      font-size: 17px;
+      margin: 20px 0;
+      width: auto;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
 
-// .title a {
-//   color: #0070f3;
-//   text-decoration: none;
-// }
+      .list{
+        text-align: center;
+        list-style: none;
+        max-width: 300px;
+        padding: 7px 0;
+        border-bottom: 1px solid lightgray;
+      }
+    }
+    .button{
+      font-family: lemonada;
+      font-weight: 500;
+      font-size: 17px;
+      margin: 15px;
+      padding: 10px;
+      color: white;
+      background-color: red;
+    }
+  }
 
-// .title a:hover,
-// .title a:focus,
-// .title a:active {
-//   text-decoration: underline;
-// }
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    width: auto;
 
-// .title {
-//   margin: 0;
-//   line-height: 1.15;
-//   font-size: 4rem;
-// }
+    .imageBigContainer {   
+      display: flex;
+      width: 100%;
+      height: 100px;
+      margin-top: 50px;
 
-// .title,
-// .description {
-//   text-align: center;
-// }
+      .imageBig {
+        display: flex;
 
-// .description {
-//   margin: 4rem 0;
-//   line-height: 1.5;
-//   font-size: 1.5rem;
-// }
+        &:nth-child(1) {
+          justify-content: flex-start;
+          margin-left: 7vw;
+          animation: bigPic1 5000ms ease-in-out 50ms forwards;
+        }
 
-// .code {
-//   background: #fafafa;
-//   border-radius: 5px;
-//   padding: 0.75rem;
-//   font-size: 1.1rem;
-//   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-//     Bitstream Vera Sans Mono, Courier New, monospace;
-// }
+        &:nth-child(2) {
+          justify-content: center;
+          animation: bigPic2 5000ms ease-in-out 50ms forwards;
+        }
 
-// .grid {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   max-width: 800px;
-// }
+        &:nth-child(3) {
+          justify-content: flex-end;
+          margin-right: 8vw;
+          margin-top: -5px;
+          animation: bigPic3 5000ms ease-in-out 50ms forwards;
+        }
+      }
+    }
 
-// .card {
-//   margin: 1rem;
-//   padding: 1.5rem;
-//   text-align: left;
-//   color: inherit;
-//   text-decoration: none;
-//   border: 1px solid #eaeaea;
-//   border-radius: 10px;
-//   transition: color 0.15s ease, border-color 0.15s ease;
-//   max-width: 300px;
-// }
+    .imageSmallContainer {
+      display: none;
 
-// .card:hover,
-// .card:focus,
-// .card:active {
-//   color: #0070f3;
-//   border-color: #0070f3;
-// }
+      .imageSmall {
+        display: flex;
+        margin: 40px 10px;
+        animation: reverseSpin 8000ms ease-out 50ms forwards;
 
-// .card h2 {
-//   margin: 0 0 1rem 0;
-//   font-size: 1.5rem;
-// }
 
-// .card p {
-//   margin: 0;
-//   font-size: 1.25rem;
-//   line-height: 1.5;
-// }
+        &:nth-child(1) {
+          justify-content: flex-end;
+        }
 
-// .logo {
-//   height: 1em;
-//   margin-left: 0.5rem;
-// }
+        &:nth-child(2) {
+            position: relative;
+            left: 25px;
+        }
+
+        &:nth-child(3) {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+
+  h1 {
+    margin: 0;
+  }
+}
+
 
 @include desktop() {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+  .container {
+    flex-direction: row;
+    height: 85vh;
+    .titleContainer{
+      width: 50%;
+      .logo{
+        display: block;
+      }
+      .features{
+        .list{
+          text-align: left;
+        }
+      }
+    }
+    .imageContainer{
+      width: 50%;
+      .imageBigContainer{        
+      position: absolute;
+      z-index: 0;   
+      width: 50%;
+      min-height: 85vh;
+      padding: 50px;
+      flex-direction: column;
+      justify-content: center;        
+      }
+      .imageSmallContainer{
+        position: relative;
+      z-index: 1;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: spin 8000ms ease-out 50ms forwards;
+      }
+    }
+    
   }
 }
