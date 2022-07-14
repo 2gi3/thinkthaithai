@@ -89,6 +89,17 @@ footer {
 }
 
 @include desktop() {
+  .toggle__button--open{
+    &.links{
+      position: absolute;
+    }
+  }
+  
+
+
+
+}
+@media all and (min-width: 361px){
   .toggle__button--opened {
     display: none;
 
@@ -121,7 +132,4 @@ footer {
       }
     }
   }
-
-
-
 }
