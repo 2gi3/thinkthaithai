@@ -55,36 +55,51 @@ export default function Home() {
       </div>
       <div className={styles.coursesContainer}>
         <div className={styles.message}>
-          <h1>Welcome to learn </h1>
-          <h2>with ThinkThaiThai</h2>
+          <h1>Speak Thai confidently</h1>
+          {/* <h2>with ThinkThaiThai</h2> */}
           <p>
-            ONE TO ONE THAI LESSONS ONLINE. THINKTHAITHAI HELPS YOU TO BECOME A CONFIDENT THAI SPEAKER,
-            LET YOU UNDERSTAND THAI CULTURE AND WATCH THAI DRAMA EASILY. THINKTHAITHAI WILL MAKE LESSONS SUITABLE FOR YOU.
+            With a personalised study plan, tailored learning materials, 
+            and flexible teaching techniques that adapt to your own learning style
           </p>
         </div>
         <div className={styles.courses}>
           <div className={styles.skills}>
             <div className={styles.SpeakingAndListening}>
-              <h3>Gain the confidence to engage in daily conversations</h3>
+              <h3>Engage in daily conversations</h3>
               <div className={styles.course}>
                 <h3>Speaking</h3>
+                <p>Real life simulations with your teacher.</p>
+                <p>Pronounciation accuracy</p>                
               </div>
               <div className={styles.course}>
                 <h3>Listening</h3>
+                <p> Thai drama</p>
+                <p> Thai songs</p>
+                <p>podcasts</p>
               </div>
             </div>
             <div className={styles.writingAndReading}>
-              <h3>Explore thai social media, chats and literature</h3>
+              <h3>Explore thai social media, chats, news and literature</h3>
               <div className={styles.course}>
                 <h3>Reading</h3>
+                <p>Thai alphabet</p>
+                <p> Thai tones </p>
+                <p> reading accuracy </p>
+                <p> Thai primary school books</p>
               </div>
               <div className={styles.course}>
                 <h3>Writing</h3>
+                <p>Grammar rules</p>
+                <p> spelling</p>
+                <p>
+                  Vocabulary</p>
+                  <p> sentence structure.
+                </p>
               </div>
             </div>
           </div>
           <div className={styles.needs}>
-            <h3>Learning paths highly flexible and adapted to your specific needs </h3>
+            <h3>Prioritise vocabulary and situations relevant to your life  </h3>
             <div className={styles.course}>Holiday</div>
             <div className={styles.course}>Business</div>
             <div className={styles.course}>Family</div>
@@ -95,29 +110,29 @@ export default function Home() {
         <div className={styles.teacher}>
           <div className={styles.teacherVideo}>
             <h3> Know your teacher and learning style</h3>
-            <iframe src="https://www.youtube.com/embed/OfwbcqTyg3o?autohide=1&amp;border=0&amp;wmode=opaque&amp;enablejsapi=1&amp;mute=1&amp;autoplay=1"
-              allowfullscreen="" frameborder="0">
-            </iframe>
+            <video src="/videos/teacherIntroduction.mp4" controls height='150' width='225'
+              loading="lazy" allowfullscreen="" frameborder="0">
+            </video>
           </div>
           <div className={styles.teacerClassesVideos}>
             <h3>Some examples of my classes</h3>
             <div className={styles.classVideo}>
               <h3>Speaking</h3>
-              <iframe src="https://www.youtube.com/embed/JWA5qHp6EGQ?autohide=1&amp;border=0&amp;wmode=opaque&amp;enablejsapi=1&amp;autoplay=1"
-                allowfullscreen="" frameborder="0">
-              </iframe>
+              <video src="/videos/speaking.mp4" controls type="video/mp4" height='100' width='150'
+                loading="lazy" allowfullscreen="" frameborder="0">
+              </video>
             </div>
             <div className={styles.classVideo}>
               <h3>Writing</h3>
-              <iframe src="https://www.youtube.com/embed/QnZ5BUiaZXM?autohide=1&amp;border=0&amp;wmode=opaque&amp;enablejsapi=1&amp;autoplay=1"
-                allowfullscreen="" frameborder="0">
-              </iframe>
+              <video src="/videos/reading.mp4" controls height='100' width='150'
+                loading="lazy" allowfullscreen="" frameborder="0">
+              </video>
             </div>
             <div className={styles.classVideo}>
               <h3>Conversation</h3>
-              <iframe src="https://www.youtube.com/embed/A9-zNVOc47Y?autohide=1&amp;border=0&amp;wmode=opaque&amp;enablejsapi=1&amp;autoplay=1"
-                allowfullscreen="" frameborder="0">
-              </iframe>
+              <video src="/videos/conversation2.mp4" controls height='100' width='150'
+                loading="lazy" allowfullscreen="" frameborder="0">
+              </video>
             </div>
           </div>
         </div>
@@ -125,26 +140,48 @@ export default function Home() {
           <h3> What my students say abuot me</h3>
           <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
-
+              <Image src='/students/Shannen Li_HK.png' width='100' height='100' />
             </div>
             <div className={styles.feedbackText}>
-            <p>Elit laborum labore esse fugiat enim laborum tempor id adipisicing velit nulla eu cupidatat magna. Deserunt ut ad commodo mollit fugiat deserunt elit. Et mollit pariatur mollit consequat et eiusmod non. Exercitation labore incididunt non id cillum voluptate dolor sit sunt consectetur minim exercitation. Exercitation adipisicing adipisicing duis deserunt commodo qui in nostrud. Exercitation nisi mollit elit ut excepteur adipisicing nulla exercitation minim exercitation. Tempor anim eu pariatur esse elit est sit magna pariatur pariatur.</p>
+              <h3 className='feedbackHeader'>So Much Fun</h3>
+              <p className='feedbackBody'>Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
+                and it was very relevant! I feel like I’m ready to visit Thailand now! 😍
+              </p>
+              <p className='feedbackFooter'>
+                Shanen Li Student, Hong Kong
+              </p>
             </div>
           </div>
           <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
-
+              <Image src='/students/saru.png' width='100' height='100' />
             </div>
             <div className={styles.feedbackText}>
-            <p>Elit laborum labore esse fugiat enim laborum tempor id adipisicing velit nulla eu cupidatat magna. Deserunt ut ad commodo mollit fugiat deserunt elit. Et mollit pariatur mollit consequat et eiusmod non. Exercitation labore incididunt non id cillum voluptate dolor sit sunt consectetur minim exercitation. Exercitation adipisicing adipisicing duis deserunt commodo qui in nostrud. Exercitation nisi mollit elit ut excepteur adipisicing nulla exercitation minim exercitation. Tempor anim eu pariatur esse elit est sit magna pariatur pariatur.</p>            
+              <h3 className='feedbackHeader'>I totally recommend her lessons</h3>
+              <p className='feedbackBody'>Great lesson! Natt’s class was very cozy and relaxed, she is so friendly and
+                easy to talk to, but she also prepared really nice materials with a clear and systematic structure,
+                that covered vocabulary, expressions and dialogues. Also, she sent me the pronunciation for me to practice
+                and gave me meaningful homework. During the lesson we practiced pronunciation, talked about the uses,
+                and she let me build my own examples. I totally recommend her lessons!
+              </p>
+              <p className='feedbackFooter'>
+                Saru Salvador, Spanish Teacher, Germany
+              </p>
             </div>
           </div>
           <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
-
+              <Image className={styles.feedbackPicture} src='/students/Emily_.jpg' width='100' height='100' />
             </div>
             <div className={styles.feedbackText}>
-            <p>Elit laborum labore esse fugiat enim laborum tempor id adipisicing velit nulla eu cupidatat magna. Deserunt ut ad commodo mollit fugiat deserunt elit. Et mollit pariatur mollit consequat et eiusmod non. Exercitation labore incididunt non id cillum voluptate dolor sit sunt consectetur minim exercitation. Exercitation adipisicing adipisicing duis deserunt commodo qui in nostrud. Exercitation nisi mollit elit ut excepteur adipisicing nulla exercitation minim exercitation. Tempor anim eu pariatur esse elit est sit magna pariatur pariatur.</p>              
+              <h3 className='feedbackHeader'>Very kind teacher</h3>
+              <p className='feedbackBody'>Natt is a very kind teacher who taught me pronunciation practice patiently.
+                Let me to improve after each class. Before teaching a new vowel, Natt would help me review what I had
+                learned to strengthen my memory. Thanks, teacher Natt.
+              </p>
+              <p className='feedbackFooter'>
+                Emily Huang Accountant , Taiwan
+              </p>
             </div>
           </div>
         </div>

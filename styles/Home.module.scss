@@ -90,7 +90,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255,255,255,1) 40%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 40%);
     width: 100%;
     padding: 0 30px 30px 30px;
     margin-top: 250px;
@@ -193,17 +193,18 @@
 }
 
 .coursesContainer {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: aquamarine;
 
   .message {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 5px;
-    p{
+
+    p {
       max-width: 450px;
     }
   }
@@ -215,7 +216,8 @@
     .needs {
       margin: 5px;
 
-      .SpeakingAndListening, .writingAndReading {
+      .SpeakingAndListening,
+      .writingAndReading {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -224,6 +226,7 @@
         border: 1px solid black;
 
       }
+
       h3 {
         width: 100%;
         margin: 5px;
@@ -231,64 +234,107 @@
 
       .course {
         margin: 5px;
-        background-color: yellow;
+        background-color: rgba(255, 255, 0, 0.650);
       }
     }
   }
 
 }
 
-.peopleContainer{
+.peopleContainer {
   display: flex;
   flex-direction: column;
-  .students{    
-   flex-wrap: wrap;
-  }
-  .teacher , .students{
-    background-color: aquamarine;
-   min-height: 50vh;
-   display: flex;
-   flex-direction: column;
-   margin: 10px;
-   h3{
-    width: 100%;
-  }
-   .teacherVideo{
-    border: 1px solid black;
-   }
-  .teacerClassesVideos{
-    display: flex;
+  align-items: center;
+
+  .students {
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    border: 1px solid black;
-    .classVideo{
-      min-height: 130px;
-      max-width: 300px;
+  }
+
+  .teacherVideo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .teacher,
+  .students {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+
+    h3 {
+      width: 100%;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    .teacerClassesVideos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      border: 5px solid aquamarine;
+      border-radius: 0 40px 0 40px / 0 40px 0 40px;
+      padding: 20px 0;
+
+      .classVideo {
+        min-height: 130px;
+        max-width: 300px;
+      }
+    }
+
+    .feedback {
+      max-width: 350px;
+      overflow: hidden;
+      margin: 10px;
+      overflow: visible;
+      border: 1px solid black;
+      border-radius: 50px;
+      padding: 15px;
+
+      // position: static;
+      .feedbackPicture {
+        width: 110px;
+        height: 110px;
+        // border-radius: 50% 50% 10% 50% / 50% 50% 10% 50% ;
+        padding: 2%;
+        margin: -23px 10px 0 -23px;
+        float: left;
+
+        img {
+          width: auto;
+          height: auto;
+          border-radius: 50%;
+        }
+      }
     }
   }
-  .feedback{
-    max-width: 350px;
-    overflow: hidden;
-    margin: 10px;
-    background-color: red;
-  }
-  }
-  
+
 }
 
-@media all and (min-width: 361px) and (max-width:768px){
+@media all and (min-width: 361px) and (max-width:768px) {
   .background {
     width: 70vw;
+  }
+
+  .peopleContainer {
+    .teacherVideo {
+      border: 1px solid black;
+      padding: 15px;
+    }
   }
 
 }
 
 
 @media all and (min-width: 769px) {
-  .background{
+  .background {
     width: 80vw;
     top: unset;
   }
+
   .container {
     flex-direction: row;
     padding: 0 15vw;
@@ -297,8 +343,8 @@
     .titleContainer {
       width: 50%;
       padding: 30px;
-    margin-top: 0;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255,255,255,1) 60%);
+      margin-top: 0;
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 60%);
 
       .logo {
         display: block;
@@ -313,8 +359,8 @@
 
     .imageContainer {
       display: flex;
-    justify-content: center;
-    width: auto;
+      justify-content: center;
+      width: auto;
       width: 50%;
 
       .imageBigContainer {
@@ -340,10 +386,38 @@
     }
 
   }
-  .peopleContainer{
-    .teacher , .students{
+
+  .peopleContainer {
+    margin-top: 200px;
+
+    .teacherVideo {
+      margin: -370px -100px 0 0;
+      background-color: aquamarine;
+      height: 255px;
+      max-width: 312px;
+      border-radius: 40px 40px 0 40px/40px 40px 0 40px;
+      padding: 35px 20px;
+      position: relative;
+
+      h3 {
+        margin-top: 0;
+      }
+
+
+    }
+
+    .teacher,
+    .students {
       flex-direction: row;
+      justify-content: space-evenly;
+      align-items: inherit;
+      max-width: 1205px;
+      margin: 10px;
+      .teacerClassesVideos {
+        align-items: center;
+        max-height: 270px;
+        border-radius: 0 40px 40px 40px/0 40px 40px 40px;
+      }
     }
   }
 }
-
