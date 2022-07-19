@@ -194,7 +194,7 @@
 
 .coursesContainer {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   background-color: aquamarine;
 
@@ -203,6 +203,8 @@
     flex-direction: column;
     align-items: center;
     margin: 5px;
+    width: auto;
+    color: white;
 
     p {
       max-width: 450px;
@@ -223,7 +225,12 @@
         flex-wrap: wrap;
         margin: 5px;
         justify-content: space-evenly;
-        border: 1px solid black;
+        padding: 10px;
+        border-radius: 40px;
+        background: white;
+        border: 5px solid aquamarine;
+        outline: 5px solid white;
+        outline-offset: 5px;
 
       }
 
@@ -387,6 +394,35 @@
 
   }
 
+  .coursesContainer {
+    align-items: flex-start;
+    padding: 10px;
+    margin: 200px 10px;
+    position: relative;
+
+    .message {
+      width: 48%;
+    }
+
+    .courses {
+      width: 48%;
+
+      .skills,
+      .needs {
+        .SpeakingAndListening {
+          margin-right: -42px;
+          margin-top: -16px;
+        }
+
+        .writingAndReading {
+          position: absolute;
+          max-width: 400px;
+          left: -5px;
+        }
+      }
+    }
+  }
+
   .peopleContainer {
     margin-top: 200px;
 
@@ -413,11 +449,16 @@
       align-items: inherit;
       max-width: 1205px;
       margin: 10px;
+
       .teacerClassesVideos {
         align-items: center;
         max-height: 270px;
         border-radius: 0 40px 40px 40px/0 40px 40px 40px;
       }
+    }
+
+    .teacher {
+      margin-top: 100px;
     }
   }
 }
