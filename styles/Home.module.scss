@@ -237,11 +237,19 @@
       h3 {
         width: 100%;
         margin: 5px;
+
+        &:nth-child(3) {
+          text-align: end;
+        }
       }
 
       .course {
         margin: 5px;
-        background-color: rgba(255, 255, 0, 0.650);
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // background-color: rgba(255, 255, 0, 0.650);
       }
     }
   }
@@ -346,6 +354,7 @@
     flex-direction: row;
     padding: 0 15vw;
     height: 85vh;
+    margin-bottom: 7px;
 
     .titleContainer {
       width: 50%;
@@ -397,27 +406,54 @@
   .coursesContainer {
     align-items: flex-start;
     padding: 10px;
-    margin: 200px 10px;
     position: relative;
+    min-height: 500px;
+    max-width: 1200px;
+    margin: auto;
 
     .message {
       width: 48%;
+      max-width: 600px;
+      justify-content: center;
+      min-height: 250px;
     }
 
     .courses {
       width: 48%;
 
-      .skills,
-      .needs {
+
+      .skills {
+
+        .SpeakingAndListening,
+        .writingAndReading {
+          min-width: 400px;
+          width: 50%;
+          max-width: 600px;
+        }
+
         .SpeakingAndListening {
-          margin-right: -42px;
-          margin-top: -16px;
+          right: -5px;
+          top: -75px;
+          position: absolute;
         }
 
         .writingAndReading {
           position: absolute;
-          max-width: 400px;
+          width: 50%;
           left: -5px;
+          bottom: -75px;
+        }
+      }
+
+      .needs {
+        margin-top: 275px;
+        margin-left: 100px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        p{
+          width: 100%;
         }
       }
     }

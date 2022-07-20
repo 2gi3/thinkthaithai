@@ -65,29 +65,33 @@ export default function Home() {
         <div className={styles.courses}>
           <div className={styles.skills}>
             <div className={styles.SpeakingAndListening}>
-              <h3>Engage in daily conversations</h3>
+            <h3>Speaking and listening</h3>
               <div className={styles.course}>
-                <h3>Speaking</h3>
-                <p>Real life simulations with your teacher.</p>
-                <p>Pronounciation accuracy</p>                
+                <p>Simulate <strong>real life situations</strong> with your teacher.</p>
+                {/* <p>Pronounciation accuracy</p>  */}
+                <p> Watch <strong> Thai drama</strong> </p>
+                <p> learn your favourite <strong>songs</strong></p>
+                <p> and listen to <strong> podcasts</strong></p>                              
               </div>
-              <div className={styles.course}>
+              <h3>Gain the confidence to engage in daily conversations</h3> 
+              {/* <div className={styles.course}>
                 <h3>Listening</h3>
                 <p> Thai drama</p>
                 <p> Thai songs</p>
                 <p>podcasts</p>
-              </div>
+              </div> */}
             </div>
             <div className={styles.writingAndReading}>
-              <h3>Explore thai social media, chats, news and literature</h3>
+              <h3>Reading and writing</h3>
               <div className={styles.course}>
-                <h3>Reading</h3>
-                <p>Thai alphabet</p>
-                <p> Thai tones </p>
-                <p> reading accuracy </p>
-                <p> Thai primary school books</p>
+                {/* <h3>Reading</h3> */}
+                <p> Learn the <strong>Thai alphabet and grammar</strong>, </p>
+                <p> Understand and practice Thai tones and reading accuracy </p>
+                {/* <p> reading accuracy </p> */}
+                <p> learn from official Thai primary school books</p>
               </div>
-              <div className={styles.course}>
+              <h3>All you need to explore thai social media, chats, news and literature</h3>
+              {/* <div className={styles.course}>
                 <h3>Writing</h3>
                 <p>Grammar rules</p>
                 <p> spelling</p>
@@ -95,14 +99,14 @@ export default function Home() {
                   Vocabulary</p>
                   <p> sentence structure.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className={styles.needs}>
-            <h3>Prioritise vocabulary and situations relevant to your life  </h3>
-            <div className={styles.course}>Holiday</div>
-            <div className={styles.course}>Business</div>
-            <div className={styles.course}>Family</div>
+            <h3>Prioritise the vocabulary most relevant to your own life  </h3>
+            <p>Holiday</p>
+            <p>Business</p>
+            <p>Family</p>
           </div>
         </div>
       </div>
