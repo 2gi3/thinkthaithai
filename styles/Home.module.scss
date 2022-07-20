@@ -230,7 +230,7 @@
         background: white;
         border: 5px solid aquamarine;
         outline: 5px solid white;
-        outline-offset: 5px;
+        // outline-offset: 5px;
 
       }
 
@@ -305,9 +305,15 @@
       overflow: hidden;
       margin: 10px;
       overflow: visible;
-      border: 1px solid black;
+      // border: 1px solid black;
       border-radius: 50px;
       padding: 15px;
+      &:nth-child( 3 ){
+        .feedbackPicture{
+          margin: 15px 10px 0 -23px;  
+        float: left;
+        }
+      }
 
       // position: static;
       .feedbackPicture {
@@ -315,8 +321,8 @@
         height: 110px;
         // border-radius: 50% 50% 10% 50% / 50% 50% 10% 50% ;
         padding: 2%;
-        margin: -23px 10px 0 -23px;
-        float: left;
+        margin: 15px 0px 0 -5px;  
+        float: right;      
 
         img {
           width: auto;
@@ -433,7 +439,7 @@
 
         .SpeakingAndListening {
           right: -5px;
-          top: -75px;
+          top: -65px;
           position: absolute;
         }
 
@@ -441,7 +447,7 @@
           position: absolute;
           width: 50%;
           left: -5px;
-          bottom: -75px;
+          bottom: -65px;
         }
       }
 

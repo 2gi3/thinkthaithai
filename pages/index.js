@@ -148,8 +148,8 @@ export default function Home() {
             </div>
             <div className={styles.feedbackText}>
               <h3 className='feedbackHeader'>So Much Fun</h3>
-              <p className='feedbackBody'>Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
-                and it was very relevant! I feel like I’m ready to visit Thailand now! 😍
+              <p className='feedbackBody'>"Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
+                and it was very relevant! I feel like I’m ready to visit Thailand now! 😍"
               </p>
               <p className='feedbackFooter'>
                 Shanen Li Student, Hong Kong
@@ -189,6 +189,48 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.pricingContainer}>
+        <div className={styles.priceContainerCard}>
+          <div className={styles.priceContainerCardHeader}>
+             <h1>5 lessons</h1>
+             <p>&#36;200</p>
+             <p> &#36;20/Lesson</p>
+          </div>
+          {/* <div className={styles.priceContainerCardBody}>
+            <p>Consectetur culpa duis qui consequat. Ea ex amet qui elit ad minim. Aliquip id enim qui sint.</p>
+          </div> */}
+          <div className={styles.priceContainerCardFooter}>
+          <p>BUY NOW</p>
+          </div>
+        </div>
+        <div className={styles.priceContainerCard}>
+          <div className={styles.priceContainerCardHeader}>
+             <h1>10 Lessons</h1>
+             <p>&#36;180</p>
+             <p> &#36;18/Lesson</p>
+          </div>
+          {/* <div className={styles.priceContainerCardBody}>
+            <p>Consectetur culpa duis qui consequat. Ea ex amet qui elit ad minim. Aliquip id enim qui sint.</p>
+          </div> */}
+          <div className={styles.priceContainerCardFooter}>
+            <p>BUY NOW</p>
+          </div>
+        </div>
+        <div className={styles.priceContainerCard}>
+          <div className={styles.priceContainerCardHeader}>
+             <h1>20 Lessons</h1>
+             <p>&#36; 300</p>
+             <p> &#36;15/Lesson</p>
+          </div>
+          {/* <div className={styles.priceContainerCardBody}>
+            <p>Consectetur culpa duis qui consequat. Ea ex amet qui elit ad minim. Aliquip id enim qui sint.</p>
+          </div> */}
+          <div className={styles.priceContainerCardFooter}>
+            <p>BUY NOW</p>
+          </div>
+        </div>
+        <p>Learning materials, homeworks and exercices always included </p>
       </div>
     </>
   )
