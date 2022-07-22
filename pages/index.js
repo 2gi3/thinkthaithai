@@ -147,11 +147,11 @@ export default function Home() {
               <Image src='/students/Shannen Li_HK.png' width='100' height='100' />
             </div>
             <div className={styles.feedbackText}>
-              <h3 className='feedbackHeader'>So Much Fun</h3>
-              <p className='feedbackBody'>"Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
+              <h3 className={styles.feedbackHeader}>So Much Fun</h3>
+              <p className={styles.feedbackBody}>"Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
                 and it was very relevant! I feel like I’m ready to visit Thailand now! 😍"
               </p>
-              <p className='feedbackFooter'>
+              <p className={styles.feedbackFooter}>
                 Shanen Li Student, Hong Kong
               </p>
             </div>
@@ -161,14 +161,14 @@ export default function Home() {
               <Image src='/students/saru.png' width='100' height='100' />
             </div>
             <div className={styles.feedbackText}>
-              <h3 className='feedbackHeader'>I totally recommend her lessons</h3>
-              <p className='feedbackBody'>Great lesson! Natt’s class was very cozy and relaxed, she is so friendly and
+              <h3 className={styles.feedbackHeader}>I totally recommend her lessons</h3>
+              <p className={styles.feedbackBody}>Great lesson! Natt’s class was very cozy and relaxed, she is so friendly and
                 easy to talk to, but she also prepared really nice materials with a clear and systematic structure,
                 that covered vocabulary, expressions and dialogues. Also, she sent me the pronunciation for me to practice
                 and gave me meaningful homework. During the lesson we practiced pronunciation, talked about the uses,
                 and she let me build my own examples. I totally recommend her lessons!
               </p>
-              <p className='feedbackFooter'>
+              <p className={styles.feedbackFooter}>
                 Saru Salvador, Spanish Teacher, Germany
               </p>
             </div>
@@ -178,60 +178,38 @@ export default function Home() {
               <Image className={styles.feedbackPicture} src='/students/Emily_.jpg' width='100' height='100' />
             </div>
             <div className={styles.feedbackText}>
-              <h3 className='feedbackHeader'>Very kind teacher</h3>
-              <p className='feedbackBody'>Natt is a very kind teacher who taught me pronunciation practice patiently.
+              <h3 className={styles.feedbackHeader}>Very kind teacher</h3>
+              <p className={styles.feedbackBody}>Natt is a very kind teacher who taught me pronunciation practice patiently.
                 Let me to improve after each class. Before teaching a new vowel, Natt would help me review what I had
                 learned to strengthen my memory. Thanks, teacher Natt.
               </p>
-              <p className='feedbackFooter'>
+              <p className={styles.feedbackFooter}>
                 Emily Huang Accountant , Taiwan
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.pricingContainer}>
-        <div className={styles.priceContainerCard}>
-          <div className={styles.priceContainerCardHeader}>
-             <h1>5 lessons</h1>
-             <p>&#36;200</p>
-             <p> &#36;20/Lesson</p>
-          </div>
-          {/* <div className={styles.priceContainerCardBody}>
-            <p>Consectetur culpa duis qui consequat. Ea ex amet qui elit ad minim. Aliquip id enim qui sint.</p>
-          </div> */}
-          <div className={styles.priceContainerCardFooter}>
-          <p>BUY NOW</p>
-          </div>
+      <div className={styles.testPricingContainer}>
+        <div>
+          <h3>
+            Book your &#36;5 taster lesson or buy a bundle of lessons from starting from &#36;15/hour!
+          </h3>
         </div>
-        <div className={styles.priceContainerCard}>
-          <div className={styles.priceContainerCardHeader}>
-             <h1>10 Lessons</h1>
-             <p>&#36;180</p>
-             <p> &#36;18/Lesson</p>
-          </div>
-          {/* <div className={styles.priceContainerCardBody}>
-            <p>Consectetur culpa duis qui consequat. Ea ex amet qui elit ad minim. Aliquip id enim qui sint.</p>
-          </div> */}
-          <div className={styles.priceContainerCardFooter}>
-            <p>BUY NOW</p>
-          </div>
-        </div>
-        <div className={styles.priceContainerCard}>
-          <div className={styles.priceContainerCardHeader}>
-             <h1>20 Lessons</h1>
-             <p>&#36; 300</p>
-             <p> &#36;15/Lesson</p>
-          </div>
-          {/* <div className={styles.priceContainerCardBody}>
-            <p>Consectetur culpa duis qui consequat. Ea ex amet qui elit ad minim. Aliquip id enim qui sint.</p>
-          </div> */}
-          <div className={styles.priceContainerCardFooter}>
-            <p>BUY NOW</p>
-          </div>
-        </div>
-        <p>Learning materials, homeworks and exercices always included </p>
+        <p className={styles.priceContainerFooter}>Learning materials, homeworks and exercices always included </p>
       </div>
+      {/* <div className={styles.pricingContainer}>
+          <div><p>5 Lessons</p></div>
+          <div><p>&#36;100</p></div>
+          <div><p>&#36;20/lesson</p></div>
+          <div><p>10 Lessond</p></div>
+          <div><p>&#36;180</p></div>
+          <div><p>&#36;18/lesson</p></div>
+          <div><p>15 Lessons</p></div>
+          <div><p>&#36;300</p></div>
+          <div><p>&#36;15/lesson</p></div>        
+        <p className={styles.priceContainerFooter}>Learning materials, homeworks and exercices always included </p>
+      </div> */}
     </>
   )
 }

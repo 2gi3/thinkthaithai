@@ -330,9 +330,28 @@
           border-radius: 50%;
         }
       }
+      .feedbackFooter{
+        text-align: end;
+      }
     }
   }
 
+}
+.pricingContainer{
+  display: grid;
+  grid-template: repeat(2, 2.5em)/repeat(3, 1fr);
+  grid-row-gap: 3px;
+  margin: auto;
+  padding: 10px;
+  max-width: 400px;
+  div{
+    background-color: yellow;
+    border-left: 1px solid black;
+  }
+  .priceContainerFooter{
+    background-color: pink;
+      grid-column: 1 / -1;  
+  }
 }
 
 @media all and (min-width: 361px) and (max-width:768px) {
