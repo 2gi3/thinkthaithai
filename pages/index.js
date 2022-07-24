@@ -4,8 +4,40 @@ import Image from 'next/image'
 import Footer from '../components/footer/Footer'
 import NavBar from '../components/navBar/NavBar'
 import styles from '../styles/Home.module.scss'
+import {useState, useRef, useMemo, useEffect} from 'react'
 
 export default function Home() {
+const [isVisible, setIsVisible] = useState(true)
+const targetRef = useRef(null)
+
+const callbackFunction = entries => {
+  const entry = entries[0];
+  setIsVisible(entry.isIntersecting)
+  console.log(entry.isIntersecting)
+}
+const options = useMemo(()=>{
+  return(
+  {root:null,
+  threshold:0,
+  rootMargin: '0px'}
+ )}, []);
+
+ useEffect(()=>{
+  const observer = new IntersectionObserver(callbackFunction, options);
+  const currentTarget = targetRef.current;
+  if(currentTarget) observer.observe(currentTarget);
+
+  return()=>{
+    if(currentTarget) observer.observe(currentTarget);
+  }
+ },[targetRef, options])
+// const observer = new IntersectionObserver(
+//   (entries, observer)=>{
+//     entries.forEach(entry => console.log(entry.isIntersecting)
+//     )
+// }, options)
+
+// observer.observe(trialLessonButton)
   return (
     <>
       <Head>
@@ -21,12 +53,12 @@ export default function Home() {
           <div className={styles.logo}>
             <Image src='/logo.webp' width='180' height='90' />
           </div>
-          <ul className={styles.features}>
+          <ul ref={targetRef} className={styles.features}>
             <li className={styles.list}>One on one Thai lessons</li>
             <li className={styles.list}>Custom-tailored experience</li>
             <li className={styles.list}>learning materials included</li>
           </ul>
-          <Link href='/#'><button className={styles.button} >Book a free trial lesson</button></Link>
+          <Link href='/#'><button className={isVisible === true ? styles.button : styles.buttonFixed} >Book a &#36;5 trial lesson</button></Link>
         </div>
         <div className={styles.imageContainer}>
           {/* <div className={styles.imageBigContainer}>
@@ -190,8 +222,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={styles.testPricingContainer}>
-        <div>
+      <div className={styles.pricingContainer}>
+        <div className={styles.pricingContainerHeader} >
           <h3>
             Book your &#36;5 taster lesson or buy a bundle of lessons from starting from &#36;15/hour!
           </h3>

@@ -1,5 +1,23 @@
 @import "mixins";
 
+@keyframes buttonAnimation {
+  0% {
+    // transform: translateX(-173%) translateY(-637%) scale(0);
+    transform: translateX(-173%) translateY(-837%) ;
+    opacity: 0.3;
+
+  }
+  20%{
+    width: 225px;
+  }
+
+  100% {
+    transform: translateX(0%) translateY(0) scale(1);    
+    width: 150px;
+    opacity: 1;
+  }
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -119,14 +137,26 @@
       }
     }
 
-    .button {
+    .button,
+    .buttonFixed {
+      width: 225px;
       font-family: lemonada;
       font-weight: 500;
       font-size: 17px;
       margin: 15px;
       padding: 10px;
       color: white;
-      background-color: red;
+        border-radius: 40px;
+        background: aquamarine;
+        border: 5px solid white;
+        outline: 5px solid aquamarine;
+    }
+    .buttonFixed {
+      position: fixed;
+      bottom: 15px;
+      right: 5vw;
+      z-index: 99;
+        animation: buttonAnimation 2000ms ease-in-out  forwards;
     }
   }
 
@@ -337,22 +367,33 @@
   }
 
 }
+
 .pricingContainer{
-  display: grid;
-  grid-template: repeat(2, 2.5em)/repeat(3, 1fr);
-  grid-row-gap: 3px;
-  margin: auto;
+  margin: 40px auto 40px auto;
   padding: 10px;
-  max-width: 400px;
-  div{
-    background-color: yellow;
-    border-left: 1px solid black;
-  }
-  .priceContainerFooter{
-    background-color: pink;
-      grid-column: 1 / -1;  
-  }
+ max-width: 400px;
+        border-radius: 40px;
+        background: aquamarine;
+        border: 5px solid white;
+        outline: 5px solid aquamarine;
+        margin: 40px auto;
 }
+// .pricingContainer{
+//   display: grid;
+//   grid-template: repeat(2, 2.5em)/repeat(3, 1fr);
+//   grid-row-gap: 3px;
+//   margin: auto;
+//   padding: 10px;
+//   max-width: 400px;
+//   div{
+//     background-color: yellow;
+//     border-left: 1px solid black;
+//   }
+//   .priceContainerFooter{
+//     background-color: pink;
+//       grid-column: 1 / -1;  
+//   }
+// }
 
 @media all and (min-width: 361px) and (max-width:768px) {
   .background {

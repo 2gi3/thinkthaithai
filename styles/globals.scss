@@ -28,8 +28,11 @@
   height: 80px;
   width: 80px;
   padding: 10px;
-  background-color: blue;
-  color: white;
+  background-color: red;
+    border: 5px solid white;
+    border-radius: 50%;
+    outline: 5px solid red;
+    color: white;
 
   &+.links {
     position: absolute;
@@ -73,8 +76,11 @@
   height: 80px;
   width: 80px;
   padding: 10px;
-  background-color: red;
-  color: white;
+  background-color: aquamarine;
+    border: 5px solid white;
+    border-radius: 50%;
+    outline: 5px solid aquamarine;
+    color: white;
 
   &+.links {
     display: none;
