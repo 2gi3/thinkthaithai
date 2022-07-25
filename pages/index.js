@@ -4,40 +4,43 @@ import Image from 'next/image'
 import Footer from '../components/footer/Footer'
 import NavBar from '../components/navBar/NavBar'
 import styles from '../styles/Home.module.scss'
-import {useState, useRef, useMemo, useEffect} from 'react'
+import { useState, useRef, useMemo, useEffect } from 'react'
 
 export default function Home() {
-const [isVisible, setIsVisible] = useState(true)
-const targetRef = useRef(null)
 
-const callbackFunction = entries => {
-  const entry = entries[0];
-  setIsVisible(entry.isIntersecting)
-  console.log(entry.isIntersecting)
-}
-const options = useMemo(()=>{
-  return(
-  {root:null,
-  threshold:0,
-  rootMargin: '0px'}
- )}, []);
+// --Start-- Function and options object to pass in the intersectionObserver inside useEffect
+  const [isVisible, setIsVisible] = useState(true)
+  const targetRef = useRef(null)
 
- useEffect(()=>{
-  const observer = new IntersectionObserver(callbackFunction, options);
-  const currentTarget = targetRef.current;
-  if(currentTarget) observer.observe(currentTarget);
-
-  return()=>{
-    if(currentTarget) observer.observe(currentTarget);
+  const callbackFunction = entries => {
+    const entry = entries[0];
+    setIsVisible(entry.isIntersecting)
+    console.log(entry.isIntersecting)
   }
- },[targetRef, options])
-// const observer = new IntersectionObserver(
-//   (entries, observer)=>{
-//     entries.forEach(entry => console.log(entry.isIntersecting)
-//     )
-// }, options)
+  const options = useMemo(() => {
+    return (
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: '100px 0px 0px 0px'
+      }
+    )
+  }, []);
+  // --End-- Function and options object to pass in the intersectionObserver inside useEffect
+  
 
-// observer.observe(trialLessonButton)
+  useEffect(() => {
+    // --Start-- detect when the button ("book a $5 trial lesson") is outside of the viewport
+    const observer = new IntersectionObserver(callbackFunction, options);
+    const currentTarget = targetRef.current;
+    if (currentTarget) observer.observe(currentTarget);
+
+    return () => {
+      if (currentTarget) observer.observe(currentTarget);
+    }
+    // --End-- detect when the button ("book a $5 trial lesson") is outside of the viewport
+  }, [targetRef, options])
+
   return (
     <>
       <Head>
@@ -48,90 +51,50 @@ const options = useMemo(()=>{
       <div className={styles.background}>
         <Image src='/homepageBg.jpg' width='400px' height='400px' ></Image>
       </div>
-      <div className={styles.container}>
+      <div ref={targetRef} className={styles.container}>
         <div className={styles.titleContainer}>
           <div className={styles.logo}>
-            <Image src='/logo.webp' width='180' height='90' />
+            <h1>ThinkThaiThai</h1>
           </div>
-          <ul ref={targetRef} className={styles.features}>
+          <ul className={styles.features}>
             <li className={styles.list}>One on one Thai lessons</li>
             <li className={styles.list}>Custom-tailored experience</li>
             <li className={styles.list}>learning materials included</li>
           </ul>
+          {/* Toggle the button's class according to whether or not the button is visible in the viewport  */}
           <Link href='/#'><button className={isVisible === true ? styles.button : styles.buttonFixed} >Book a &#36;5 trial lesson</button></Link>
         </div>
         <div className={styles.imageContainer}>
-          {/* <div className={styles.imageBigContainer}>
-            <div className={styles.imageBig}>
-              <Image className={styles.image} src='/phone.png' width='100' height='100' />
-            </div>
-            <div className={styles.imageBig}>
-              <Image className={styles.image} src='/computer.png' width='100' height='100' />
-            </div>
-            <div className={styles.imageBig}>
-              <Image className={styles.image} src='/tablet.png' width='120' height='100' />
-            </div>
-          </div> */}
-          {/* <div className={styles.imageSmallContainer}>
-            <div className={styles.imageSmall}>
-              <Image src='/ipod.png' width='50' height='50' />
-            </div>
-            <div className={styles.imageSmall}> 
-              <Image src='/ear.png' width='50' height='50' />
-            </div>
-            <div className={styles.imageSmall}>
-              <Image src='/listen.png' width='50' height='50' />
-            </div>
-          </div> */}
         </div>
       </div>
       <div className={styles.coursesContainer}>
         <div className={styles.message}>
           <h1>Speak Thai confidently</h1>
-          {/* <h2>with ThinkThaiThai</h2> */}
           <p>
-            With a personalised study plan, tailored learning materials, 
+            With a personalised study plan, tailored learning materials,
             and flexible teaching techniques that adapt to your own learning style
           </p>
         </div>
         <div className={styles.courses}>
           <div className={styles.skills}>
             <div className={styles.SpeakingAndListening}>
-            <h3>Speaking and listening</h3>
+              <h3>Speaking and listening</h3>
               <div className={styles.course}>
                 <p>Simulate <strong>real life situations</strong> with your teacher.</p>
-                {/* <p>Pronounciation accuracy</p>  */}
                 <p> Watch <strong> Thai drama</strong> </p>
                 <p> learn your favourite <strong>songs</strong></p>
-                <p> and listen to <strong> podcasts</strong></p>                              
+                <p> and listen to <strong> podcasts</strong></p>
               </div>
-              <h3>Gain the confidence to engage in daily conversations</h3> 
-              {/* <div className={styles.course}>
-                <h3>Listening</h3>
-                <p> Thai drama</p>
-                <p> Thai songs</p>
-                <p>podcasts</p>
-              </div> */}
+              <h3>Gain the confidence to engage in daily conversations</h3>
             </div>
             <div className={styles.writingAndReading}>
               <h3>Reading and writing</h3>
               <div className={styles.course}>
-                {/* <h3>Reading</h3> */}
                 <p> Learn the <strong>Thai alphabet and grammar</strong>, </p>
                 <p> Understand and practice Thai tones and reading accuracy </p>
-                {/* <p> reading accuracy </p> */}
                 <p> learn from official Thai primary school books</p>
               </div>
               <h3>All you need to explore thai social media, chats, news and literature</h3>
-              {/* <div className={styles.course}>
-                <h3>Writing</h3>
-                <p>Grammar rules</p>
-                <p> spelling</p>
-                <p>
-                  Vocabulary</p>
-                  <p> sentence structure.
-                </p>
-              </div> */}
             </div>
           </div>
           <div className={styles.needs}>
@@ -225,23 +188,13 @@ const options = useMemo(()=>{
       <div className={styles.pricingContainer}>
         <div className={styles.pricingContainerHeader} >
           <h3>
-            Book your &#36;5 taster lesson or buy a bundle of lessons from starting from &#36;15/hour!
+            Start learning now
           </h3>
+          <p>from as little as &#36;15/Lesson!</p>
         </div>
+        <Link href='www.google.com'><a>find out more about pricing and payment methods </a></Link>
         <p className={styles.priceContainerFooter}>Learning materials, homeworks and exercices always included </p>
       </div>
-      {/* <div className={styles.pricingContainer}>
-          <div><p>5 Lessons</p></div>
-          <div><p>&#36;100</p></div>
-          <div><p>&#36;20/lesson</p></div>
-          <div><p>10 Lessond</p></div>
-          <div><p>&#36;180</p></div>
-          <div><p>&#36;18/lesson</p></div>
-          <div><p>15 Lessons</p></div>
-          <div><p>&#36;300</p></div>
-          <div><p>&#36;15/lesson</p></div>        
-        <p className={styles.priceContainerFooter}>Learning materials, homeworks and exercices always included </p>
-      </div> */}
     </>
   )
 }

@@ -7,8 +7,11 @@ import { useState } from 'react'
 
 
 const NavBar = () => {
-    const [toggle__button, setToggle__button] = useState('toggle__button--closed')
+    const [toggle__button, setToggle__button] = useState('closed')
     const [toggleButtonIcon, setToggleButtonIcon] = useState(faBars)
+    // --Start-- test new class toggle
+
+    // --End-- test new class toggle
     return (
         <div className={styles.navContainer}>
             <div className={styles.logo}>
@@ -16,17 +19,17 @@ const NavBar = () => {
             </div>
             <nav className={styles.nav}>
                 <button onClick={() => {
-                    if (toggle__button === 'toggle__button--closed') {
-                        setToggle__button('toggle__button--opened');
+                    if (toggle__button === 'closed') {
+                        setToggle__button('opened');
                         setToggleButtonIcon(faXmark)
                     } else {
-                        setToggle__button('toggle__button--closed')
+                        setToggle__button('closed')
                         setToggleButtonIcon(faBars)
                     }
                 }
-                } className={toggle__button}><FontAwesomeIcon icon={toggleButtonIcon} />
+                } className={toggle__button==='closed'? styles.toggleButtonClosed : styles.toggleButtonOpened }><FontAwesomeIcon icon={toggleButtonIcon} />
                 </button>
-                <div className='links'>
+                <div className={styles.links}>
                     <Link href='/'><a><p>Home</p></a></Link>
                     <Link href='/about'><a><p>About Me</p></a></Link>
                     <Link href='/students'><a><p>My students</p></a></Link>
