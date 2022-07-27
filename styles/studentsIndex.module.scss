@@ -1,0 +1,15 @@
+@use "styles" as *;
+
+.container{
+    padding:5vw;
+.student{
+    padding: 2px 16px;
+    background-color: #ffff;
+    margin: 10px 20px;
+    border-left: 8px solid $primaryColor;
+    &:hover{
+        border-left:8px solid $secondaryColor;
+        box-shadow: 1px 1px 1px #ebebeb;
+    }
+}
+}

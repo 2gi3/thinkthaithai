@@ -8,7 +8,7 @@ import { useState, useRef, useMemo, useEffect } from 'react'
 
 export default function Home() {
 
-// --Start-- Function and options object to pass in the intersectionObserver inside useEffect
+  // --Start-- Function and options object to pass in the intersectionObserver inside useEffect
   const [isVisible, setIsVisible] = useState(true)
   const targetRef = useRef(null)
 
@@ -27,7 +27,7 @@ export default function Home() {
     )
   }, []);
   // --End-- Function and options object to pass in the intersectionObserver inside useEffect
-  
+
 
   useEffect(() => {
     // --Start-- detect when the button ("book a $5 trial lesson") is outside of the viewport
@@ -192,7 +192,11 @@ export default function Home() {
           </h3>
           <p>from as little as &#36;15/Lesson!</p>
         </div>
-        <Link href='www.google.com'><a>find out more about pricing and payment methods </a></Link>
+        <Link href='www.google.com'>
+          <div className={styles.pricingContainerLink}>
+            <p>find out more about pricing and payment methods </p>
+          </div>
+        </Link>
         <p className={styles.priceContainerFooter}>Learning materials, homeworks and exercices always included </p>
       </div>
     </>

@@ -1,12 +1,26 @@
+import styles from '../../styles/studentsIndex.module.scss';
 
+export const getStaticProps = async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await res.json();
 
-const Profiles = () => {
-    return(
-        <div>
-            <h1>List of students</h1>
-            <p>
-                A LIST OF STUDENTS Do commodo mollit exercitation nostrud. Eu cillum cillum id aliqua occaecat veniam cillum id reprehenderit cupidatat sunt proident consectetur do. Ut ad magna aute pariatur pariatur eiusmod cupidatat est id labore ullamco mollit in. Eiusmod in officia dolore quis culpa nisi anim tempor. Sint nostrud adipisicing commodo ad sunt.
-            </p>
+    // return { props: { data } }
+    return { props: { data } }
+}
+
+const Profiles = ({data} ) => {
+    return (
+        <div className={styles.container}>
+            <h1>List of test students</h1>
+            {data.map(student => (
+                <div className={styles.student} key={student.id}>
+                    <a>
+                        <h3>{student.name}</h3>
+                        {/* <p>{student.email}</p>
+                        <p>{student.address.city}</p> */}
+                    </a>
+                </div>
+            ))}
         </div>
     )
 }

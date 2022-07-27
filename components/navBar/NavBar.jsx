@@ -9,9 +9,7 @@ import { useState } from 'react'
 const NavBar = () => {
     const [toggle__button, setToggle__button] = useState('closed')
     const [toggleButtonIcon, setToggleButtonIcon] = useState(faBars)
-    // --Start-- test new class toggle
-
-    // --End-- test new class toggle
+    
     return (
         <div className={styles.navContainer}>
             <div className={styles.logo}>
@@ -33,7 +31,7 @@ const NavBar = () => {
                     <Link href='/'><a><p>Home</p></a></Link>
                     <Link href='/about'><a><p>About Me</p></a></Link>
                     <Link href='/students'><a><p>My students</p></a></Link>
-                    <Link href='#'><a><p>My blog</p></a></Link>
+                    <Link href='/myblog'><a><p>My blog</p></a></Link>
                 </div>
             </nav>
         </div>
