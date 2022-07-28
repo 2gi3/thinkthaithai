@@ -13,7 +13,8 @@ const NavBar = () => {
     return (
         <div className={styles.navContainer}>
             <div className={styles.logo}>
-                <Image src='/logo.webp' width='180' height='90' />
+                {/* <Image src='/logo.webp' width='180' height='90' /> */}
+                <h1>ThinkThaiThai</h1>
             </div>
             <nav className={styles.nav}>
                 <button onClick={() => {
@@ -29,7 +30,7 @@ const NavBar = () => {
                 </button>
                 <div className={styles.links}>
                     <Link href='/'><a><p>Home</p></a></Link>
-                    <Link href='/about'><a><p>About Me</p></a></Link>
+                    <Link href='/aboutme'><a><p>About Me</p></a></Link>
                     <Link href='/students'><a><p>My students</p></a></Link>
                     <Link href='/myblog'><a><p>My blog</p></a></Link>
                 </div>

@@ -14,17 +14,16 @@ const Profiles = ({ data }) => {
             <h1>List of test students</h1>
             {data.map(student => (
                 <Link
-                    className={styles.student}
                     href={{
                         pathname: '/students/[id]',
                         query: { id: student.id }
                     }}
                     key={student.id}>
-                    <a>
+                    <div className={styles.student}>
                         <h3>{student.name}</h3>
                         {/* <p>{student.email}</p>
                         <p>{student.address.city}</p> */}
-                    </a>
+                    </div>
                 </Link>
             ))}
         </div>

@@ -77,12 +77,7 @@
 
     .button,
     .buttonFixed {
-      width: 225px;
-      font-family: lemonada;
-      font-weight: 500;
-      font-size: 17px;
-      margin: 15px;
-      padding: 10px;
+      @include buttonTrialLesson;
       color: $primaryBackground;
       border-radius: $borderRadius;
       background: $primaryColor;

@@ -18,7 +18,12 @@
 
     .logo {
         width: 100%;
-        height: 15vh;
+        // height: 15vh;
+        padding-left: 15px;
+        h1{
+          font-size:2.5rem;
+          color: $secondaryColor;
+          }
     }
 
     .nav {

@@ -11,3 +11,18 @@
       @content;
   
 }
+
+@mixin buttonTrialLesson() {
+  width: 225px;
+      font-family: lemonada;
+      font-weight: 500;
+      font-size: 17px;
+      margin: 15px;
+      padding: 10px;
+      // color: $primaryBackground;
+      // border-radius: $borderRadius;
+      // background: $primaryColor;
+      // border: 5px solid $primaryBackground;
+      // outline: 5px solid $primaryColor;
+      @content;
+}

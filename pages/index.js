@@ -62,7 +62,9 @@ export default function Home() {
             <li className={styles.list}>learning materials included</li>
           </ul>
           {/* Toggle the button's class according to whether or not the button is visible in the viewport  */}
-          <Link href='/#'><button className={isVisible === true ? styles.button : styles.buttonFixed} >Book a &#36;5 trial lesson</button></Link>
+          <Link href='/#'><button
+            className={isVisible === true ? styles.button : styles.buttonFixed} >Book a &#36;5 trial lesson
+          </button></Link>
         </div>
         <div className={styles.imageContainer}>
         </div>
