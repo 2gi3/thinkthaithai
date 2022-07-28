@@ -9,13 +9,13 @@
 
   }
 
-  75% {
-    width: 225px;
-  }
+  // 75% {
+  //   width: 225px;
+  // }
 
   100% {
     transform: translateX(0%) translateY(0) scale(1);
-    width: 150px;
+    // width: 150px;
     opacity: 1;
   }
 }
@@ -258,14 +258,14 @@
 
     p {
       font-size: 2.5rem;
-      margin-top: -2rem;
-      margin-bottom: 3rem;
+      margin: 0;
     }
   }
 
   .pricingContainerLink {
+    max-width: 400px;
     font-size: 1.5rem;
-    margin: 2rem;
+    margin: 2rem auto; 
     padding: 10px;
     border-radius: $borderRadius;
     background: $primaryColor;

@@ -3,11 +3,11 @@
 html{
   background-color: $primaryBackground;
 }
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6, b{
   color: $primaryText;
   font-family: $primaryFont;
 }
-p, a, strong, b, ul, li {
+p, a, strong, ul, li {
   color: $secondaryText;
   font-family: $secondaryFont;
 }

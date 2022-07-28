@@ -63,7 +63,7 @@ export default function Home() {
           </ul>
           {/* Toggle the button's class according to whether or not the button is visible in the viewport  */}
           <Link href='/#'><button
-            className={isVisible === true ? styles.button : styles.buttonFixed} >Book a &#36;5 trial lesson
+            className={isVisible === true ? styles.button : styles.buttonFixed} > &#36;5 trial lesson
           </button></Link>
         </div>
         <div className={styles.imageContainer}>
@@ -196,7 +196,7 @@ export default function Home() {
         </div>
         <Link href='www.google.com'>
           <div className={styles.pricingContainerLink}>
-            <p>find out more about pricing and payment methods </p>
+            <p>Pricing and payment methods </p>
           </div>
         </Link>
         <p className={styles.priceContainerFooter}>Learning materials, homeworks and exercices always included </p>
