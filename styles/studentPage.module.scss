@@ -1,0 +1,8 @@
+@use "styles" as *;
+
+.container{
+    padding: 10vw;
+    h1{
+        background:$primaryColor ;
+    }
+}
