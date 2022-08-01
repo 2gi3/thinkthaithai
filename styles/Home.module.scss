@@ -271,7 +271,9 @@
     background: $primaryColor;
     border: 5px solid $primaryBackground;
     outline: 5px solid $primaryColor;
-
+    p{
+      margin: 0;
+    }
   }
   .priceContainerFooter{
     font-size: 1.5rem;

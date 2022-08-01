@@ -31,7 +31,8 @@ const NavBar = () => {
                 <div className={styles.links}>
                     <Link href='/'><a><p>Home</p></a></Link>
                     <Link href='/aboutme'><a><p>About Me</p></a></Link>
-                    <Link href='/students'><a><p>My students</p></a></Link>
+                    <Link href='/feedbacks'><a><p>Feedbacks</p></a></Link>
+                    <Link href='/pricing'><a><p>Pricing</p></a></Link>
                     <Link href='/myblog'><a><p>My blog</p></a></Link>
                 </div>
             </nav>

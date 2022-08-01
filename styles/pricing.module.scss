@@ -1,0 +1,26 @@
+@use "styles" as *;
+
+.pricingContainer {
+    width: 70%;
+    margin: auto;
+    color: aqua;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 5px;
+
+    h1 {
+        grid-column: 1 /-1;
+        background: $primaryColor
+    }
+    .pricingFooter{
+        grid-column: 1 /-1;
+        background: $primaryColor
+    }
+}
+.paymentMethods{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+
+}
