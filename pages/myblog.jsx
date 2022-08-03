@@ -29,13 +29,13 @@ const MyBlog = ({ feed }) => {
             //     </div>
             // </Link>
             <div className={styles.blogVideoContainer}>
-                <Link key={post.id} href={post.permalink} >
-            <video className={styles.blogVideo}  src={post.media_url} controls type="video/mp4" 
+                {/* <Link key={post.id} href={post.permalink} > */}
+            <video className={styles.blogVideo} key={post.id} src={post.media_url} controls type="video/mp4" 
             height='200' 
             // width='150'
                 loading="lazy" allowfullscreen="true" frameborder="0">
               </video>
-              </Link>
+              {/* </Link> */}
               </div>
 
         ))}
