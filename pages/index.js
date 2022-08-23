@@ -46,6 +46,7 @@ export default function Home() {
       <Head>
         <title>ThinkThaiThai</title>
         <meta name="description" content="Learn thai" />
+        <meta property="og:image" content="/1.png" />
         <link rel="icon" href="/logo.webp" />
       </Head>
       <div className={styles.background}>
@@ -158,8 +159,8 @@ export default function Home() {
               <Image src='/students/saru.png' width='100' height='100' alt='The picture of a student'/>
             </div>
             <div className={styles.feedbackText}>
-              <h3 className={styles.feedbackHeader}>&quot;I totally recommend her lessons</h3>
-              <p className={styles.feedbackBody}>Great lesson! Natt’s class was very cozy and relaxed, she is so friendly and
+              <h3 className={styles.feedbackHeader}>I totally recommend her lessons</h3>
+              <p className={styles.feedbackBody}>&quot;Great lesson! Natt’s class was very cozy and relaxed, she is so friendly and
                 easy to talk to, but she also prepared really nice materials with a clear and systematic structure,
                 that covered vocabulary, expressions and dialogues. Also, she sent me the pronunciation for me to practice
                 and gave me meaningful homework. During the lesson we practiced pronunciation, talked about the uses,
