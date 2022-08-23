@@ -45,8 +45,10 @@ export default function Home() {
     <>
       <Head>
         <title>ThinkThaiThai</title>
-        <meta name="description" content="Learn thai" />
+        <meta name="description" content="Learn thai test" />
         {/* <meta property="og:image" content="/1.png" /> */}
+        <meta property="og:url" content="https://thinkthaithai.vercel.app/" />
+        <meta property="og:type" content="website" />
         
 
         <meta
