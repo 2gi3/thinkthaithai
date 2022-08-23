@@ -7,12 +7,12 @@ const feedbacks = () =>{
         <h3> What my students say abuot me</h3>
         <div className={styles.feedback}>
           <div className={styles.feedbackPicture}>
-            <Image src='/students/Shannen Li_HK.png' width='100' height='100' />
+            <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />
           </div>
           <div className={styles.feedbackText}>
             {/* <h3 className={styles.feedbackHeader}>So Much Fun</h3> */}
-            <p className={styles.feedbackBody}>"Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
-              and it was very relevant! I feel like I’m ready to visit Thailand now! 😍"
+            <p className={styles.feedbackBody}>&quot;Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
+              and it was very relevant! I feel like I’m ready to visit Thailand now! 😍&quot;
             </p>
             <p className={styles.feedbackFooter}>
               Shanen Li Student, Hong Kong
@@ -21,7 +21,7 @@ const feedbacks = () =>{
         </div>
         <div className={styles.feedback}>
           <div className={styles.feedbackPicture}>
-            <Image src='/students/saru.png' width='100' height='100' />
+            <Image src='/students/saru.png' width='100' height='100' alt='The picture of a student' />
           </div>
           <div className={styles.feedbackText}>
             {/* <h3 className={styles.feedbackHeader}>I totally recommend her lessons</h3> */}
@@ -38,7 +38,7 @@ const feedbacks = () =>{
         </div>
         <div className={styles.feedback}>
           <div className={styles.feedbackPicture}>
-            <Image className={styles.feedbackPicture} src='/students/Emily_.jpg' width='100' height='100' />
+            <Image className={styles.feedbackPicture} src='/students/Emily_.jpg' width='100' height='100' alt='The picture of a student' />
           </div>
           <div className={styles.feedbackText}>
             {/* <h3 className={styles.feedbackHeader}>Very kind teacher</h3> */}
@@ -53,7 +53,7 @@ const feedbacks = () =>{
         </div>
         <div className={styles.feedback}>
           <div className={styles.feedbackPicture}>
-            <Image className={styles.feedbackPicture} src='/students/jojo3.1.jpg' width='100' height='100' />
+            <Image className={styles.feedbackPicture} src='/students/jojo3.1.jpg' width='100' height='100' alt='The picture of a student' />
           </div>
           <div className={styles.feedbackText}>
             <p className={styles.feedbackBody}>kruu Natt is a very talkative, passionate nice person. She is very good in Thai and English. 
@@ -66,7 +66,7 @@ const feedbacks = () =>{
         </div>
         <div className={styles.feedback}>
           <div className={styles.feedbackPicture}>
-            <Image className={styles.feedbackPicture} src='/students/Chi_Hui_Malysia.jpg' width='100' height='100' />
+            <Image className={styles.feedbackPicture} src='/students/Chi_Hui_Malysia.jpg' width='100' height='100' alt='The picture of a student' />
           </div>
           <div className={styles.feedbackText}>
             <p className={styles.feedbackBody}>Natt is very friendly , I like her teaching style which makes the lesson relaxed and enjoyable!
@@ -78,7 +78,7 @@ const feedbacks = () =>{
         </div>
         <div className={styles.feedback}>
           {/* <div className={styles.feedbackPicture}>
-            <Image className={styles.feedbackPicture} src='/students/Chi_Hui_Malysia.jpg' width='100' height='100' />
+            <Image className={styles.feedbackPicture} src='/students/Chi_Hui_Malysia.jpg' width='100' height='100' alt='The picture of a student' />
           </div> */}
           <div className={styles.feedbackText}>
             <p className={styles.feedbackBody}>體驗課配合我個人需求，聊了一小時的ประเทศกูมี歌詞中我的諸多疑問。
@@ -92,7 +92,7 @@ const feedbacks = () =>{
         </div>
         <div className={styles.feedback}>
           <div className={styles.feedbackPicture}>
-            <Image className={styles.feedbackPicture} src='/students/Linsey_USA.jpg' width='100' height='100' />
+            <Image className={styles.feedbackPicture} src='/students/Linsey_USA.jpg' width='100' height='100' alt='The picture of a student' />
           </div>
           <div className={styles.feedbackText}>
             <p className={styles.feedbackBody}>Thank you Kru Natt. You are spectacular at helping me feel confident and able in my limited Thai language skills.
@@ -104,7 +104,7 @@ const feedbacks = () =>{
         </div>
         <div className={styles.feedback}>
           <div className={styles.feedbackPicture}>
-            <Image className={styles.feedbackPicture} src='/students/amanda-1-100x100.jpg' width='100' height='100' />
+            <Image className={styles.feedbackPicture} src='/students/amanda-1-100x100.jpg' width='100' height='100' alt='The picture of a student' />
           </div>
           <div className={styles.feedbackText}>
             <p className={styles.feedbackBody}>Thank you Kruu Natt for your patience. I know u are having a hard time
@@ -117,7 +117,7 @@ const feedbacks = () =>{
         </div>
         <div className={styles.feedback}>
           {/* <div className={styles.feedbackPicture}>
-            <Image className={styles.feedbackPicture} src='/students/amanda-1-100x100.jpg' width='100' height='100' />
+            <Image className={styles.feedbackPicture} src='/students/amanda-1-100x100.jpg' width='100' height='100' alt='The picture of a student' />
           </div> */}
           <div className={styles.feedbackText}>
             <p className={styles.feedbackBody}>Teacher Natt is very kind teacher 🙂 She waits for me patiently while I

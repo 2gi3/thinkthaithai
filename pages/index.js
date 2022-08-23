@@ -49,7 +49,7 @@ export default function Home() {
         <link rel="icon" href="/logo.webp" />
       </Head>
       <div className={styles.background}>
-        <Image src='/homepageBg.jpg' width='400px' height='400px' ></Image>
+        <Image src='/homepageBg.jpg' width='400px' height='400px' alt='A picture of teacher nat'></Image>
       </div>
       <div ref={targetRef} className={styles.container}>
         <div className={styles.titleContainer}>
@@ -112,7 +112,7 @@ export default function Home() {
           <div className={styles.teacherVideo}>
             <h3> Know your teacher and learning style</h3>
             <video src="/videos/teacherIntroduction.mp4" controls height='150' width='225'
-              loading="lazy" allowfullscreen="" frameborder="0">
+              loading="lazy" allowFullScreen="" frameBorder="0">
             </video>
           </div>
           <div className={styles.teacerClassesVideos}>
@@ -120,19 +120,19 @@ export default function Home() {
             <div className={styles.classVideo}>
               <h3>Speaking</h3>
               <video src="/videos/speaking.mp4" controls type="video/mp4" height='100' width='150'
-                loading="lazy" allowfullscreen="" frameborder="0">
+                loading="lazy" allowFullScreen="" frameBorder="0">
               </video>
             </div>
             <div className={styles.classVideo}>
               <h3>Writing</h3>
               <video src="/videos/reading.mp4" controls height='100' width='150'
-                loading="lazy" allowfullscreen="" frameborder="0">
+                loading="lazy" allowFullScreen="" frameBorder="0">
               </video>
             </div>
             <div className={styles.classVideo}>
               <h3>Conversation</h3>
               <video src="/videos/conversation2.mp4" controls height='100' width='150'
-                loading="lazy" allowfullscreen="" frameborder="0">
+                loading="lazy" allowFullScreen="" frameBorder="0">
               </video>
             </div>
           </div>
@@ -141,12 +141,12 @@ export default function Home() {
           <h3> What my students say abuot me</h3>
           <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
-              <Image src='/students/Shannen Li_HK.png' width='100' height='100' />
+              <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />
             </div>
             <div className={styles.feedbackText}>
               <h3 className={styles.feedbackHeader}>So Much Fun</h3>
-              <p className={styles.feedbackBody}>"Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
-                and it was very relevant! I feel like I’m ready to visit Thailand now! 😍"
+              <p className={styles.feedbackBody}>&quot;Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
+                and it was very relevant! I feel like I’m ready to visit Thailand now! 😍&quot;
               </p>
               <p className={styles.feedbackFooter}>
                 Shanen Li Student, Hong Kong
@@ -155,15 +155,15 @@ export default function Home() {
           </div>
           <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
-              <Image src='/students/saru.png' width='100' height='100' />
+              <Image src='/students/saru.png' width='100' height='100' alt='The picture of a student'/>
             </div>
             <div className={styles.feedbackText}>
-              <h3 className={styles.feedbackHeader}>I totally recommend her lessons</h3>
+              <h3 className={styles.feedbackHeader}>&quot;I totally recommend her lessons</h3>
               <p className={styles.feedbackBody}>Great lesson! Natt’s class was very cozy and relaxed, she is so friendly and
                 easy to talk to, but she also prepared really nice materials with a clear and systematic structure,
                 that covered vocabulary, expressions and dialogues. Also, she sent me the pronunciation for me to practice
                 and gave me meaningful homework. During the lesson we practiced pronunciation, talked about the uses,
-                and she let me build my own examples. I totally recommend her lessons!
+                and she let me build my own examples. I totally recommend her lessons!&quot;
               </p>
               <p className={styles.feedbackFooter}>
                 Saru Salvador, Spanish Teacher, Germany
@@ -172,13 +172,13 @@ export default function Home() {
           </div>
           <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
-              <Image className={styles.feedbackPicture} src='/students/Emily_.jpg' width='100' height='100' />
+              <Image className={styles.feedbackPicture} src='/students/Emily_.jpg' width='100' height='100' alt='The picture of a student' />
             </div>
             <div className={styles.feedbackText}>
               <h3 className={styles.feedbackHeader}>Very kind teacher</h3>
-              <p className={styles.feedbackBody}>Natt is a very kind teacher who taught me pronunciation practice patiently.
+              <p className={styles.feedbackBody}> &quot;Natt is a very kind teacher who taught me pronunciation practice patiently.
                 Let me to improve after each class. Before teaching a new vowel, Natt would help me review what I had
-                learned to strengthen my memory. Thanks, teacher Natt.
+                learned to strengthen my memory. Thanks, teacher Natt.&quot;
               </p>
               <p className={styles.feedbackFooter}>
                 Emily Huang Accountant , Taiwan

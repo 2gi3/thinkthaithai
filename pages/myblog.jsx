@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
 
     return { 
         props: {feed },
-        revalidate:600
+        // revalidate:600
      }
 }
 
@@ -28,12 +28,12 @@ const MyBlog = ({ feed }) => {
             //         <img src={post.thumbnail_url} width='100'  />
             //     </div>
             // </Link>
-            <div className={styles.blogVideoContainer}>
+            <div className={styles.blogVideoContainer} key={post.id}>
                 {/* <Link key={post.id} href={post.permalink} > */}
             <video className={styles.blogVideo} key={post.id} src={post.media_url} controls type="video/mp4" 
             height='200' 
             // width='150'
-                loading="lazy" allowfullscreen="true" frameborder="0">
+                loading="lazy" allowFullScreen="true" frameBorder="0">
               </video>
               {/* </Link> */}
               </div>

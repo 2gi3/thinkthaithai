@@ -6,7 +6,7 @@ const AboutMe = () => {
     return (
         <div className={styles.container}>
             <div className={styles.heroPicture}>
-                <Image src='/aboutMe1.jpg' width='400px' height='400px' ></Image>
+                <Image src='/aboutMe1.jpg' width='400px' height='400px' alt='A picture of teacher Nat' ></Image>
             </div>
             <div className={styles.heroTitle}>
                 <h1>สวัสดีคะ Sawatdii&nbsp;ka!</h1>
@@ -43,7 +43,7 @@ const AboutMe = () => {
                 </p>
             </div>
             <div className={styles.contentPicture}>
-                <Image src='/aboutMe2.jpg' width='400px' height='400px' ></Image>
+                <Image src='/aboutMe2.jpg' width='400px' height='400px' alt='A picture of teacher Nat'></Image>
             </div>
         </div>
     )
