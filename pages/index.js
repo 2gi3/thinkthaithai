@@ -46,7 +46,23 @@ export default function Home() {
       <Head>
         <title>ThinkThaiThai</title>
         <meta name="description" content="Learn thai" />
-        <meta property="og:image" content="/1.png" />
+        {/* <meta property="og:image" content="/1.png" /> */}
+        
+
+        <meta
+          property="og:title"
+          content="Learn Thai language!"
+        />
+
+        <meta
+          property="og:description"
+          content="Explore the learning material and book a trial lesson"
+        />
+
+        <meta 
+          property="og:image"
+          content={"/1.png"} 
+          />
         <link rel="icon" href="/logo.webp" />
       </Head>
       <div className={styles.background}>
