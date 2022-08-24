@@ -48,8 +48,7 @@ export default function Home() {
         <meta name="description" content="Learn thai test" />
         {/* <meta property="og:image" content="/1.png" /> */}
         <meta property="og:url" content="https://thinkthaithai.vercel.app/" />
-        <meta property="og:type" content="website" />
-        
+        <meta property="og:type" content="website" />       
 
         <meta
           property="og:title"
@@ -63,8 +62,10 @@ export default function Home() {
 
         <meta 
           property="og:image"
-          content={"/1.png"} 
+          content={"https://thinkthaithai.vercel.app/1.png"} 
           />
+          
+
         <link rel="icon" href="/logo.webp" />
       </Head>
       <div className={styles.background}>
