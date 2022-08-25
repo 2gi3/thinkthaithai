@@ -63,8 +63,7 @@ export default function Home() {
         <meta 
           property="og:image"
           content={"https://thinkthaithai.vercel.app/1.png"} 
-          />
-          
+          />          
 
         <link rel="icon" href="/logo.webp" />
       </Head>
