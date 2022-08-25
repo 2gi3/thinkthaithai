@@ -1,4 +1,5 @@
 import styles from '../styles/pricing.module.scss';
+import Link from 'next/link'
 import { checkOut } from '../checkOut';
 
 const pricing = () =>{
@@ -9,25 +10,43 @@ const pricing = () =>{
     return(<>
         <div className={styles.pricingContainer}>
         <h1 className={styles.pricingHeader}> pricing</h1>
-        <h3>Number of lessons</h3> <h3>price</h3>
-        <p>5</p> 
+        {/* <h3>lessons</h3> <h3 className={styles.price}>price</h3> */}
+        <p>5 Lessons</p> 
+        {/* <p>&#36;100</p> */}
+            <div className={styles.buyButton}>
             <button onClick={(()=>{checkOut(price100)})}>
-                <p>&#36;100</p>
+                &#36;100
+                {/* BUY */}
             </button> 
-        <p>10</p> 
+            </div>
+        <p>10 Lessons</p>
+         {/* <p>&#36;180</p> */}
+            <div className={styles.buyButton}>
             <button onClick={(()=>{checkOut(price180)})}>
-                <p>&#36;180</p>
+                &#36;180
+                {/* BUY */}
             </button> 
-        <p>20</p> 
+            </div>
+        <p>20 Lessons</p>
+         {/* <p>&#36;300</p> */}
+            <div className={styles.buyButton}>
             <button onClick={(()=>{checkOut(price300)})}>
-                <p>&#36;300</p>
+                &#36;300
+                {/* BUY */}
             </button> 
+            </div>
         <p className={styles.pricingFooter}>Lerning material and Homeworks always included</p>
         </div>
-        <div className={styles.paymentMethods}>
+        <div className={styles.buttonContainer}>
+                <Link href='/#'><button
+                    className={styles.button}
+                >&#36;5 trial lesson
+                </button></Link>
+            </div>
+        {/* <div className={styles.paymentMethods}>
             <p>Paypal</p>
             <p>credit / debit card</p>
-        </div>
+        </div> */}
         </>
     )
 }
