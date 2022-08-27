@@ -19,7 +19,7 @@
     .logo {
         width: 100%;
         // height: 15vh;
-        padding-left: 15px;
+        padding-left: 5vw;
         h1{
           font-size:2rem;
           color: $secondaryColor;
@@ -109,55 +109,15 @@
     }
 }
 
-// @media all and (min-width: 361px) and (max-width:768px) {
-//     .navContainer {
-//         flex-direction: column-reverse;
-//         justify-content: center;
+@media all and (min-width: 361px) and (max-width:768px) {
+    .navContainer {
 
-//         .logo {
-//             width: auto;
-//             margin-left: 20px;
-//             margin-top: 35px;
-//             margin-bottom: -45px;
-//         }
+        .logo {
+            padding-left:12vw;
+        }
+      }
 
-//         .nav {
-//             position: static;
-//             .toggleButtonOpened {
-//                 display: none;
-            
-//                 &+.links {
-//                   display: flex;
-//                   justify-content: center;
-//                   width: 100vw;
-//                   border-bottom: 1px solid lightgray;
-//                   box-shadow: 1px 1px 1px lightgray;
-//                   margin-right: 0;
-//                   a{
-//                     margin: 0 5vw;
-//                     border-bottom: none;
-//                   }
-//                 }
-//               }
-            
-//               .toggleButtonClosed {
-//                 display: none;
-            
-//                 &+.links {
-//                   display: flex;
-//                   justify-content: center;
-//                   width: 100vw;
-//                   border-bottom: 1px solid lightgray; 
-//                   box-shadow: 1px 1px 1px lightgray; 
-//                   a{
-//                     margin: 0 5vw;
-//                     border-bottom: none;
-//                   }
-//                 }
-//               }
-//         }
-//     }
-// }
+}
 
 @media all and (min-width: 769px) {
     .navContainer {
