@@ -43,7 +43,12 @@
     margin-bottom: 5px;
     border-bottom: 1px solid grey;
         button{            
-        background-color: $primaryColor;
+            color: $primaryBackground;
+        border-radius: $borderRadius;
+        background-color: $secondaryColor;
+        border: 3px solid $primaryBackground;
+        outline: 3px solid $secondaryColor;
+        padding: 3px 12px;
         }
     }
 }
@@ -63,8 +68,8 @@
         @include buttonTrialLesson;
         color: $primaryBackground;
         border-radius: $borderRadius;
-        background: $primaryColor;
+        background: $secondaryColor;
         border: 5px solid $primaryBackground;
-        outline: 5px solid $primaryColor;
+        outline: 5px solid $secondaryColor;
     }
 }

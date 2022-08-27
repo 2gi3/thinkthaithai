@@ -110,6 +110,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 20px;
     margin: 5px;
     width: auto;
     color: $primaryBackground;
@@ -160,6 +161,12 @@
         // background-color: rgba(255, 255, 0, 0.650);
       }
     }
+    .needs{
+      margin-top: 50px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    
   }
 
 }
@@ -250,34 +257,44 @@
 
 .pricingContainer {
   max-width: 600px;
+  padding: 0 20px;
 
   margin: 60px auto;
   text-align: center;
 
   .pricingContainerHeader {
-    font-size: 4rem;
+    h3 {
+      font-size: 2rem;
+    }
 
     p {
-      font-size: 2.5rem;
+      font-size: 1.2rem;
       margin: 0;
     }
   }
 
   .pricingContainerLink {
-    max-width: 400px;
+    max-width: 150px;
     font-size: 1.5rem;
-    margin: 2rem auto; 
+    margin: 2rem auto;
     padding: 10px;
     border-radius: $borderRadius;
     background: $primaryColor;
     border: 5px solid $primaryBackground;
     outline: 5px solid $primaryColor;
-    p{
+
+    p {
       margin: 0;
+
+      span {
+        display: none;
+      }
     }
   }
-  .priceContainerFooter{
-    font-size: 1.5rem;
+
+  .priceContainerFooter {
+    max-width: 300px;
+    margin: auto;
     margin-top: 55px;
   }
 }
@@ -295,6 +312,16 @@
     }
   }
 
+  .pricingContainer {  
+    .pricingContainerHeader {
+      h3 {
+        font-size: 2.5rem;
+      }
+      p{
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
 
 
@@ -319,9 +346,10 @@
 
       .logo {
         display: block;
-        h1{
-        font-size:4.5rem;
-        color: $secondaryColor;
+
+        h1 {
+          font-size: 4rem;
+          color: $secondaryColor;
         }
       }
 
@@ -382,12 +410,12 @@
 
       .needs {
         margin-top: 275px;
-        margin-left: 100px;
+        margin-left: 50px;
+        margin-bottom: 0;
         color: $primaryBackground;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-
         p {
           width: 100%;
         }
@@ -427,7 +455,8 @@
         max-height: 270px;
         border-radius: 0 40px 40px 40px / 0 40px 40px 40px;
       }
-      .feedback{
+
+      .feedback {
         .feedbackPicture {
           margin: 15px 10px 0 -23px;
           float: left;
@@ -437,6 +466,27 @@
 
     .teacher {
       margin-top: 100px;
+    }
+  }
+
+  .pricingContainer {
+    .pricingContainerHeader {
+      h3 {
+        font-size: 3rem;
+      }
+  
+      p {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+    }
+    .pricingContainerLink {
+      max-width: 325px;
+      p {
+        span {
+          display: inline;
+        }
+      }
     }
   }
 }

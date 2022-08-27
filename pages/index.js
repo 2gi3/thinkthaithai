@@ -211,11 +211,11 @@ export default function Home() {
           <h3>
             Start learning now
           </h3>
-          <p>from as little as &#36;15/Lesson!</p>
+          <p>from &#36;15/Lesson!</p>
         </div>
         <Link href='www.google.com'>
           <div className={styles.pricingContainerLink}>
-            <p>Pricing and payment methods </p>
+            <p> <span>MORE ABOUT</span> PRICING</p>
           </div>
         </Link>
         <p className={styles.priceContainerFooter}>Learning materials, homeworks and exercices always included </p>
