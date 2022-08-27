@@ -19,7 +19,7 @@
     .logo {
         width: 100%;
         // height: 15vh;
-        padding-left: 5vw;
+        padding-left: 4vw;
         h1{
           font-size:2rem;
           color: $secondaryColor;
@@ -29,7 +29,7 @@
     .nav {
         // the toggle__button class is styled in globals.scss as it is dynamic
         position: absolute;
-        right: 10px;
+        right: 4vw;
         top: 10px;
         height: 15vh;
         width: auto;
@@ -113,7 +113,10 @@
     .navContainer {
 
         .logo {
-            padding-left:12vw;
+            padding-left:7vw;
+        }
+        .nav{
+          right: 7vw;
         }
       }
 
