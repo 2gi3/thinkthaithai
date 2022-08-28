@@ -59,7 +59,7 @@
       font-family: lemonada;
       font-weight: 500;
       font-size: 17px;
-      margin: 20px 0;
+      margin: 0 0 20px 0;
       width: auto;
       display: flex;
       flex-direction: column;
@@ -70,7 +70,7 @@
         text-align: center;
         list-style: none;
         max-width: 300px;
-        padding: 7px 0;
+        padding: 10px 0;
         border-bottom: 1px solid lightgray;
       }
     }
@@ -175,9 +175,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  .teacherTitle {
+    font-size: 1.5rem;
+    margin-top: 65px;
+    margin-bottom: 0;
+  }
 
   .students {
     flex-wrap: wrap;
+    .studentsTitle{
+      border-top: 1px solid #dfdfdf;
+    padding-top: 30px;
+      font-size: 1.3rem;
+    }
   }
 
   .teacherVideo {
@@ -186,6 +196,13 @@
     justify-content: flex-start;
     align-items: center;
   }
+  .teacherIntroduction{
+    margin: 30px 20px;
+    max-width: 300px;
+    a{
+      color: $primaryColor;
+    }
+  }
 
   .teacher,
   .students {
@@ -193,26 +210,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 0;
+    margin: 50px 0;
 
     h3 {
       width: 100%;
       margin-bottom: 0;
       text-align: center;
-    }
-
-    .teacerClassesVideos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      border: 5px solid $primaryColor;
-      border-radius: 0 40px 0 40px / 0 40px 0 40px;
-      padding: 20px 0;
-
-      .classVideo {
-        min-height: 130px;
-        max-width: 300px;
-      }
     }
 
     .feedback {
@@ -304,17 +307,24 @@
   .background {
     width: 70vw;
   }
+  // .titleContainer{
+  //   .features{
+  //     margin: 10px 0;
+  //     .list{
+  //       padding: 9px 0;
+  //     }
+  //   }
+  // }
 
   .coursesContainer {
     padding: 0 7vw;
   }
 
-  .peopleContainer {
-    .teacherVideo {
-      border: 1px solid black;
-      padding: 15px;
-    }
-  }
+  // .peopleContainer {
+  //   .teacherVideo {
+  //     padding: 15px;
+  //   }
+  // }
 
   .pricingContainer {  
     .pricingContainerHeader {
@@ -347,7 +357,13 @@
       margin-top: 0;
       background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, $primaryBackground 60%);
       min-height: auto;
-
+      .features{
+        margin: 40px 0;
+        .list{
+           padding: 20px 0;
+        }
+      }
+      
       .logo {
         display: block;
 
@@ -429,20 +445,23 @@
 
   .peopleContainer {
     margin-top: 200px;
+    .teacherTitle {
+      margin-top: 0px;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    }
+
+
 
     .teacherVideo {
-      margin: -370px -100px 0 0;
+      margin: -150px -100px 0 0;
+      flex-direction: row;
       // background-color: $primaryColor;
-      height: 255px;
-      max-width: 312px;
+      // height: 255px;
+      // max-width: 312px;
       // border-radius: 40px  40px 0 40px / 40px 40px 0 40px;
       padding: 35px 20px;
       position: relative;
-
-      h3 {
-        margin-top: 0;
-      }
-
 
     }
 
@@ -453,12 +472,10 @@
       align-items: inherit;
       max-width: 1205px;
       margin: 10px;
-
-      .teacerClassesVideos {
-        align-items: center;
-        max-height: 270px;
-        border-radius: 0 40px 40px 40px / 0 40px 40px 40px;
+      .studentsTitle{
+        font-size: 2.2rem;
       }
+      
 
       .feedback {
         .feedbackPicture {
@@ -469,7 +486,12 @@
     }
 
     .teacher {
-      margin-top: 100px;
+      margin-top: 65px;
+    }
+    .students{
+      h3{
+        margin:20px;
+      }
     }
   }
 

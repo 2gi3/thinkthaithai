@@ -9,7 +9,7 @@ const AboutMe = () => {
                 <Image src='/aboutMe1.jpg' width='400px' height='400px' alt='A picture of teacher Nat' ></Image>
             </div>
             <div className={styles.heroTitle}>
-                <h1>สวัสดีคะ Sawatdii&nbsp;ka!</h1>
+                <h1>สวัสดีค่ะ Sawatdii&nbsp;ka!</h1>
                 <h3>I’m Nattaporn Claycham</h3>
                 <p>Let me help you learn Thai!</p>
             </div>

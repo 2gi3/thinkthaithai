@@ -1,16 +1,43 @@
 @use "styles" as *;
 
-.blogContainer{
+.blogContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
-    gap:20px;
-    .blogTitle{
+    gap: 20px;
+
+    .startLearning{
+        margin: 20px;
+        border: 1px solid $primaryColor;
+        padding: 10px;
+    }
+
+    .teacerClassesVideos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        border: 5px solid $primaryColor;
+        border-radius: 0 40px 0 40px / 0 40px 0 40px;
+        padding: 20px 0;
+        h3 {
+            width: 100%;
+            margin-bottom: 0;
+            text-align: center;
+          }
+
+        .classVideo {
+            min-height: 130px;
+            max-width: 300px;
+        }
+    }
+
+    .blogTitle {
         width: 100%;
         text-align: center;
     }
-    .blogVideoContainer{
+
+    .blogVideoContainer {
         height: 200px;
         width: 120px;
         display: flex;
@@ -18,24 +45,27 @@
         align-items: center;
         position: relative;
         overflow: hidden;
-        &:hover{
+
+        &:hover {
             overflow: visible;
         }
-    .blogVideo{
-        height: 200px;
-        &:hover{
-            position: absolute;
-            z-index: 1;
-            height: 400px;
-            max-height: 80vh;
+
+        .blogVideo {
+            height: 200px;
+
+            &:hover {
+                position: absolute;
+                z-index: 1;
+                height: 400px;
+                max-height: 80vh;
+            }
         }
     }
 }
-}
 
-@media all and (min-width: 769px){
-    .blogVideoContainer{
-        min-width:250px;
+@media all and (min-width: 769px) {
+    .blogVideoContainer {
+        min-width: 250px;
         // border-radius: $borderRadius;
         // box-shadow: 1px 1px 1px $primaryColor;
     }

@@ -127,37 +127,22 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.peopleContainer}>
+      <h3 className={styles.teacherTitle}> Know your teacher </h3>
         <div className={styles.teacher}>
+        
           <div className={styles.teacherVideo}>
-            <h3> Know your teacher and learning style</h3>
-            <video src="/videos/teacherIntroduction.mp4" controls height='150' width='225'
-              loading="lazy" allowFullScreen="" frameBorder="0">
-            </video>
-          </div>
-          <div className={styles.teacerClassesVideos}>
-            <h3>Some examples of my classes</h3>
-            <div className={styles.classVideo}>
-              <h3>Speaking</h3>
-              <video src="/videos/speaking.mp4" controls type="video/mp4" height='100' width='150'
-                loading="lazy" allowFullScreen="" frameBorder="0">
-              </video>
-            </div>
-            <div className={styles.classVideo}>
-              <h3>Writing</h3>
-              <video src="/videos/reading.mp4" controls height='100' width='150'
-                loading="lazy" allowFullScreen="" frameBorder="0">
-              </video>
-            </div>
-            <div className={styles.classVideo}>
-              <h3>Conversation</h3>
-              <video src="/videos/conversation2.mp4" controls height='100' width='150'
-                loading="lazy" allowFullScreen="" frameBorder="0">
-              </video>
+            <iframe src="https://drive.google.com/file/d/18T5UaTOLQulNkiT2GNw-hCTa8HxAeise/preview"
+             width="304" height="228"  loading="lazy" ></iframe>
+            <div className={styles.teacherIntroduction}>
+              <p>Fugiat nisi sunt occaecat dolore minim dolor proident enim in. Enim sit ea incididunt cillum dolore
+                 reprehenderit ut magna enim consequat. 
+              </p>
+              <Link href='/aboutme'><a> Find out more <span>About Me</span></a></Link>
             </div>
           </div>
         </div>
         <div className={styles.students}>
-          <h3> What my students say abuot me</h3>
+          <h3 className={styles.studentsTitle}> What my students say abuot me </h3>
           <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
               <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />
