@@ -34,16 +34,13 @@ const MyBlog = ({ feed }) => {
                 </p>
                 </div>
                 <div>
-                    <h4> Recorded new student's lesson</h4>
+                    <h4> Recorded new student&apos;s lesson</h4>
                     {/* <video src="" controls type="video/mp4" height='100' width='150'
                         loading="lazy" allowFullScreen="" frameBorder="0">
                     </video> */}
                     <iframe src="https://drive.google.com/file/d/161-dY5kG5dNHKZtzj2vyI9lF40v4ahQm/preview"
-                     width="320" height="240" loading="lazy" allowFullScreen=""
-                    //  allow="autoplay"
-                     >
+                     width="320" height="240" loading="lazy" allowFullScreen="">
                      </iframe>
-
                 </div>
 
             </div>
