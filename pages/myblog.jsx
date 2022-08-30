@@ -39,28 +39,29 @@ const MyBlog = ({ feed }) => {
                         loading="lazy" allowFullScreen="" frameBorder="0">
                     </video> */}
                     <iframe src="https://drive.google.com/file/d/161-dY5kG5dNHKZtzj2vyI9lF40v4ahQm/preview"
-                     width="320" height="240" loading="lazy" allowFullScreen="">
-                     </iframe>
+                     width="320" height="240" allow="autoplay" allowFullScreen=""></iframe>
+                     <iframe src="https://drive.google.com/file/d/1Kle6aubivBUFGVwvpFsO9k1kHWehbRzG/preview" 
+                        width="320" height="240" allow="autoplay" allowFullScreen="">
+                    </iframe>                     
                 </div>
-
             </div>
             <div className={styles.teacerClassesVideos}>
                 <h3>Some examples of my classes</h3>
                 <div className={styles.classVideo}>
                     <h3>Speaking</h3>
-                    <video src="/videos/speaking.mp4" controls type="video/mp4" height='100' width='150'
-                        loading="lazy" allowFullScreen="" frameBorder="0">
+                    <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824864/thinkthaithai/speaking_chsr3p.mp4" 
+                        controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
                     </video>
                 </div>
                 <div className={styles.classVideo}>
                     <h3>Writing</h3>
-                    <video src="/videos/reading.mp4" controls height='100' width='150'
-                        loading="lazy" allowFullScreen="" frameBorder="0">
+                    <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824840/thinkthaithai/Reading_wofifh.mp4"
+                     controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
                     </video>
                 </div>
                 <div className={styles.classVideo}>
                     <h3>Conversation</h3>
-                    <video src="/videos/conversation2.mp4" controls height='100' width='150'
+                    <video src="/videos/conversation2.mp4" controls height='' width='280'
                         loading="lazy" allowFullScreen="" frameBorder="0">
                     </video>
                 </div>
