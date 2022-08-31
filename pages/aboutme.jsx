@@ -17,7 +17,7 @@ const AboutMe = () => {
             <Link href='https://www.paypal.com/webapps/hermes?token=2LP71852KR243514U&useraction=commit&mfid=1661951713535_f7632277b2f02'>
                 <button
                     className={styles.button}
-                >&#36;5 trial lesson
+                >trial lesson
                 </button></Link>
             </div>
             <div className={styles.contentText}>

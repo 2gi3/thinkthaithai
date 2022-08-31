@@ -82,7 +82,7 @@ export default function Home() {
           </ul>
           {/* Toggle the button's class according to whether or not the button is visible in the viewport  */}
           <Link href='https://www.paypal.com/webapps/hermes?token=2LP71852KR243514U&useraction=commit&mfid=1661951713535_f7632277b2f02'><button
-            className={isVisible === true ? styles.button : styles.buttonFixed} > &#36;5 trial lesson
+            className={isVisible === true ? styles.button : styles.buttonFixed} > trial lesson
           </button></Link>
         </div>
         <div className={styles.imageContainer}>
