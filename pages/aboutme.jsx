@@ -14,7 +14,8 @@ const AboutMe = () => {
                 <p>Let me help you learn Thai!</p>
             </div>
             <div className={styles.buttonContainer}>
-                <Link href='/#'><button
+            <Link href='https://www.paypal.com/webapps/hermes?token=11136720N04936738&useraction=commit&mfid=1661912995235_f28691568b858'>
+                <button
                     className={styles.button}
                 >&#36;5 trial lesson
                 </button></Link>
@@ -25,7 +26,7 @@ const AboutMe = () => {
                     I’ve worked in an IT company for 8 years and I also love teaching.  I started teaching Math when I was at the university.
                     Now I have been teaching Thai for more than 4 years.
                 </p>
-                <p>
+                <p> 
                     When I was young my dream was to be a teacher. My cousin and I acted to be a teacher and students.
                     I love teaching, sharing, learning, and talking to people.
                     My passion is to help people to reach their goals about Thai language,

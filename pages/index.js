@@ -81,7 +81,7 @@ export default function Home() {
             <li className={styles.list}>learning materials included</li>
           </ul>
           {/* Toggle the button's class according to whether or not the button is visible in the viewport  */}
-          <Link href='/#'><button
+          <Link href='https://www.paypal.com/webapps/hermes?token=11136720N04936738&useraction=commit&mfid=1661912995235_f28691568b858'><button
             className={isVisible === true ? styles.button : styles.buttonFixed} > &#36;5 trial lesson
           </button></Link>
         </div>
