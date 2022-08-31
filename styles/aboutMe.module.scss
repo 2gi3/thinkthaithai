@@ -39,9 +39,18 @@
         @include buttonTrialLesson;
         color: $primaryBackground;
         border-radius: $borderRadius;
-        background: $secondaryColor;
         border: 5px solid $primaryBackground;
         outline: 5px solid $secondaryColor;
+        background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) right;
+      background-size: 350% 100%;
+      transition: all 1500ms ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) left;
+        background-size: 350% 100%;
+        outline: 5px solid $primaryColor;
+      }
     }
 }
 }

@@ -80,9 +80,18 @@
       @include buttonTrialLesson;
       color: $primaryBackground;
       border-radius: $borderRadius;
-      background: $secondaryColor;
       border: 5px solid $primaryBackground;
       outline: 5px solid $secondaryColor;
+      background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) right;
+      background-size: 350% 100%;
+      transition: all 1500ms ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) left;
+        background-size: 350% 100%;
+        outline: 5px solid $primaryColor;
+      }
     }
 
     .buttonFixed {
@@ -161,12 +170,13 @@
         // background-color: rgba(255, 255, 0, 0.650);
       }
     }
-    .needs{
+
+    .needs {
       margin-top: 50px;
       margin-bottom: 50px;
       text-align: center;
     }
-    
+
   }
 
 }
@@ -175,6 +185,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .teacherTitle {
     font-size: 1.5rem;
     margin-top: 65px;
@@ -183,9 +194,10 @@
 
   .students {
     flex-wrap: wrap;
-    .studentsTitle{
+
+    .studentsTitle {
       border-top: 1px solid #dfdfdf;
-    padding-top: 30px;
+      padding-top: 30px;
       font-size: 1.3rem;
     }
   }
@@ -196,10 +208,12 @@
     justify-content: flex-start;
     align-items: center;
   }
-  .teacherIntroduction{
+
+  .teacherIntroduction {
     margin: 30px 20px;
     max-width: 300px;
-    a{
+
+    a {
       color: $primaryColor;
     }
   }
@@ -284,7 +298,18 @@
     border-radius: $borderRadius;
     background: $primaryColor;
     border: 5px solid $primaryBackground;
-    outline: 5px solid $primaryColor;
+    outline: 5px solid $secondaryColor;
+    background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) right;
+      background-size: 350% 100%;
+      transition: all 1500ms ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) left;
+        background-size: 350% 100%;
+        outline: 5px solid $primaryColor;
+      }
+    
 
     p {
       margin: 0;
@@ -307,6 +332,7 @@
   .background {
     width: 70vw;
   }
+
   // .titleContainer{
   //   .features{
   //     margin: 10px 0;
@@ -326,12 +352,13 @@
   //   }
   // }
 
-  .pricingContainer {  
+  .pricingContainer {
     .pricingContainerHeader {
       h3 {
         font-size: 2.5rem;
       }
-      p{
+
+      p {
         font-size: 1.5rem;
       }
     }
@@ -357,13 +384,15 @@
       margin-top: 0;
       background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, $primaryBackground 60%);
       min-height: auto;
-      .features{
+
+      .features {
         margin: 40px 0;
-        .list{
-           padding: 20px 0;
+
+        .list {
+          padding: 20px 0;
         }
       }
-      
+
       .logo {
         display: block;
 
@@ -436,6 +465,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
         p {
           width: 100%;
         }
@@ -445,10 +475,11 @@
 
   .peopleContainer {
     margin-top: 200px;
+
     .teacherTitle {
       margin-top: 0px;
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
     }
 
 
@@ -472,10 +503,11 @@
       align-items: inherit;
       max-width: 1205px;
       margin: 10px;
-      .studentsTitle{
+
+      .studentsTitle {
         font-size: 2.2rem;
       }
-      
+
 
       .feedback {
         .feedbackPicture {
@@ -488,9 +520,10 @@
     .teacher {
       margin-top: 65px;
     }
-    .students{
-      h3{
-        margin:20px;
+
+    .students {
+      h3 {
+        margin: 20px;
       }
     }
   }
@@ -500,14 +533,16 @@
       h3 {
         font-size: 3rem;
       }
-  
+
       p {
         font-size: 1.5rem;
         margin: 0;
       }
     }
+
     .pricingContainerLink {
       max-width: 325px;
+
       p {
         span {
           display: inline;

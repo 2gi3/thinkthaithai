@@ -14,7 +14,7 @@ const AboutMe = () => {
                 <p>Let me help you learn Thai!</p>
             </div>
             <div className={styles.buttonContainer}>
-            <Link href='https://www.paypal.com/webapps/hermes?token=11136720N04936738&useraction=commit&mfid=1661912995235_f28691568b858'>
+            <Link href='https://www.paypal.com/webapps/hermes?token=2LP71852KR243514U&useraction=commit&mfid=1661951713535_f7632277b2f02'>
                 <button
                     className={styles.button}
                 >&#36;5 trial lesson

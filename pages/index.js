@@ -81,7 +81,7 @@ export default function Home() {
             <li className={styles.list}>learning materials included</li>
           </ul>
           {/* Toggle the button's class according to whether or not the button is visible in the viewport  */}
-          <Link href='https://www.paypal.com/webapps/hermes?token=11136720N04936738&useraction=commit&mfid=1661912995235_f28691568b858'><button
+          <Link href='https://www.paypal.com/webapps/hermes?token=2LP71852KR243514U&useraction=commit&mfid=1661951713535_f7632277b2f02'><button
             className={isVisible === true ? styles.button : styles.buttonFixed} > &#36;5 trial lesson
           </button></Link>
         </div>
@@ -198,7 +198,7 @@ export default function Home() {
           </h3>
           <p>from &#36;15/Lesson!</p>
         </div>
-        <Link href='www.google.com'>
+        <Link href='/pricing'>
           <div className={styles.pricingContainerLink}>
             <p> <span>MORE ABOUT</span> PRICING</p>
           </div>
