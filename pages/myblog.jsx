@@ -23,40 +23,40 @@ const MyBlog = ({ feed }) => {
             <div className={styles.startLearning}>
                 <h3>Start learning the basics of Thai language</h3>
                 <div className={styles.startLearningFirftLesson}>
-                <h4> Main differences between thai and English language</h4>
-                <p>Duis cillum excepteur exercitation minim. In incididunt Lorem officia in amet commodo tempor non.
-                    Cillum nisi dolore et ea consectetur.
-                </p>
-                <p>Officia elit fugiat ipsum excepteur cupidatat culpa est tempor. Irure non adipisicing
-                    incididunt ea occaecat cupidatat ullamco aliqua. Culpa velit id do sint. Nostrud aliquip aute et consectetur consectetur esse adipisicing enim.</p>
-                <p>Ea deserunt culpa ut Lorem mollit in. Quis irure sit magna consectetur do dolor aliqua irure do non est.
-                    Nulla incididunt deserunt fugiat ad excepteur nisi minim magna sunt proident. Non culpa velit minim Lorem.
-                </p>
+                    <h4> Main differences between thai and English language</h4>
+                    <p>Duis cillum excepteur exercitation minim. In incididunt Lorem officia in amet commodo tempor non.
+                        Cillum nisi dolore et ea consectetur.
+                    </p>
+                    <p>Officia elit fugiat ipsum excepteur cupidatat culpa est tempor. Irure non adipisicing
+                        incididunt ea occaecat cupidatat ullamco aliqua. Culpa velit id do sint. Nostrud aliquip aute et consectetur consectetur esse adipisicing enim.</p>
+                    <p>Ea deserunt culpa ut Lorem mollit in. Quis irure sit magna consectetur do dolor aliqua irure do non est.
+                        Nulla incididunt deserunt fugiat ad excepteur nisi minim magna sunt proident. Non culpa velit minim Lorem.
+                    </p>
                 </div>
                 <div>
                     <h4> Recorded new student&apos;s lesson</h4>
                     {/* <video src="" controls type="video/mp4" height='100' width='150'
                         loading="lazy" allowFullScreen="" frameBorder="0">
                     </video> */}
-                    <iframe src="https://drive.google.com/file/d/161-dY5kG5dNHKZtzj2vyI9lF40v4ahQm/preview"
-                     width="320" height="240" allow="autoplay" allowFullScreen=""></iframe>
-                     <iframe src="https://drive.google.com/file/d/1Kle6aubivBUFGVwvpFsO9k1kHWehbRzG/preview" 
-                        width="320" height="240" allow="autoplay" allowFullScreen="">
-                    </iframe>                     
+                    <iframe src="https://drive.google.com/file/d/1djizhCmnKYSYVg6uYXu1pEeo0XvE8DsB/preview"
+                        width="320" height="240" allowFullScreen=""></iframe>
+                    <iframe src="https://drive.google.com/file/d/1Kle6aubivBUFGVwvpFsO9k1kHWehbRzG/preview"
+                        width="320" height="240" allowFullScreen="">
+                    </iframe>
                 </div>
             </div>
             <div className={styles.teacerClassesVideos}>
                 <h3>Some examples of my classes</h3>
                 <div className={styles.classVideo}>
                     <h3>Speaking</h3>
-                    <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824864/thinkthaithai/speaking_chsr3p.mp4" 
+                    <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824864/thinkthaithai/speaking_chsr3p.mp4"
                         controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
                     </video>
                 </div>
                 <div className={styles.classVideo}>
                     <h3>Writing</h3>
                     <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824840/thinkthaithai/Reading_wofifh.mp4"
-                     controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
+                        controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
                     </video>
                 </div>
                 <div className={styles.classVideo}>

@@ -132,7 +132,8 @@ export default function Home() {
         
           <div className={styles.teacherVideo}>
             <iframe src="https://drive.google.com/file/d/18T5UaTOLQulNkiT2GNw-hCTa8HxAeise/preview"
-             width="304" height="228"  loading="lazy" ></iframe>
+               width="304" height="228" loading="lazy">
+           </iframe>            
             <div className={styles.teacherIntroduction}>
               <p>
                 In my 4 years of experience teaching Thai language, I have helped hundreds of students achieve their goals!

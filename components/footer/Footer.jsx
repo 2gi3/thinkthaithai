@@ -18,7 +18,7 @@ const Footer = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="https://wa.me/+447795961318">
+                        <a href="https://wa.me/+66924496600">
                           <img src="/WhatsApp.webp" width="50px" height="" alt="WhatsApp" />
                         </a>
                    </li>
