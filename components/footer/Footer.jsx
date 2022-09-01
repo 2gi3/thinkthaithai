@@ -24,9 +24,9 @@ const Footer = () => {
                    </li>
                 </ul>
                 </div>
-                <div className={styles.FAQ}>
+                {/* <div className={styles.FAQ}>
                     <p>FAQ</p>
-                </div>
+                </div> */}
             </div>
             <div className={styles.copyRights}>
                 <p className={styles.copyRightsBy}>Website by:<a> Giuseppe Ippolito.</a></p>
