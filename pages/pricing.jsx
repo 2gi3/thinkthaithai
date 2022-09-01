@@ -9,6 +9,23 @@ const pricing = () => {
 
 
     return (<>
+        <div className={styles.logo}>
+            <h1>ThinkThaiThai</h1>
+        </div>
+        <div className={styles.lessonsInfo}>
+            <div className={styles.normalLessons}>
+                <h3>Regular lessons</h3>
+            <p>
+                 Last 50 minutes, and you will receive homeworks and study material to prepare yourself for the next one.
+            </p>
+            </div>
+            <div className={styles.trialLessons}>
+                <h3>Trial lessons</h3>
+            <p>
+                Last 25 minutes and are intended for new students.
+            </p>
+            </div>
+        </div>
         <div className={styles.pricingContainer}>
             <h1 className={styles.pricingHeader}> pricing</h1>
             {/* <h3>lessons</h3> <h3 className={styles.price}>price</h3> */}

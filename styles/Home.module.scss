@@ -300,16 +300,16 @@
     border: 4px solid $primaryBackground;
     outline: 4px solid $secondaryColor;
     background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) right;
-      background-size: 350% 100%;
-      transition: all 1500ms ease-in-out;
+    background-size: 350% 100%;
+    transition: all 1500ms ease-in-out;
 
-      &:hover {
-        cursor: pointer;
-        background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) left;
-        background-size: 350% 100%;
-        outline: 4px solid $primaryColor;
-      }
-    
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) left;
+      background-size: 350% 100%;
+      outline: 4px solid $primaryColor;
+    }
+
 
     p {
       margin: 0;
@@ -485,14 +485,27 @@
 
 
     .teacherVideo {
+      width: 85vw;
+      max-width: 800px;
       margin: -150px -100px 0 0;
       flex-direction: row;
+      justify-content: space-between;
       // background-color: $primaryColor;
       // height: 255px;
       // max-width: 312px;
       // border-radius: 40px  40px 0 40px / 40px 40px 0 40px;
       padding: 35px 20px;
       position: relative;
+      .teacherIntroduction{
+        p{
+          &:first-child{
+            margin-bottom: 30px;
+          }
+          &:last-child{
+            margin-top: 30px;
+          }
+        }
+      }
 
     }
 

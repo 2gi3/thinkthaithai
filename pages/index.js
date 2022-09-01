@@ -134,10 +134,13 @@ export default function Home() {
             <iframe src="https://drive.google.com/file/d/18T5UaTOLQulNkiT2GNw-hCTa8HxAeise/preview"
              width="304" height="228"  loading="lazy" ></iframe>
             <div className={styles.teacherIntroduction}>
-              <p>Fugiat nisi sunt occaecat dolore minim dolor proident enim in. Enim sit ea incididunt cillum dolore
-                 reprehenderit ut magna enim consequat. 
+              <p>
+                In my 4 years of experience teaching Thai language, I have helped hundreds of students achieve their goals!
               </p>
               <Link href='/aboutme'><a> Find out more <span>About Me</span></a></Link>
+              <p>
+                And feel free to <a>contact me</a> if you have any question.
+              </p>
             </div>
           </div>
         </div>
