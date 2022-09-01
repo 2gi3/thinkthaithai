@@ -9,7 +9,7 @@ const Footer = () => {
                 <ul>
                     <li>
                         <Link href='https://www.instagram.com/thaiwithnatt'>
-                            <img src="/instagramLogo.png" width="50px" height="50px"  alt="Instagram" />
+                           <a><img src="/logo-ig-png-32461-64x64.ico" width="60px" height="60px"  alt="Instagram" /></a>
                         </Link>
                     </li>
                     <li>                      	
