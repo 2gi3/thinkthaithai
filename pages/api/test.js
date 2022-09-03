@@ -2,8 +2,11 @@ import dbConnect from "../../back-end/utilities/dbConnect";
 
 dbConnect();
 
-export default async (req, res) => {
+const testController = async (req, res) => {
     res.json({
         test : 'test',
     });
 }
+
+
+export default testController
