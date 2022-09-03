@@ -1,6 +1,6 @@
-import styles from "./footer.module.scss"
-import Link from 'next/link'
-import Image from 'next/image'
+import styles from "./footer.module.scss";
+import Link from 'next/link';
+import Image from 'next/image';
 
 
 const Footer = () => {
@@ -16,12 +16,12 @@ const Footer = () => {
                     </li>
                     <li>                      	
                        <a href="mailto:nattaporn.cl@gmail.com?subject=Message_From_ThinkThaiThai">
-                          <Image src="/emailIcon.png" width="" height="50" alt="Email" />
+                          <Image src="/emailIcon.png" width="55" height="50" alt="Email" />
                         </a>
                     </li>
                     <li>
                         <a href="https://wa.me/+66924496600">
-                          <Image src="/WhatsApp.webp" width="50px" height="" alt="WhatsApp" />
+                          <Image src="/WhatsApp.webp" width="50px" height="50" alt="WhatsApp" />
                         </a>
                    </li>
                 </ul>

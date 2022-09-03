@@ -9,4 +9,4 @@ const testController = async (req, res) => {
 }
 
 
-export default testController
+export default testController;

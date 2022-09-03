@@ -1,6 +1,6 @@
 import styles from '../styles/pricing.module.scss';
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
 import { checkOut } from '../checkOut';
 
 const pricing = () => {
