@@ -1,13 +1,14 @@
 import mongoose from 'mongoose';
 
 const connection = {};
+const mongoURI = process.env.MONGO_URI; 
 
 async function dbConnect() {
     if (connection.isConnected) {
         return;
     }
 
-    const db = await mongoose.connect(process.env.MONGO_URI, {
+    const db = await mongoose.connect( `${mongoURI}`, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
