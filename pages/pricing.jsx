@@ -28,7 +28,7 @@ const pricing = () => {
             </div>
         </div>
         <div className={styles.pricingContainer}>
-            <h1 className={styles.pricingHeader}> pricing</h1>
+            <h1 className={styles.pricingHeader}> Pricing</h1>
             {/* <h3>lessons</h3> <h3 className={styles.price}>price</h3> */}
             <p>Trial Lesson</p>
             <p>&#3647;170</p>
@@ -54,7 +54,7 @@ const pricing = () => {
                 {/* </button>  */}
             </div>
             <p>5 Lessons</p>
-            <p>&#3647;3.750</p>
+            <p>&#3647;3,750</p>
             <div className={styles.buyButton}>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick" />
@@ -70,7 +70,7 @@ const pricing = () => {
                 {/* </button>  */}
             </div>
             <p>10 Lessons</p>
-            <p>&#3647;7.200</p>
+            <p>&#3647;7,200</p>
             <div className={styles.buyButton}>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick" />
@@ -85,7 +85,7 @@ const pricing = () => {
                 {/* </button> */}
             </div>
             <p>20 Lessons</p>
-            <p>&#3647;13.000</p>
+            <p>&#3647;13,000</p>
             <div className={styles.buyButton}>
                 {/* <button onClick={(()=>{checkOut(price300)})}> */}
                 {/* &#36;300 */}

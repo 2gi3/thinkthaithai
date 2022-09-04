@@ -136,7 +136,7 @@ export default function Home() {
            </iframe>            
             <div className={styles.teacherIntroduction}>
               <p>
-                In my 4 years of experience teaching Thai language, I have helped hundreds of students achieve their goals!
+                In my 5 years of experience teaching Thai language, I have helped hundreds of students achieve their goals!
               </p>
               <Link href='/aboutme'><a> Find out more <span>About Me</span></a></Link>
               <p>
@@ -146,7 +146,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.students}>
-          <h3 className={styles.studentsTitle}> What my students say abuot me </h3>
+          <h3 className={styles.studentsTitle}> What my students say about me </h3>
           <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
               <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />
