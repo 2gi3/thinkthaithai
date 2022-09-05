@@ -6,6 +6,7 @@ html{
 h1,h2,h3,h4,h5,h6, b{
   color: $primaryText;
   font-family: $primaryFont;
+  text-shadow: 1px 1px 1px lightgray;
 }
 p, a, strong, ul, li {
   color: $secondaryText;

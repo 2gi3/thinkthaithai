@@ -4,7 +4,10 @@ import Image from 'next/image'
 const feedbacks = () =>{
     return(
         <div className={styles.students}>
-        <h3> What my students say abuot me</h3>
+          <div className={styles.logo}>
+            <h1>ThinkThaiThai</h1>
+        </div>
+        <h2> What my students say abuot me</h2>
         <div className={styles.feedback}>
           <div className={styles.feedbackPicture}>
             <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />

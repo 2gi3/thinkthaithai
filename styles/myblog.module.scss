@@ -7,10 +7,37 @@
     padding: 10px;
     gap: 20px;
 
+    .logo {
+        display: none;
+        text-align: center;
+        width: 100%;
+        h1 {
+          font-size: 4rem;
+          color: $secondaryColor;
+        }
+      }
+
     .startLearning{
         margin: 20px;
         border: 1px solid $primaryColor;
-        padding: 10px;
+        padding: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        h2{
+            width: 100%;
+            text-align: center;
+        }
+        h4{
+            width: 100%;
+            text-align: center;
+        }
+        .startLearningVideos{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
     }
 
     .teacerClassesVideos {
@@ -64,10 +91,15 @@
 }
 
 @media all and (min-width: 769px) {
+    .blogContainer {
+        .logo{
+            display: block;
+        }
     .blogVideoContainer {
         min-width: 250px;
         // border-radius: $borderRadius;
         // box-shadow: 1px 1px 1px $primaryColor;
     }
+}
 
 }

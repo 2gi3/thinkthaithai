@@ -20,17 +20,20 @@ const MyBlog = ({ feed }) => {
     const data = feed.data
     return (
         <div className={styles.blogContainer}>
+            <div className={styles.logo}>
+            <h1>ThinkThaiThai</h1>
+        </div>
             <div className={styles.startLearning}>
-                <h3>Start learning the basics of Thai language</h3>
-                <div>
+                <h2>Start learning the basics of Thai language</h2>
+                <div className={styles.startLearningVideos}>
                     <h4> Recorded new student&apos;s lesson</h4>
                     {/* <video src="" controls type="video/mp4" height='100' width='150'
                         loading="lazy" allowFullScreen="" frameBorder="0">
                     </video> */}
                     <iframe src="https://drive.google.com/file/d/1djizhCmnKYSYVg6uYXu1pEeo0XvE8DsB/preview"
-                        width="320" height="240" allowFullScreen=""></iframe>
+                        width="288" height="216" allowFullScreen=""></iframe>
                     <iframe src="https://drive.google.com/file/d/1Kle6aubivBUFGVwvpFsO9k1kHWehbRzG/preview"
-                        width="320" height="240" allowFullScreen="">
+                        width="288" height="216" allowFullScreen="">
                     </iframe>
                 </div>
             </div>

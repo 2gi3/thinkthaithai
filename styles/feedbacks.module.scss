@@ -5,7 +5,15 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 5vw;
-    h3{
+    .logo {
+      display: none;
+      text-align: center;
+      h1 {
+        font-size: 4rem;
+        color: $secondaryColor;
+      }
+    }
+    h2{
         width: 100%;
         text-align: center;
     }
@@ -50,6 +58,10 @@
 
   @media all and (min-width:769px){
     .students{
+      padding-top: 0;
+      .logo{
+        display: block;
+      }
     .feedback{
         .feedbackPicture {
           margin: 15px 10px 0 -23px;
