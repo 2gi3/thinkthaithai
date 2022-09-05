@@ -1,21 +1,25 @@
 @use "styles" as *;
 
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 
 @keyframes buttonAnimation {
   0% {
-    // transform: translateX(-173%) translateY(-637%) scale(0);
     transform: translateX(-173%) translateY(-837%);
     opacity: 0;
 
   }
 
-  // 75% {
-  //   width: 225px;
-  // }
 
   100% {
     transform: translateX(0%) translateY(0) scale(1);
-    // width: 150px;
     opacity: 1;
   }
 }
@@ -212,9 +216,62 @@
   .teacherIntroduction {
     margin: 30px 20px;
     max-width: 300px;
+    position: relative;
 
+    button,
     a {
+      background: none;
+      border: none;
       color: $primaryColor;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .contactsOn {
+      position: absolute;
+      top: 143px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 140px;
+      padding-bottom: 0px;
+      border: 3px solid white;
+      border-radius: 15px;
+      outline: 3px solid #ff5d4f;
+      background: white;
+
+      button {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        width: 48px;
+        padding: 9px;
+        background-color: $secondaryColor;
+        border: none;
+        border-radius: 15px;
+        outline: 3px solid white;
+        outline-offset: -5px;
+        color: white;
+        opacity: 0;
+        animation: fadeIn 600ms ease-in 850ms forwards;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .contactsOff {
+      display: none;
     }
   }
 
@@ -496,12 +553,14 @@
       // border-radius: 40px  40px 0 40px / 40px 40px 0 40px;
       padding: 35px 20px;
       position: relative;
-      .teacherIntroduction{
-        p{
-          &:first-child{
+
+      .teacherIntroduction {
+        p {
+          &:first-child {
             margin-bottom: 30px;
           }
-          &:last-child{
+
+          &:last-child {
             margin-top: 30px;
           }
         }
