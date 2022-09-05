@@ -152,7 +152,6 @@ export default function Home() {
                   contact me
                 </button>
                 if you have any question.
-                {value.toString()}
               </p>
               <div className={value === false? styles.contactsOff :styles.contactsOn}>
               <button onClick={() => {
