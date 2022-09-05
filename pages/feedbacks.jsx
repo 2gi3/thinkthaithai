@@ -110,7 +110,7 @@ const feedbacks = () => {
             <Image className={styles.feedbackPicture} src='/joner.PNG' width='100' height='100' alt='The picture of a student' />
           </div>
         <div className={styles.feedbackText}>
-          <p className={styles.feedbackBody}>Khruu Nat's lessons have always been entertaining and fun.
+          <p className={styles.feedbackBody}>Khruu Nat&apos;s lessons have always been entertaining and fun.
             I always like the fact that when Khruu Nat would spend time knowing what you
             do usually and teach according Thai words and phrases for me to learn more.
           </p>
@@ -154,7 +154,7 @@ const feedbacks = () => {
             The lessons are taught in English from the beginning, and later are taught in full Thai!
             &#40; I sincerely recommend that you have to keep the frequency of classes if you can. 2~3
             classes per week are very effective, and your listening will increase instantly.&#41;
-            Because I don't like the typical learning style, Natt shares some current events in Thailand,
+            Because I don&apos;t like the typical learning style, Natt shares some current events in Thailand,
             Thai culture, or interesting advertisements, videos, etc. every time. We chat to learn words
             &#40; take notes every time&#41; and enhance listening and speaking.If it is too fast or too difficult
             to understand, you can tell Natt directly. She will speak slowlyin a simple and slow way.
