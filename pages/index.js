@@ -5,8 +5,13 @@ import Footer from '../components/footer/Footer'
 import NavBar from '../components/navBar/NavBar'
 import styles from '../styles/Home.module.scss'
 import { useState, useRef, useMemo, useEffect } from 'react'
+import Contacts from '../components/contacts/Contacts'
+import useToggle from '../functions/useToggle'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
+  const [value, toggleValue] = useToggle(false)
 
   // --Start-- Function and options object to pass in the intersectionObserver inside useEffect
   const [isVisible, setIsVisible] = useState(true)
@@ -48,7 +53,7 @@ export default function Home() {
         <meta name="description" content="Learn thai test" />
         {/* <meta property="og:image" content="/1.png" /> */}
         <meta property="og:url" content="https://thinkthaithai.vercel.app/" />
-        <meta property="og:type" content="website" />       
+        <meta property="og:type" content="website" />
 
         <meta
           property="og:title"
@@ -60,10 +65,10 @@ export default function Home() {
           content="Explore the learning material and book a trial lesson"
         />
 
-        <meta 
+        <meta
           property="og:image"
-          content={"https://thinkthaithai.vercel.app/1.png"} 
-          />          
+          content={"https://thinkthaithai.vercel.app/1.png"}
+        />
 
         <link rel="icon" href="/logo.webp" />
       </Head>
@@ -127,21 +132,36 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.peopleContainer}>
-      <h3 className={styles.teacherTitle}> Know your teacher </h3>
+        <h3 className={styles.teacherTitle}> Know your teacher </h3>
         <div className={styles.teacher}>
-        
+
           <div className={styles.teacherVideo}>
             <iframe src="https://drive.google.com/file/d/18T5UaTOLQulNkiT2GNw-hCTa8HxAeise/preview"
-               width="304" height="228" loading="lazy">
-           </iframe>            
+              width="304" height="228" loading="lazy">
+            </iframe>
             <div className={styles.teacherIntroduction}>
               <p>
                 In my 5 years of experience teaching Thai language, I have helped hundreds of students achieve their goals!
               </p>
               <Link href='/aboutme'><a> Find out more <span>About Me</span></a></Link>
               <p>
-                And feel free to <a>contact me</a> if you have any question.
+                And feel free to
+                <button onClick={() => {
+                  value === true? toggleValue(false): toggleValue(true);
+                }}>
+                  contact me
+                </button>
+                if you have any question.
+                {value.toString()}
               </p>
+              <div className={value === false? styles.contactsOff :styles.contactsOn}>
+              <button onClick={() => {
+                  value === true? toggleValue(false): toggleValue(true);
+                }}>
+                  <FontAwesomeIcon icon={faXmark} />
+                </button>
+                <Contacts />
+              </div>
             </div>
           </div>
         </div>
@@ -163,7 +183,7 @@ export default function Home() {
           </div>
           <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
-              <Image src='/students/saru.png' width='100' height='100' alt='The picture of a student'/>
+              <Image src='/students/saru.png' width='100' height='100' alt='The picture of a student' />
             </div>
             <div className={styles.feedbackText}>
               <h3 className={styles.feedbackHeader}>I totally recommend her lessons</h3>

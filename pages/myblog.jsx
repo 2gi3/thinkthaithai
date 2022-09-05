@@ -22,17 +22,6 @@ const MyBlog = ({ feed }) => {
         <div className={styles.blogContainer}>
             <div className={styles.startLearning}>
                 <h3>Start learning the basics of Thai language</h3>
-                <div className={styles.startLearningFirftLesson}>
-                    <h4> Main differences between thai and English language</h4>
-                    <p>Duis cillum excepteur exercitation minim. In incididunt Lorem officia in amet commodo tempor non.
-                        Cillum nisi dolore et ea consectetur.
-                    </p>
-                    <p>Officia elit fugiat ipsum excepteur cupidatat culpa est tempor. Irure non adipisicing
-                        incididunt ea occaecat cupidatat ullamco aliqua. Culpa velit id do sint. Nostrud aliquip aute et consectetur consectetur esse adipisicing enim.</p>
-                    <p>Ea deserunt culpa ut Lorem mollit in. Quis irure sit magna consectetur do dolor aliqua irure do non est.
-                        Nulla incididunt deserunt fugiat ad excepteur nisi minim magna sunt proident. Non culpa velit minim Lorem.
-                    </p>
-                </div>
                 <div>
                     <h4> Recorded new student&apos;s lesson</h4>
                     {/* <video src="" controls type="video/mp4" height='100' width='150'

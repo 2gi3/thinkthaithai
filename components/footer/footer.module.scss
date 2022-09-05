@@ -33,26 +33,26 @@
     }
   }
 
-  .footerInfo {
-    width: 210px;
-    // height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 20px;
+  // .footerInfo {
+  //   width: 210px;
+  //   // height: 100%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: flex-start;
+  //   margin: 20px;
 
-    .footerContacts {
-      ul {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
+  //   .footerContacts {
+  //     ul {
+  //       display: flex;
+  //       justify-content: space-between;
+  //       align-items: center;
+  //       list-style-type: none;
+  //       margin: 0;
+  //       padding: 0;
+  //     }
 
-    }
-  }
+  //   }
+  // }
 }
 
 @media all and (min-width: 569px) {
