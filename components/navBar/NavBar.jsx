@@ -40,7 +40,7 @@ const NavBar = () => {
                 } className={toggle__button === 'closed' ? styles.toggleButtonClosed : styles.toggleButtonOpened}><FontAwesomeIcon icon={toggleButtonIcon} />
                 </button>
                 <div className={styles.links}>
-                    <Link href='/'><a className={URI === "/home"?styles.linkSelected: null }><p>Home</p></a></Link>
+                    <Link href='/'><a className={URI === "/"?styles.linkSelected: null }><p>Home</p></a></Link>
                     <Link href='/aboutme'><a className={URI === "/aboutme"?styles.linkSelected: null }><p>About Me</p></a></Link>
                     <Link href='/feedbacks'><a className={URI === "/feedbacks"?styles.linkSelected: null }><p>Feedbacks</p></a></Link>
                     <Link href='/pricing'><a className={URI === "/pricing"?styles.linkSelected: null }><p>Pricing</p></a></Link>
