@@ -2,6 +2,8 @@ import styles from '../styles/pricing.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { checkOut } from '../checkOut';
+import Head from 'next/head'
+
 
 const pricing = () => {
     const price100 = "price_1LaO82A9zEY10SLQnsojks9L"
@@ -10,7 +12,32 @@ const pricing = () => {
 
 
     return (<>
+
         <div className={styles.logo}>
+        <Head>
+        <title>ThinkThaiThai</title>
+        <meta name="description" content="Learn thai test" />
+        {/* <meta property="og:image" content="/1.png" /> */}
+        <meta property="og:url" content="https://thinkthaithai.vercel.app/" />
+        <meta property="og:type" content="website" />
+
+        <meta
+          property="og:title"
+          content="Learn Thai language!"
+        />
+
+        <meta
+          property="og:description"
+          content="Explore the learning material and book a trial lesson"
+        />
+
+        <meta
+          property="og:image"
+          content={"https://thinkthaithai.vercel.app/1.png"}
+        />
+
+        <link rel="icon" href="/logo.webp" />
+      </Head>
             <h1>ThinkThaiThai</h1>
         </div>
         <div className={styles.lessonsInfo}>
@@ -28,7 +55,7 @@ const pricing = () => {
             </div>
         </div>
         <div className={styles.pricingContainer}>
-            <h1 className={styles.pricingHeader}> Pricing</h1>
+            <h1 className={styles.pricingHeader}> Pricing in THB</h1>
             {/* <h3>lessons</h3> <h3 className={styles.price}>price</h3> */}
             <p>Trial Lesson</p>
             <p>&#3647;170</p>
@@ -99,7 +126,7 @@ const pricing = () => {
                 </form>
 
             </div>
-            <p className={styles.pricingFooter}>Lerning material and Homeworks always included</p>
+            <p className={styles.pricingFooter}>Lerning material &#38; Homeworks always included</p>
         </div>
         {/* <div className={styles.buttonContainer}> */}
         {/* <Link href='/#'><button */}

@@ -20,6 +20,30 @@ const MyBlog = ({ feed }) => {
     const data = feed.data
     return (
         <div className={styles.blogContainer}>
+            <Head>
+        <title>ThinkThaiThai</title>
+        <meta name="description" content="Learn thai test" />
+        {/* <meta property="og:image" content="/1.png" /> */}
+        <meta property="og:url" content="https://thinkthaithai.vercel.app/" />
+        <meta property="og:type" content="website" />
+
+        <meta
+          property="og:title"
+          content="Learn Thai language!"
+        />
+
+        <meta
+          property="og:description"
+          content="Explore the learning material and book a trial lesson"
+        />
+
+        <meta
+          property="og:image"
+          content={"https://thinkthaithai.vercel.app/1.png"}
+        />
+
+        <link rel="icon" href="/logo.webp" />
+      </Head>
             <div className={styles.logo}>
             <h1>ThinkThaiThai</h1>
         </div>
