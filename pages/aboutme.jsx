@@ -49,9 +49,11 @@ const AboutMe = () => {
             </div>
             <div className={styles.contentText}>
                 <h3> Call me Natt </h3>
-                <p> I live in Nakhon Pathom, Thailand. I graduated in computer engineering.
-                    I’ve worked in an IT company for 8 years and I also love teaching.  I started teaching Math when I was at the university.
-                    Now I have been teaching Thai for more than 5 years.
+                <p> I live in Nakhon Pathom, Thailand,  and i graduated in computer engineering in 2010.
+                    My experience as a teacher started in university,  where i used to tutor junior high-school
+                     and elementary level students in math. 
+                    After my graduation i worked at an IT company for 8 years but my true passion and my second job kept being teaching.
+                    That&apos;s why in 2017 i also started teaching Thai language and this allowed me to finally leave my IT job and focus on my true passion.
                 </p>
                 <p> 
                     When I was young my dream was to become a teacher. My cousin and I used to play to be a teacher and students.
@@ -60,8 +62,13 @@ const AboutMe = () => {
                     confidently speaking, and understanding Thai culture.
                 </p>
                 <p>
-                    I like watching movies, learning languages, surfing on the internet,  traveling and now I’m learning Japanese.
-                    Therefore I understand how difficult it is to learn a second language, but <b>TOGETHER</b> we can do it.
+                    As a Thai teacher i have had the satisfaction of helping many students reach their goals about Thai language,
+                    i have seen their confidence growing as they gained fluency in speaking and listening, and i helped them understend Thai culture.
+                </p>
+                <p>
+                    I like watching movies, learning languages, surfing on the internet,  traveling and now I&apos;m learning Japanese.
+                    Therefore I understand the challenges of learning a second language, from both a teacher&apos;s and a student&apos;s point of view,
+                     but <b>together</b> we can do it.
                 </p>
                 <p>
                     Thanks again for stopping by.
