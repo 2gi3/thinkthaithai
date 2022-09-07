@@ -8,9 +8,7 @@ const StudentSchema = new mongoose.Schema(
             unique: true,
             trim: true,
             maxlength: [30, ' The name of the student cannot be more than 30 characters']
-        },
-
-        rate: { type: Number, min: 0, max: 1000 }, 
+        }, 
 
         email: {
             type: String,
@@ -18,7 +16,9 @@ const StudentSchema = new mongoose.Schema(
             unique: true,
             trim: true,
             maxlength: [30, ' The Email of the student cannot be more than 30 characters']
-        }
+        },
+
+        password: { type: String, required: true }
 
     }
 )
