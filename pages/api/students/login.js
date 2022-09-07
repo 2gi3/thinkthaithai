@@ -1,7 +1,9 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 import dbConnect from "../../../back-end/utilities/dbConnect";
 import Student from "../../../back-end/models/Student";
+
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const JWTSecret = process.env.JWT_SECRET; 
 
 dbConnect();
 
@@ -22,7 +24,7 @@ export default (req, res, next) => {
             }
             const token = jwt.sign(
               { studentId: student._id },
-              'RANDOM_TOKEN_SECRET',
+              `${JWTSecret}`,
               { expiresIn: '24h' });
             res.status(200).json({
               studentName: student.name,  
