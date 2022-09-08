@@ -17,7 +17,7 @@ export default async (req, res) =>{
 
     switch(method) {
         case 'GET':
-            if( authoriseRoute(req, res) === true){ // part 2/3 of route authorisation 
+            if(  authoriseRoute(req, res) === true){ // part 2/3 of route authorisation 
 
             try {
                 const students = await Student.find({});

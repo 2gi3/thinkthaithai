@@ -18,7 +18,7 @@ export default async (req, res) => {
                 
    if( authoriseRoute(req, res) === true){ // part 2/3 of route authorisation 
 
-                    
+
     switch (method) {
         case 'GET':
             try {
@@ -88,7 +88,7 @@ export default async (req, res) => {
     }
 // part 3/3 of route authorisation start    
 }else{
-    res.status(400).json({ success: false, message: "Failed authorisation test" });
+    res.status(400).json({ success: false, message: "Failed authorisation" });
 }
 // part 3/3 of route authorisation end
 }

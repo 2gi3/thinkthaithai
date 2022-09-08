@@ -49,24 +49,20 @@ const AboutMe = () => {
             </div>
             <div className={styles.contentText}>
                 <h3> Call me Natt </h3>
-                <p> I live in Nakhon Pathom, Thailand,  and i graduated in computer engineering in 2010.
+                <p> I live in Nakhon Pathom, Thailand,  and i graduated in computer engineering in 2009.
                     My experience as a teacher started in university,  where i used to tutor junior high-school
-                     and elementary level students in math. 
+                     and elementary level students in math.<br />
                     After my graduation i worked at an IT company for 8 years but my true passion and my second job kept being teaching.
-                    That&apos;s why in 2017 i also started teaching Thai language and this allowed me to finally leave my IT job and focus on my true passion.
+                    That&apos;s why in 2017 i also started teaching Thai language and focused on my true passion.
                 </p>
                 <p> 
-                    When I was young my dream was to become a teacher. My cousin and I used to play to be a teacher and students.
-                    I love teaching, sharing, learning, and talking to people.
-                    My passion is to help people to reach their goals about Thai language,
-                    confidently speaking, and understanding Thai culture.
+                    When I was young my dream was to become a teacher because i already
+                    loved teaching, sharing, learning, and talking to people.
+                    And help them reach their goals about speaking Thai language
+                    confidently, and understanding Thai culture.
                 </p>
                 <p>
-                    As a Thai teacher i have had the satisfaction of helping many students reach their goals about Thai language,
-                    i have seen their confidence growing as they gained fluency in speaking and listening, and i helped them understend Thai culture.
-                </p>
-                <p>
-                    I like watching movies, learning languages, surfing on the internet,  traveling and now I&apos;m learning Japanese.
+                    I like watching movies, learning languages, surfing on the internet,  traveling and now I&apos;m learning Japanese. <br />
                     Therefore I understand the challenges of learning a second language, from both a teacher&apos;s and a student&apos;s point of view,
                      but <b>together</b> we can do it.
                 </p>
