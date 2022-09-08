@@ -1,5 +1,7 @@
 import dbConnect from "../../../back-end/utilities/dbConnect";
 import Student from "../../../back-end/models/Student";
+import authoriseRoute from "../../../back-end/middleware/auth" // part 1/3 of route authorisation
+
 import {hash} from "bcrypt"
 
 
@@ -15,6 +17,8 @@ export default async (req, res) =>{
 
     switch(method) {
         case 'GET':
+            if( authoriseRoute(req, res) === true){ // part 2/3 of route authorisation 
+
             try {
                 const students = await Student.find({});
 
@@ -22,6 +26,11 @@ export default async (req, res) =>{
             }catch (error) {
                 res.status(400).json({ success: false });                
             }
+            // part 3/3 of route authorisation start    
+            }else{
+               res.status(400).json({ success: false, message: "Failed authorisation test" });
+            }
+            // part 3/3 of route authorisation end
         break;
         case 'POST':
             try {
