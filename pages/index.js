@@ -219,7 +219,7 @@ export default function Home() {
           <h3>
             Start learning now
           </h3>
-          <p>from &#3647;170/Lesson!</p>
+          <p>with a &#3647;170 trial Lesson!</p>
         </div>
         <Link href='/pricing'>
           <div className={styles.pricingContainerLink}>

@@ -6,6 +6,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    b{
+        color: $primaryColor;
+        font-size: 1.3rem;
+    }
 
     .heroPicture {
         min-width: 100%;
