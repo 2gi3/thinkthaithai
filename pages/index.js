@@ -36,23 +36,6 @@ export default function Home() {
 
   useEffect(() => {
 
-let testtt = async () =>{
-    const res = await fetch('/api/students', 
-    {
-      method: 'GET',
-      headers:{
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOiI2MzE5N2JlMjk2NGIwN2I2ODkwYTQ0ZjciLCJpYXQiOjE2NjI2MTQ1MzEsImV4cCI6MTY2MjcwMDkzMX0.71pv30-6bcG8xvYT8U3azxSrYeDkKyjAieUR0SjNlCA"
-    }}
-    )
-    const data = await res.json()
-    console.log(data.data);
-  }
-  testtt()
-    // const data = await res.json();
-
-
-
-
     // --Start-- detect when the button ("book a $5 trial lesson") is outside of the viewport
     const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = targetRef.current;
@@ -91,7 +74,7 @@ let testtt = async () =>{
         <link rel="icon" href="/logo.webp" />
       </Head>
       <div className={styles.background}>
-        <Image src='/homepageBg.jpg' width='400px' height='400px' alt='A picture of teacher nat'></Image>
+        <Image src='/nat2.jpg' width='448px' height='597' alt='teacher nat'></Image>
       </div>
       <div ref={targetRef} className={styles.container}>
         <div className={styles.titleContainer}>
