@@ -1,7 +1,7 @@
 import styles from '../../styles/studentPage.module.scss';
 
 export const getStaticPaths = async () =>{
-    const res = await fetch('http://localhost:3000/api/students/', 
+    const res = await fetch('http://thinkthaithai.vercel.app/api/students/', 
     {
       method: 'GET',
       headers:{
@@ -25,7 +25,7 @@ export const getStaticPaths = async () =>{
 export const getStaticProps = async (context)=>{
     const id = context.params.id;
 
-    const res = await fetch(`http://localhost:3000/api/students/${id}`, 
+    const res = await fetch(`http://thinkthaithai.vercel.app/api/students/${id}`, 
     {
       method: 'GET',
       headers:{

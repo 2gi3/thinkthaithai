@@ -2,7 +2,7 @@ import styles from '../../styles/studentsIndex.module.scss';
 import Link from 'next/link'
 
 export const getStaticProps = async () => {
-    const res = await fetch('http://localhost:3000/api/students', 
+    const res = await fetch('http://thinkthaithai.vercel.app/api/students', 
     {
       method: 'GET',
       headers:{
