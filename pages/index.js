@@ -138,7 +138,7 @@ export default function Home() {
 
           <div className={styles.teacherVideo}>
             <iframe src="https://drive.google.com/file/d/18T5UaTOLQulNkiT2GNw-hCTa8HxAeise/preview"
-              width="304" height="228" loading="lazy">
+              width="274" height="205" loading="lazy">
             </iframe>
             <div className={styles.teacherIntroduction}>
               <p>
