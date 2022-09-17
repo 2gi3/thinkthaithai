@@ -1,0 +1,11 @@
+@use "styles" as *;
+
+.container{
+    padding: 20px;
+    min-height: 2500px;
+    min-width: 300px;
+    background: green;
+    h1{
+        background:$primaryColor ;
+    }
+}
