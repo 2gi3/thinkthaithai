@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useState, useRef, useMemo, useEffect } from 'react'
+import NewStudentForm from '../teacher/NewStudentForm'
 import styles from './studentsList.module.scss'
 
 
@@ -39,6 +40,9 @@ const StudentsList = () => {
         <>
         <div className={styles.container}>
             <h1>List of test students</h1>
+            <div>
+            <NewStudentForm />
+            </div>
             {students.map(student => (
                 <Link
                     href={{
