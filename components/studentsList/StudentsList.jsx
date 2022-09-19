@@ -39,7 +39,7 @@ const StudentsList = () => {
     return (
         <>
         <div className={styles.container}>
-            <h1>List of test students</h1>
+            <h1>List of test students test</h1>
             <div>
             <NewStudentForm />
             </div>

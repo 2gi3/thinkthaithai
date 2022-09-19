@@ -2,12 +2,16 @@ import { useState, useRef, useMemo, useEffect } from 'react'
 import styles from './NewStudentForm.module.scss'
 
 
+
 const NewStudentForm =()=>{
+    
+    
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const createStudent =(e)=>{
+        const JWT = sessionStorage.getItem('token')
         e.preventDefault()
 
         const userData = JSON.stringify({
@@ -15,7 +19,25 @@ const NewStudentForm =()=>{
             email,
             password
         })
-        console.log(userData)
+        // console.log(userData)
+        fetch("http://localhost:3000/api/students", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    "Authorization": `Bearer ${JWT}`
+                  },
+                body: userData,
+                redirect: 'follow'
+              }
+             )
+            .then((res)=>{
+                console.log(res)                
+                return res.json(); })
+                .catch((err) => {
+                    console.log(err.message);                    
+                })
+    
 
     }
     return(
@@ -43,7 +65,7 @@ const NewStudentForm =()=>{
                         />
                     </div>
                     <button className="primaryButton sauceButton" type="submit" value="submit">
-                            <span>Sign&nbsp;up </span>
+                            <span>Create </span>
                         </button>
 
 
