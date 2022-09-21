@@ -21,8 +21,6 @@ const LogIn =()=>{
     const logIn = (e,) => {
         e.preventDefault();
 
-        // const myHeaders = new Headers();
-        // myHeaders.append("Content-Type", "application/json");
         console.log(userData)
         // if (!re.test(email)) {
         //     setLogInMessage("Please provide a valid email address")
@@ -30,7 +28,6 @@ const LogIn =()=>{
         // } else {
             fetch("http://localhost:3000/api/students/login", {
                 method: 'POST',
-                // headers: myHeaders,
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -40,7 +37,6 @@ const LogIn =()=>{
               }
              )
             .then((res)=>{ return res.json(); })
-            //  .then(function(data){ console.log( data )  })
                 .then(
                     (data) => {
                         sessionStorage.setItem("token", data.token)
@@ -51,8 +47,8 @@ const LogIn =()=>{
                         // window.location = "/";
                     })
                 .catch((err) => {
-                    setLogInResponse("appear primaryColor");
-                    setLogInMessage("You have entered an invalid username or password")
+                    // setLogInResponse("appear primaryColor");
+                    // setLogInMessage("You have entered an invalid username or password")
                     console.log(err.message);
                     
                 });

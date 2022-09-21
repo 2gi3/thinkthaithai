@@ -25,6 +25,9 @@
 }
 
 .background {
+  display: none;
+}
+.backgroundMobile {
   position: absolute;
   z-index: -1;
   width: 100vw;
@@ -386,9 +389,13 @@
 
 
 @media all and (min-width: 361px) and (max-width:768px) {
-  .background {
-    width: 70vw;
-  }
+  // .background {
+  //   width: 70vw;
+  // }
+  // .backgroundMobile{
+    // display: none;
+    // width: 70vw;
+  // }
 
   // .titleContainer{
   //   .features{
@@ -425,8 +432,24 @@
 
 @media all and (min-width: 769px) {
   .background {
+    position: absolute;
+  z-index: -1;
+  // width: 100vw;
+  height: 87vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0px;
+  // top: 30px;
+  // opacity: 0.5;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
     width: 65vw;
     top: unset;
+  }
+  .backgroundMobile{
+    display: none;
   }
 
   .container {
