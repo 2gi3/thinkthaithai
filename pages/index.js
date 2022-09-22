@@ -90,9 +90,12 @@ export default function Home() {
             <li className={styles.list}>learning materials included</li>
           </ul>
           {/* Toggle the button's class according to whether or not the button is visible in the viewport  */}
-          <Link href='https://www.paypal.com/webapps/hermes?token=2LP71852KR243514U&useraction=commit&mfid=1661951713535_f7632277b2f02'><button
-            className={isVisible === true ? styles.button : styles.buttonFixed} > trial lesson
-          </button></Link>
+          {/* <Link href='https://www.paypal.com/webapps/hermes?token=2LP71852KR243514U&useraction=commit&mfid=1661951713535_f7632277b2f02'> */}
+          <Link href='/pricing'>
+            <button
+              className={isVisible === true ? styles.button : styles.buttonFixed} > trial lesson
+            </button>
+          </Link>
         </div>
         <div className={styles.imageContainer}>
         </div>
@@ -151,15 +154,15 @@ export default function Home() {
               <p>
                 And feel free to
                 <button onClick={() => {
-                  value === true? toggleValue(false): toggleValue(true);
+                  value === true ? toggleValue(false) : toggleValue(true);
                 }}>
                   contact me
                 </button>
                 if you have any question.
               </p>
-              <div className={value === false? styles.contactsOff :styles.contactsOn}>
-              <button onClick={() => {
-                  value === true? toggleValue(false): toggleValue(true);
+              <div className={value === false ? styles.contactsOff : styles.contactsOn}>
+                <button onClick={() => {
+                  value === true ? toggleValue(false) : toggleValue(true);
                 }}>
                   <FontAwesomeIcon icon={faXmark} />
                 </button>
