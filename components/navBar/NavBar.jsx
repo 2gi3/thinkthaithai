@@ -24,8 +24,9 @@ const NavBar = () => {
     return (
         <div className={styles.navContainer}>
             <div className={styles.logo}>
-                {/* <Image src='/logo.webp' width='180' height='90' /> */}
+                {/* <Link href='/'> */}
                 <h1>ThinkThaiThai</h1>
+                {/* </Link> */}
             </div>
             <nav className={styles.nav}>
                 <button onClick={() => {
