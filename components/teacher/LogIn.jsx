@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useRouter } from 'next/router'
 import styles from './logIn.module.scss'
 
 
 const LogIn =()=>{
+    const router = useRouter()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [logInMessage, setLogInMessage] = useState("You have entered an invalid username or password")
@@ -44,6 +46,7 @@ const LogIn =()=>{
                         sessionStorage.setItem("email", data.studentEmail)
                         console.log(data);
 
+                        router.reload(window.location.pathname)
                         // window.location = "/";
                     })
                 .catch((err) => {
