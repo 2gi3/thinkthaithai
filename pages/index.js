@@ -74,7 +74,7 @@ export default function Home() {
         <link rel="icon" href="/logo.webp" />
       </Head>
       <div className={styles.backgroundMobile}>
-        <Image src='/natMobile.jfif' width='448px' height='597' alt='teacher nat'></Image>
+        <Image src='/natMobile.webp' width='557px' height='615' alt='teacher nat'></Image>
       </div>
       <div className={styles.background}>
         <Image src='/nat2.jpg' width='448px' height='597' alt='teacher nat'></Image>
