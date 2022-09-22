@@ -4,11 +4,10 @@ import FeedbacksCRUD from '../../components/teacher/FeedbacksCRUD';
 import LogIn from '../../components/teacher/LogIn';
 import styles from '../../styles/teacherIndex.module.scss';
 
-const teacher = () => {
+const Teacher = () => {
 
     const[JWT, setJWT] = useState(null)
     const [status, setStatus] = useState('out')
-    // let JWT 
 
     useEffect(
         () => {
@@ -20,7 +19,6 @@ const teacher = () => {
             <div className={styles.dashboardTitle}>
                 <h1>Teacher Dashboard TEST</h1>
             </div>
-            {/* <LogIn /> */}
             {JWT === null? <LogIn />  : 
             <div>
             <Link href='/students'>
@@ -36,4 +34,4 @@ const teacher = () => {
     )
 }
 
-export default teacher
+export default Teacher
