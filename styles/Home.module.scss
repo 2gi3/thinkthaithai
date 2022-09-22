@@ -482,6 +482,8 @@
           &:first-child{
             color: inherit;
             font-size: inherit;
+            text-shadow: none;
+            font-weight: 600;
           }
         }
       }
