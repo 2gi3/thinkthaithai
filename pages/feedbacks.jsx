@@ -2,8 +2,24 @@ import styles from '../styles/feedbacks.module.scss';
 import Image from 'next/image'
 import Head from 'next/head'
 
+export const getStaticProps = async () => {
+  const res = await fetch('http://localhost:3000/api/feedbacks', 
+  {
+    method: 'GET',
+    headers:{
+  // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOiI2MzE5N2JlMjk2NGIwN2I2ODkwYTQ0ZjciLCJpYXQiOjE2NjI2MTQ1MzEsImV4cCI6MTY2MjcwMDkzMX0.71pv30-6bcG8xvYT8U3azxSrYeDkKyjAieUR0SjNlCA"
+  }}
+  );
+  const rawData= await res.json();
+  const data = rawData.data
+  console.log(data)
 
-const feedbacks = () => {
+  return { props: { data } }
+}
+
+
+const feedbacks = ({ data }) => {
+  console.log(data)
   return (
     <div className={styles.students}>
       <Head>
