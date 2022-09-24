@@ -1,6 +1,7 @@
 import styles from '../styles/feedbacks.module.scss';
 import Image from 'next/image'
 import Head from 'next/head'
+import { useState } from 'react';
 
 export const getStaticProps = async () => {
   const res = await fetch('http://localhost:3000/api/feedbacks', 
@@ -19,7 +20,8 @@ export const getStaticProps = async () => {
 
 
 const feedbacks = ({ data }) => {
-  console.log(data)
+  // const [feedbacks, setFeedbacks] = useState([])
+  // setFeedbacks(data)
   return (
     <div className={styles.students}>
       <Head>
@@ -50,6 +52,22 @@ const feedbacks = ({ data }) => {
         <h1>ThinkThaiThai</h1>
       </div>
       <h2> What my students say about me</h2>
+      {data.map( feedback => 
+        <div key={feedback._id} className={styles.feedback}>
+          <div className={styles.feedbackPicture}>
+          <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />
+        </div>
+           <div className={styles.feedbackText}>
+          {/* <h3 className={styles.feedbackHeader}>So Much Fun</h3> */}
+          <p className={styles.feedbackBody}>
+            {feedback.content}
+          </p>
+          <p className={styles.feedbackFooter}>
+            {feedback.studentName}, {feedback.studentJob} <br/> {feedback.studentLocation}.
+          </p>
+        </div>
+        </div>
+      )}
       <div className={styles.feedback}>
         <div className={styles.feedbackPicture}>
           <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />
