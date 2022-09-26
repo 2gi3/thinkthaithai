@@ -38,6 +38,7 @@ const FeedbackSchema = new mongoose.Schema(
             trim: true,
             maxlength: [300, ' The feedback cannot be more than 300 characters']
         },
+        imageUrl: { type: String},
 
 
     }

@@ -40,8 +40,7 @@ export default async (req, res) =>{
                          studentLocation: req.body.studentLocation,
                          feedbackTitle: req.body.feedbackTitle,
                          content: req.body.content,
-
-
+                         imageUrl: req.body.imageUrl
                       }
                       );
                       const student = await Feedback.create(body);

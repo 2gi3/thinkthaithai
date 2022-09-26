@@ -8,18 +8,40 @@ const FeedbacksCRUD = () => {
     const [studentLocation, setStudentLocation] = useState('')
     const [feedbackTitle, setFeedbackTitle] = useState('')
     const [content, setContent] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
+    const [imageChanged, setImageChanged] = useState(false)
+    const [imagePreview, setImagePreview] = useState()
 
     const createFeedback = (e) => {
         const JWT = sessionStorage.getItem('token')
         e.preventDefault()
 
-        const userData = JSON.stringify({
+        const userData = 
+        JSON.stringify(
+            {
             studentName,
             studentJob,
             studentLocation,
             feedbackTitle,
             content
-        })
+        }
+        )
+        // const data = new FormData()
+        // data.append("data", userData)
+        // data.append("studentName",JSON.stringify( studentName))
+        // data.append("studentJob",JSON.stringify( studentJob))
+        // data.append("studentLocation",JSON.stringify( studentLocation))
+        // data.append("feedbackTitle",JSON.stringify( feedbackTitle))
+        // data.append("content",JSON.stringify( content))
+
+        // data.append("image", imageUrl)
+
+        // let payLoad
+        // if(imageChanged === false){
+        //     payLoad = dataObj
+        // } else{
+        //     payLoad = data
+        // }
 
         fetch("http://localhost:3000/api/feedbacks", {
             method: 'POST',
@@ -34,12 +56,24 @@ const FeedbacksCRUD = () => {
         )
             .then((res) => {
                 console.log(res)
+                console.log(userData)
+                // console.log(imageUrl)
+
                 return res.json();
             })
             .catch((err) => {
                 console.log(err.message);
             })
 
+    }
+
+    function getImgData() {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(imageUrl);
+        fileReader.addEventListener("load", function () {
+          setImagePreview(this.result) ;
+        });    
+      
     }
 
 
@@ -80,6 +114,17 @@ const FeedbacksCRUD = () => {
                             onChange={event => setContent(event.target.value)}
                         />
                     </div>
+                    <div className="addImageButton">
+                            <input className=" sauceButton "type="file" name="imageUrl" 
+                                onInput={(event) => {setImageUrl(event.target.files[0])}}
+                                onChange={(e)=> {setImageChanged(true)
+                                    getImgData()} }
+                                
+                                accept="image/png, image/jpeg, image/jpg, image/webp">
+                            </input>
+                    </div>
+                    <img height="100px" src={imagePreview} />
+
                     <button className="primaryButton sauceButton" type="submit" value="submit">
                     <span>Create </span>
                 </button>

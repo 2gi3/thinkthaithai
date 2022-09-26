@@ -9,6 +9,8 @@ const NewStudentForm = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [imageChanged, setImageChanged] = useState(false)
+    const [imagePreview, setImagePreview] = useState()
 
     const createStudent = (e) => {
         const JWT = sessionStorage.getItem('token')
@@ -40,6 +42,14 @@ const NewStudentForm = () => {
             })
     }
 
+    function getImgData() {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(imageUrl);
+        fileReader.addEventListener("load", function () {
+          setImagePreview(this.result) ;
+        });    
+      
+    }
     return (
         <div className={styles.container}>
             <form
@@ -64,6 +74,16 @@ const NewStudentForm = () => {
                         onChange={event => setPassword(event.target.value)}
                     />
                 </div>
+                <div className="addImageButton">
+                            <input className=" sauceButton "type="file" name="imageUrl" 
+                                onInput={(event) => {setImageUrl(event.target.files[0])}}
+                                onChange={(e)=> {setImageChanged(true)
+                                    getImgData()} }
+                                
+                                accept="image/png, image/jpeg, image/jpg, image/webp">
+                            </input>
+                    </div>
+                    <img height="100px" src={imagePreview} />
                 <button className="primaryButton sauceButton" type="submit" value="submit">
                     <span>Create </span>
                 </button>
