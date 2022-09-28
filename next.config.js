@@ -8,6 +8,6 @@ module.exports = nextConfig
 
 module.exports = {
   images: {
-    domains: ['www.paypalobjects.com'],
+    domains: ['www.paypalobjects.com', "res.cloudinary.com"],
   },
 }

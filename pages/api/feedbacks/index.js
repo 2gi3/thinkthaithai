@@ -1,8 +1,9 @@
 import dbConnect from "../../../back-end/utilities/dbConnect";
 import Feedback from "../../../back-end/models/Feedback";
 import authoriseRoute from "../../../back-end/middleware/auth" // part 1/3 of route authorisation
-
 import {hash} from "bcrypt"
+import feedbacks from "../../feedbacks";
+const cloudinary = require('../../../back-end/utilities/cloudinary');
 
 
 // bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
@@ -10,10 +11,12 @@ import {hash} from "bcrypt"
 // });
 
 
+
 dbConnect();
 
 export default async (req, res) =>{
     const { method } = req;
+    // const {studentName, studentJob, studentLocation, feedbackTitle, content, imageUrl} = req.body
 
     switch(method) {
         case 'GET':
@@ -33,6 +36,23 @@ export default async (req, res) =>{
             {
                 if(  authoriseRoute(req, res) === true){ // part 2/3 of route authorisation 
                 // hash(req.body.password, 10, async function(err, hash) {
+                    // console.log(req.body.imageUrl)
+                    const image = req.body.imageUrl
+                    // console.log()
+                    const result= await cloudinary.uploader.upload(
+                        
+                        image
+                        // , function(error, result) {console.log(result, error); }
+                        // {
+                        //     overwrite: true,
+                        //     invalidate: true,
+                        //     width: 810, height: 456, crop: "fill"
+                        // }
+                        // {
+                        //     folder: "thinkthaithai"                            
+                        // }
+                        )
+                        
                     const body = (
                         {
                          studentName: req.body.studentName,
@@ -40,7 +60,11 @@ export default async (req, res) =>{
                          studentLocation: req.body.studentLocation,
                          feedbackTitle: req.body.feedbackTitle,
                          content: req.body.content,
-                         imageUrl: req.body.imageUrl
+                         imageUrl: result.secure_url
+                        //  imageUrl:{
+                        //     public_id: result.public_id,
+                        //     url: result.secure_url                        
+                        // }
                       }
                       );
                       const student = await Feedback.create(body);

@@ -9,12 +9,23 @@ const FeedbacksCRUD = () => {
     const [feedbackTitle, setFeedbackTitle] = useState('')
     const [content, setContent] = useState('')
     const [imageUrl, setImageUrl] = useState('')
+    const [image, setImage] =useState('')
     const [imageChanged, setImageChanged] = useState(false)
     const [imagePreview, setImagePreview] = useState()
+
+
+    const setFileToBase=(file)=>{
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend=()=>{
+            setImage(reader.result)
+        }
+    }
 
     const createFeedback = (e) => {
         const JWT = sessionStorage.getItem('token')
         e.preventDefault()
+        setFileToBase(imageUrl)
 
         const userData = 
         JSON.stringify(
@@ -23,9 +34,14 @@ const FeedbacksCRUD = () => {
             studentJob,
             studentLocation,
             feedbackTitle,
-            content
+            content,
+            imageUrl: image
         }
         )
+        // getBase64(imageUrl).then(
+        //     data => console.log(data)
+        //   )
+
         // const data = new FormData()
         // data.append("data", userData)
         // data.append("studentName",JSON.stringify( studentName))
@@ -43,6 +59,13 @@ const FeedbacksCRUD = () => {
         //     payLoad = data
         // }
 
+        // const uploadImage = async (event) => {
+        //     const file = event.target.files[0];
+        //     const base64 = await convertBase64(file);
+        //     avatar.src = base64;
+        //     textArea.innerText = base64;
+        // };
+
         fetch("http://localhost:3000/api/feedbacks", {
             method: 'POST',
             headers: {
@@ -56,7 +79,7 @@ const FeedbacksCRUD = () => {
         )
             .then((res) => {
                 console.log(res)
-                console.log(userData)
+                // console.log(userData);
                 // console.log(imageUrl)
 
                 return res.json();

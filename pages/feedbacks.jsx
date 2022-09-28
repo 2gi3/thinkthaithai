@@ -55,7 +55,7 @@ const feedbacks = ({ data }) => {
       {data.map( feedback => 
         <div key={feedback._id} className={styles.feedback}>
           <div className={styles.feedbackPicture}>
-          <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />
+          <Image src={feedback.imageUrl} width='100' height='100' alt='The picture of a student' />
         </div>
            <div className={styles.feedbackText}>
           {/* <h3 className={styles.feedbackHeader}>So Much Fun</h3> */}
