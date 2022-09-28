@@ -28,7 +28,7 @@ const LogIn =()=>{
         //     setLogInMessage("Please provide a valid email address")
         //     setLogInResponse("appear secondaryColor");
         // } else {
-            fetch("http://localhost:3000/api/students/login", {
+            fetch("https://www.thiktaithaitest.dev/api/students/login", {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -47,7 +47,6 @@ const LogIn =()=>{
                         console.log(data);
 
                         router.reload(window.location.pathname)
-                        // window.location = "/";
                     })
                 .catch((err) => {
                     // setLogInResponse("appear primaryColor");

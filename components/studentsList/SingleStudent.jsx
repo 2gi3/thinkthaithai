@@ -20,7 +20,7 @@ const SingleStudent = () => {
             password: student.password
         })
         // console.log(userData)
-        fetch(`http://localhost:3000/api/students/${id}`, {
+        fetch(`https://www.thiktaithaitest.dev/api/students/${id}`, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -51,7 +51,7 @@ const SingleStudent = () => {
         //     password: student.password
         // })
         // console.log(userData)
-        fetch(`http://localhost:3000/api/students/${id}`, {
+        fetch(`https://www.thiktaithaitest.dev/api/students/${id}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
@@ -80,7 +80,7 @@ const SingleStudent = () => {
                 const JWT = sessionStorage.getItem('token')
                 const res = await fetch(
                     // 'http://thinkthaithai.vercel.app/api/students'
-                    `http://localhost:3000/api/students/${studentId}`
+                    `https://www.thiktaithaitest.dev/api/students/${studentId}`
                     ,
                     {
                         method: 'GET',

@@ -66,7 +66,7 @@ const FeedbacksCRUD = () => {
         //     textArea.innerText = base64;
         // };
 
-        fetch("http://localhost:3000/api/feedbacks", {
+        fetch("https://www.thiktaithaitest.dev/api/feedbacks", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

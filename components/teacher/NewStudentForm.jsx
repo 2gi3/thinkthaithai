@@ -22,7 +22,7 @@ const NewStudentForm = () => {
             password
         })
         // console.log(userData)
-        fetch("http://localhost:3000/api/students", {
+        fetch("https://www.thiktaithaitest.dev/api/students", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -85,7 +85,7 @@ const NewStudentForm = () => {
                     </div>
                     <img height="100px" src={imagePreview} />
                 <button className="primaryButton sauceButton" type="submit" value="submit">
-                    <span>Create </span>
+                    <span>Create</span>
                 </button>
 
 
