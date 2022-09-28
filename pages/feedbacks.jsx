@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { useState } from 'react';
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://www.thinkthaithai.vercel.app/api/feedbacks', 
+  const res = await fetch('/api/feedbacks', 
   {
     method: 'GET',
     headers:{
