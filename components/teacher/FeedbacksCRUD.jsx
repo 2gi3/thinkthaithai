@@ -38,34 +38,7 @@ const FeedbacksCRUD = () => {
             imageUrl: image
         }
         )
-        // getBase64(imageUrl).then(
-        //     data => console.log(data)
-        //   )
-
-        // const data = new FormData()
-        // data.append("data", userData)
-        // data.append("studentName",JSON.stringify( studentName))
-        // data.append("studentJob",JSON.stringify( studentJob))
-        // data.append("studentLocation",JSON.stringify( studentLocation))
-        // data.append("feedbackTitle",JSON.stringify( feedbackTitle))
-        // data.append("content",JSON.stringify( content))
-
-        // data.append("image", imageUrl)
-
-        // let payLoad
-        // if(imageChanged === false){
-        //     payLoad = dataObj
-        // } else{
-        //     payLoad = data
-        // }
-
-        // const uploadImage = async (event) => {
-        //     const file = event.target.files[0];
-        //     const base64 = await convertBase64(file);
-        //     avatar.src = base64;
-        //     textArea.innerText = base64;
-        // };
-
+       
         fetch("https://www.thiktaithaitest.dev/api/feedbacks", {
             method: 'POST',
             headers: {
@@ -79,7 +52,7 @@ const FeedbacksCRUD = () => {
         )
             .then((res) => {
                 console.log(res)
-                // console.log(userData);
+                console.log(userData);
                 // console.log(imageUrl)
 
                 return res.json();
