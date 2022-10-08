@@ -28,7 +28,7 @@ const LogIn =()=>{
         //     setLogInMessage("Please provide a valid email address")
         //     setLogInResponse("appear secondaryColor");
         // } else {
-            fetch("https://www.thikthaithai.com/api/students/login", {
+            fetch("https://thikthaithai.com/api/students/login", {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

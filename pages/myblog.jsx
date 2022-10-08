@@ -24,7 +24,7 @@ const MyBlog = ({ feed }) => {
         <title>ThinkThaiThai</title>
         <meta name="description" content="Learn thai test" />
         {/* <meta property="og:image" content="/1.png" /> */}
-        <meta property="og:url" content="https://www.www.thikthaithai.com/" />
+        <meta property="og:url" content="https://thikthaithai.com/" />
         <meta property="og:type" content="website" />
 
         <meta
@@ -39,7 +39,7 @@ const MyBlog = ({ feed }) => {
 
         <meta
           property="og:image"
-          content={"https://www.www.thikthaithai.com/1.png"}
+          content={"https://thikthaithai.com/1.png"}
         />
 
         <link rel="icon" href="/logo.webp" />
