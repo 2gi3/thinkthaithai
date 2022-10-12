@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { useState } from 'react';
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://thinkthaithai.com/api/feedbacks', 
+  const res = await fetch('https://www.thinkthaithai.com/api/feedbacks', 
   {
     method: 'GET',
     headers:{
@@ -26,7 +26,7 @@ const feedbacks = ({ data }) => {
         <title>ThinkThaiThai</title>
         <meta name="description" content="Learn thai test" />
         {/* <meta property="og:image" content="/1.png" /> */}
-        <meta property="og:url" content="https://thinkthaithai.vercel.app/" />
+        <meta property="og:url" content="https://www.thinkthaithai.vercel.app/" />
         <meta property="og:type" content="website" />
 
         <meta
@@ -41,7 +41,7 @@ const feedbacks = ({ data }) => {
 
         <meta
           property="og:image"
-          content={"https://thinkthaithai.vercel.app/1.png"}
+          content={"https://www.thinkthaithai.vercel.app/1.png"}
         />
 
         <link rel="icon" href="/logo.webp" />
