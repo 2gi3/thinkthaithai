@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/myblog.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
+import useToggle from '../functions/useToggle'
 
 export const getStaticProps = async () => {
     const instagramToken = process.env.I_KEY
@@ -18,47 +19,65 @@ export const getStaticProps = async () => {
 
 const MyBlog = ({ feed }) => {
     const data = feed.data
+    const [value, toggleValue] = useToggle(false)
     return (
         <div className={styles.blogContainer}>
             <Head>
-        <title>ThinkThaiThai</title>
-        <meta name="description" content="Learn thai test" />
-        {/* <meta property="og:image" content="/1.png" /> */}
-        <meta property="og:url" content="https://www.thikthaithai.com/" />
-        <meta property="og:type" content="website" />
+                <title>ThinkThaiThai</title>
+                <meta name="description" content="Learn thai test" />
+                {/* <meta property="og:image" content="/1.png" /> */}
+                <meta property="og:url" content="https://www.thikthaithai.com/" />
+                <meta property="og:type" content="website" />
 
-        <meta
-          property="og:title"
-          content="Learn Thai language!"
-        />
+                <meta
+                    property="og:title"
+                    content="Learn Thai language!"
+                />
 
-        <meta
-          property="og:description"
-          content="Explore the learning material and book a trial lesson"
-        />
+                <meta
+                    property="og:description"
+                    content="Explore the learning material and book a trial lesson"
+                />
 
-        <meta
-          property="og:image"
-          content={"https://www.thikthaithai.com/1.png"}
-        />
+                <meta
+                    property="og:image"
+                    content={"https://www.thikthaithai.com/1.png"}
+                />
 
-        <link rel="icon" href="/logo.webp" />
-      </Head>
+                <link rel="icon" href="/logo.webp" />
+            </Head>
             <div className={styles.logo}>
-            <h1>ThinkThaiThai</h1>
-        </div>
+                <h1>ThinkThaiThai</h1>
+            </div>
             <div className={styles.startLearning}>
                 <h2>Start learning the basics of Thai language</h2>
                 <div className={styles.startLearningVideos}>
                     <h4> Recorded new student&apos;s lesson</h4>
-                    {/* <video src="" controls type="video/mp4" height='100' width='150'
-                        loading="lazy" allowFullScreen="" frameBorder="0">
-                    </video> */}
-                    <iframe src="https://drive.google.com/file/d/1djizhCmnKYSYVg6uYXu1pEeo0XvE8DsB/preview"
-                        width="288" height="216" allowFullScreen=""></iframe>
-                    <iframe src="https://drive.google.com/file/d/1Kle6aubivBUFGVwvpFsO9k1kHWehbRzG/preview"
-                        width="288" height="216" allowFullScreen="">
-                    </iframe>
+                    <div className={styles.scene__buttons}>
+                        <button
+                            className={value === false ? styles.scene__buttonOn : styles.scene__buttonOff}
+                            onClick={() => { value === true ? toggleValue(false) : toggleValue(true) }}>
+                            Part 1
+                        </button>
+                        <button className={value === false ? styles.scene__buttonOff : styles.scene__buttonOn}
+                            onClick={() => { value === true ? toggleValue(false) : toggleValue(true) }}>
+                            Part 2
+                        </button>
+                    </div>
+                    < div className={styles.scene}>
+                        <div className={styles.scene__object} id={value === false ? styles.scene__objectFlip: null}>
+                            <div className={styles.scene__objectVideo1} >
+                                <iframe src="https://drive.google.com/file/d/1djizhCmnKYSYVg6uYXu1pEeo0XvE8DsB/preview"
+                                    width="245" height="184" allowFullScreen="">
+                                </iframe>
+                            </div>
+                            <div className={styles.scene__objectVideo2}>
+                                <iframe src="https://drive.google.com/file/d/1Kle6aubivBUFGVwvpFsO9k1kHWehbRzG/preview"
+                                    width="245" height="184" allowFullScreen="">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={styles.teacerClassesVideos}>

@@ -11,32 +11,127 @@
         display: none;
         text-align: center;
         width: 100%;
-        h1 {
-          font-size: 4rem;
-          color: $secondaryColor;
-        }
-      }
 
-    .startLearning{
-        margin: 20px;
+        h1 {
+            font-size: 4rem;
+            color: $secondaryColor;
+        }
+    }
+
+    .startLearning {
+        margin: 20px 0;
         border: 1px solid $primaryColor;
         padding: 10px 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        h2{
+
+        h2 {
             width: 100%;
             text-align: center;
         }
-        h4{
+
+        h4 {
             width: 100%;
             text-align: center;
         }
-        .startLearningVideos{
+
+        .startLearningVideos {
             width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
+            // display: flex;
+            // flex-wrap: wrap;
+            // justify-content: space-evenly;
+
+            .scene__buttons {
+                margin: auto;
+                width: 275px;
+                height: 50px;
+                display: flex;
+                margin-bottom: -16px;
+                ;
+            }
+
+            .scene__buttonOn,
+            .scene__buttonOff {
+                all: unset;
+                width: 50%;
+                height: 100%;
+                border-radius: 10px 10px 0 0;
+                border: 2px solid $primaryColor;
+                border-bottom: none;
+                text-align: center;
+            }
+
+            .scene__buttonOn {
+                background-color: $primaryColor;
+            }
+
+
+            .scene {
+                margin: auto;
+                width: 100%;
+                height: 250px;
+                perspective: 600px;
+                width: 275px;
+                border: 2px solid $primaryColor;
+                border-top: none;
+
+                #scene__objectFlip {
+                    transform: translateX(-100%) rotateY(-180deg);
+                }
+
+                .scene__object {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 275px;
+                    margin: auto;
+                    height: 100%;
+                    cursor: pointer;
+                    transform-style: preserve-3d;
+                    transform-origin: center right;
+                    transition: transform 1s;
+
+                    .scene__objectVideo1 {
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: min-content;
+                        line-height: 260px;
+                        color: white;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 40px;
+                        backface-visibility: hidden;
+                        transform: rotateY(180deg);
+                        padding: 15px 0;
+
+                    }
+
+                    .scene__objectVideo2 {
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: min-content;
+                        line-height: 260px;
+                        color: white;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 40px;
+                        backface-visibility: hidden;
+                        // border: 2px solid $secondaryColor;
+                        padding: 15px 0;
+                    }
+
+
+
+                }
+            }
         }
     }
 
@@ -47,11 +142,12 @@
         border: 5px solid $primaryColor;
         border-radius: 0 40px 0 40px / 0 40px 0 40px;
         padding: 20px 0;
+
         h3 {
             width: 100%;
             margin-bottom: 0;
             text-align: center;
-          }
+        }
 
         .classVideo {
             min-height: 130px;
@@ -92,14 +188,13 @@
 
 @media all and (min-width: 769px) {
     .blogContainer {
-        .logo{
+        .logo {
             display: block;
         }
-    .blogVideoContainer {
-        min-width: 250px;
-        // border-radius: $borderRadius;
-        // box-shadow: 1px 1px 1px $primaryColor;
+
+        .blogVideoContainer {
+            min-width: 250px;
+        }
     }
-}
 
 }
