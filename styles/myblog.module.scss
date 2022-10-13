@@ -94,7 +94,7 @@
                     cursor: pointer;
                     transform-style: preserve-3d;
                     transform-origin: center right;
-                    transition: transform 1s;
+                    transition: transform 1050ms ease-in-out 100ms;
 
                     .scene__objectVideo1 {
                         position: absolute;
