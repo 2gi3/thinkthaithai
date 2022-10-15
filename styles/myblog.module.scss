@@ -18,8 +18,9 @@
         }
     }
 
+    .topContainer{
     .startLearning {
-        margin: 20px 0;
+        margin: 20px auto;
         // border: 1px solid $primaryColor;
         padding: 10px 0;
         display: flex;
@@ -138,25 +139,131 @@
         }
     }
 
-    .teacerClassesVideos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        border: 5px solid $primaryColor;
-        border-radius: 0 40px 0 40px / 0 40px 0 40px;
-        padding: 20px 0;
-
-        h3 {
+    .teacerClassesVideosContainer {
+        width: 275px;
+        margin: 40px auto;
+        .cubeButtons {
+            // margin: auto;
             width: 100%;
-            margin-bottom: 0;
-            text-align: center;
+            height: 50px;
+            display: flex;
+            margin-bottom: 2px;
+
+            button {
+                all: unset;
+                margin-bottom: 2px;
+                width: inherit;
+                height: 100%;
+                border-radius: 10px 10px 0 0;
+                border: 2px solid $primaryColor;
+                border-bottom: none;
+                text-align: center;
+                cursor: pointer;
+            }
         }
 
-        .classVideo {
-            min-height: 130px;
-            max-width: 300px;
+        .teacerClassesVideos {
+            width: 275px;
+            height: 275px;
+            perspective: 600px;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+
+            h3 {
+                width: 100%;
+                margin-bottom: 0;
+                text-align: center;
+                margin-top: 38px;
+            }
+
+            .cube {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transform-style: preserve-3d;
+                transform: translateZ(-135px);
+                transition: transform 3s;
+            }
+
+            .cubeSideFront,
+            .cubeSideRight,
+            .cubeSideBack,
+            .cubeSideLeft,
+            .cubeSideTop,
+            .cubeSideBottom {
+                position: absolute;
+                // border: 2px solid black;
+                // line-height: 200px;
+                // font-size: 40px;
+                font-weight: bold;
+                // color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+
+                video {
+                    width: 100%;
+                }
+            }
+
+            .cubeSideFront {
+                transform: rotateY(0deg) translateZ(135px);
+                background-color: $primaryColor;
+            }
+
+            .cubeSideRight {
+                transform: rotateY(90deg) translateZ(135px);
+                background-color: $primaryColor;
+            }
+
+            .cubeSideBack {
+                transform: rotateY(180deg) translateZ(135px);
+                background-color: $secondaryColor;
+            }
+
+            .cubeSideLeft {
+                transform: rotateY(-90deg) translateZ(135px);
+                background-color: $secondaryColor;
+            }
+
+            .cubeSideTop {
+                transform: rotateX(90deg) translateZ(135px);
+                background-color: $primaryColor;
+            }
+
+            .cubeSideBottom {
+                transform: rotateX(-90deg) translateZ(135px);
+                background-color: $primaryColor;
+            }
+
+            .cube#showFront {
+                transform: translateZ(-135px) rotateY(0deg);
+            }
+
+            .cube#showRight {
+                transform: translateZ(-135px) rotateY(-90deg);
+            }
+
+            .cube#showBack {
+                transform: translateZ(-135px) rotateY(-180deg);
+            }
+
+            .cube#showLeft {
+                transform: translateZ(-135px) rotateY(90deg);
+            }
+
+            .cube#showTop {
+                transform: translateZ(-135px) rotateX(-90deg);
+            }
+
+            .cube#showBottom {
+                transform: translateZ(-135px) rotateX(90deg);
+            }
         }
     }
+}
 
     .blogTitle {
         width: 100%;
@@ -197,6 +304,20 @@
 
         .blogVideoContainer {
             min-width: 250px;
+        }
+        .topContainer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            h2{
+                width: 100%;
+                text-align: center;
+            }
+            .startLearning{
+                .startLearningVideos{
+                    height: 372px;
+                }
+            }
         }
     }
 

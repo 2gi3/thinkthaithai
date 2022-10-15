@@ -3,6 +3,7 @@ import styles from '../styles/myblog.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import useToggle from '../functions/useToggle'
+import { useState} from 'react'
 
 export const getStaticProps = async () => {
     const instagramToken = process.env.I_KEY
@@ -20,6 +21,7 @@ export const getStaticProps = async () => {
 const MyBlog = ({ feed }) => {
     const data = feed.data
     const [value, toggleValue] = useToggle(false)
+    const [cubeValue, setCubeValue] =useState("showBottom")
     return (
         <div className={styles.blogContainer}>
             <Head>
@@ -49,8 +51,10 @@ const MyBlog = ({ feed }) => {
             <div className={styles.logo}>
                 <h1>ThinkThaiThai</h1>
             </div>
+            <div className={styles.topContainer}>
+            <h2>Start learning the basics of Thai language</h2>
             <div className={styles.startLearning}>
-                <h2>Start learning the basics of Thai language</h2>
+                {/* <h2>Start learning the basics of Thai language</h2> */}
                 <div className={styles.startLearningVideos}>
                     <h4> Recorded new student&apos;s lesson</h4>
                     <div className={styles.scene__buttons}>
@@ -80,26 +84,58 @@ const MyBlog = ({ feed }) => {
                     </div>
                 </div>
             </div>
+            <div className={styles.teacerClassesVideosContainer}>
+                <div className={styles.cubeButtons}>
+                    <button onClick={()=> {setCubeValue("showBottom"); console.log(cubeValue)}}>Speaking</button>
+                    <button onClick={()=> {setCubeValue("showBack"); console.log(cubeValue)}}>Writing</button>
+                    <button onClick={()=> {setCubeValue("showTop"); console.log(cubeValue)}}>Conversation</button>
+                </div>
             <div className={styles.teacerClassesVideos}>
-                <h3>Some examples of my classes</h3>
-                <div className={styles.classVideo}>
-                    <h3>Speaking</h3>
+                {/* <h3>Some examples of my classes</h3> */}
+                <div className={styles.cube}
+                 id={cubeValue === "showTop"? styles.showTop:
+                    cubeValue=== "showBack"? styles.showBack: styles.showBottom}>
+                <div className={styles.cubeSideFront}>
+                    {/* <h3>Speaking</h3>
+                     <p>front</p> 
                     <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824864/thinkthaithai/speaking_chsr3p.mp4"
                         controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
-                    </video>
+                    </video>  */}
+                    <Image src='/temple.webp' width='400px' height='400px' alt='A picture of teacher Nat'></Image>
                 </div>
-                <div className={styles.classVideo}>
+                <div className={styles.cubeSideRight}>
+                <Image src='/beach.webp' width='400px' height='400px' alt='A picture of teacher Nat'></Image>
+                </div>
+                <div className={styles.cubeSideBack}>
                     <h3>Writing</h3>
+                    {/* <p>back</p> */}
                     <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824840/thinkthaithai/Reading_wofifh.mp4"
                         controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
                     </video>
                 </div>
-                <div className={styles.classVideo}>
+                
+                <div className={styles.cubeSideLeft}>
+                <Image src='/group.webp' width='400px' height='400px' alt='A picture of teacher Nat'></Image>
+                </div>
+                <div className={styles.cubeSideTop}>
                     <h3>Conversation</h3>
+                    {/* <p>top</p> */}
                     <video src="/videos/conversation2.mp4" controls height='' width='280'
                         loading="lazy" allowFullScreen="" frameBorder="0">
                     </video>
                 </div>
+                <div className={styles.cubeSideBottom}>
+                {/* <Image src='/temple.webp' width='400px' height='400px' alt='A picture of teacher Nat'></Image> */}
+                <h3>Speaking</h3>
+                    {/* <p>front</p> */}
+                    <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824864/thinkthaithai/speaking_chsr3p.mp4"
+                        controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
+                    </video>
+                </div>
+
+                </div>
+            </div>
+            </div>
             </div>
             <h1 className={styles.blogTitle}>My instagram posts</h1>
             {data.map((post, index) => (
