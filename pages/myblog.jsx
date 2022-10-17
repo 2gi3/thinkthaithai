@@ -3,7 +3,7 @@ import styles from '../styles/myblog.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import useToggle from '../functions/useToggle'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 export const getStaticProps = async () => {
     const instagramToken = process.env.I_KEY
@@ -24,13 +24,15 @@ const MyBlog = ({ feed }) => {
     const [cubeValue, setCubeValue] = useState("showBottom")
     const carouselCellWidth = 100
     const carouselLength = 9
-    const [carouselIndex, setCarouselIndex] = useState(1);
+    const carouselIndex = useRef(0)
     const [carouselAngle, setCarouselAngle] = useState("")
 
-    const rotateCarousel =async () => {
-        let angle = carouselIndex / carouselLength * -360;
-        console.log(angle)
+    
+    const rotateCarousel = async () => {
+        console.log(carouselIndex)
+        let angle = carouselIndex.current / carouselLength * -360;
         await setCarouselAngle(angle)
+
     }
 
     const carouselCalculateTranslateZ = (cellSize, numberOfCells) => {
@@ -39,6 +41,7 @@ const MyBlog = ({ feed }) => {
     }
     //instead of carouselCellWidth must use the cell with from .instagramCarouselCell in CSS (because the container is wider than the video)
     // console.log(carouselCalculateTranslateZ(120, carouselLength))
+   
 
     return (
         <div className={styles.blogContainer}>
@@ -157,14 +160,20 @@ const MyBlog = ({ feed }) => {
             </div>
             <h1 className={styles.blogTitle}>My instagram posts</h1>
             <div className={styles.scene__buttons} id={styles.scene__buttonsCarousel}>
-            <button className={styles.scene__buttonOff}
-                    onClick={() => {setCarouselIndex(index => index - 1); rotateCarousel();  console.log(carouselIndex) }}
+                <button className={styles.scene__buttonOff}
+                    onClick={() => {
+                         carouselIndex.current = carouselIndex.current - 1; rotateCarousel();
+                        console.log(carouselIndex)
+                    }}
                 >
                     Previous
                 </button>
                 <button
-                    className={value === false ? styles.scene__buttonOn : styles.scene__buttonOff}
-                    onClick={() => {setCarouselIndex(index => index + 1); rotateCarousel(); console.log(carouselIndex) }}
+                    className={styles.scene__buttonOff}
+                    onClick={() => {
+                         carouselIndex.current = carouselIndex.current + 1; rotateCarousel();
+                        console.log(carouselIndex)
+                    }}
                 >
                     Next
                 </button>

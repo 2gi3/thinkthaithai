@@ -297,20 +297,24 @@ $carousel__cell-width: 165px;
         text-align: center;
     }
 
-    #scene__buttonsCarousel{
+    #scene__buttonsCarousel {
         width: 100%;
         text-align: center;
         justify-content: center;
-        button{
-            max-width: 137px;
+
+        button {
+            max-width: 141px;
         }
     }
+
     .InstagramScene {
-        border: 1px solid #CCC;
+        border: 2px solid $primaryColor;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
         position: relative;
-        width: 280px;
-        height: 180px;
-        margin: -10px auto 40px auto;
+        width: 290px;
+        height: 198px;
+        margin: -20px auto 40px auto;
         perspective: 1000px;
 
 
@@ -319,7 +323,7 @@ $carousel__cell-width: 165px;
             height: 100%;
             // background-color: red;
             position: absolute;
-            left: -20px;
+            left: -12px;
             transform: translateZ(-$carousel__cell-width);
             transform-style: preserve-3d;
             transition: transform 1s;
