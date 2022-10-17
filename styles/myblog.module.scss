@@ -1,4 +1,5 @@
 @use "styles" as *;
+$carousel__cell-width: 165px;
 
 .blogContainer {
     display: flex;
@@ -18,282 +19,387 @@
         }
     }
 
-    .topContainer{
-    .startLearning {
-        margin: 20px auto;
-        // border: 1px solid $primaryColor;
-        padding: 10px 0;
+    .scene__buttons {
+        margin: auto;
+        width: 275px;
+        height: 50px;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+        margin-bottom: 2px;
+        ;
+    }
 
-        h2 {
-            width: 100%;
-            text-align: center;
+    .scene__buttonOn,
+    .scene__buttonOff {
+        all: unset;
+        width: 50%;
+        height: 100%;
+        border-radius: 10px 10px 0 0;
+        border: 2px solid $primaryColor;
+        border-bottom: none;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .scene__buttonOn {
+        background-color: $primaryColor;
+    }
+
+    .topContainer {
+        .startLearning {
+            margin: 20px auto;
+            // border: 1px solid $primaryColor;
+            padding: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            h2 {
+                width: 100%;
+                text-align: center;
+            }
+
+            h4 {
+                width: 100%;
+                text-align: center;
+            }
+
+            .startLearningVideos {
+                width: 100%;
+                // display: flex;
+                // flex-wrap: wrap;
+                // justify-content: space-evenly;
+
+                // .scene__buttons {
+                //     margin: auto;
+                //     width: 275px;
+                //     height: 50px;
+                //     display: flex;
+                //     margin-bottom: 2px;
+                //     ;
+                // }
+
+                // .scene__buttonOn,
+                // .scene__buttonOff {
+                //     all: unset;
+                //     width: 50%;
+                //     height: 100%;
+                //     border-radius: 10px 10px 0 0;
+                //     border: 2px solid $primaryColor;
+                //     border-bottom: none;
+                //     text-align: center;
+                //     cursor: pointer;
+                // }
+
+                // .scene__buttonOn {
+                //     background-color: $primaryColor;
+                // }
+
+
+                .scene {
+                    margin: auto;
+                    width: 100%;
+                    height: 224px;
+                    perspective: 600px;
+                    width: 275px;
+                    border: 2px solid $primaryColor;
+                    border-top: none;
+                    border-radius: 0 0 10px 10px;
+                    // background: radial-gradient(circle, $secondaryColor 0%, rgba(0,0,0,0) 60%);
+
+                    #scene__objectFlip {
+                        transform: translateX(-100%) rotateY(-180deg);
+                    }
+
+                    .scene__object {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 275px;
+                        margin: auto;
+                        height: 100%;
+                        cursor: pointer;
+                        transform-style: preserve-3d;
+                        transform-origin: center right;
+                        transition: transform 1050ms ease-in-out 100ms;
+
+                        .scene__objectVideo1 {
+                            position: absolute;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: min-content;
+                            line-height: 260px;
+                            color: white;
+                            text-align: center;
+                            font-weight: bold;
+                            font-size: 40px;
+                            backface-visibility: hidden;
+                            transform: rotateY(180deg);
+                            padding: 10px 0;
+
+                        }
+
+                        .scene__objectVideo2 {
+                            position: absolute;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: min-content;
+                            line-height: 260px;
+                            color: white;
+                            text-align: center;
+                            font-weight: bold;
+                            font-size: 40px;
+                            backface-visibility: hidden;
+                            // border: 2px solid $secondaryColor;
+                            padding: 15px 0;
+                        }
+
+
+
+                    }
+                }
+            }
         }
 
-        h4 {
-            width: 100%;
-            text-align: center;
-        }
+        .teacerClassesVideosContainer {
+            width: 275px;
+            margin: 40px auto;
 
-        .startLearningVideos {
-            width: 100%;
-            // display: flex;
-            // flex-wrap: wrap;
-            // justify-content: space-evenly;
-
-            .scene__buttons {
-                margin: auto;
-                width: 275px;
+            .cubeButtons {
+                // margin: auto;
+                width: 100%;
                 height: 50px;
                 display: flex;
                 margin-bottom: 2px;
-                ;
+
+                button {
+                    all: unset;
+                    margin-bottom: 2px;
+                    width: inherit;
+                    height: 100%;
+                    border-radius: 10px 10px 0 0;
+                    border: 2px solid $primaryColor;
+                    border-bottom: none;
+                    text-align: center;
+                    cursor: pointer;
+                }
             }
 
-            .scene__buttonOn,
-            .scene__buttonOff {
-                all: unset;
-                width: 50%;
-                height: 100%;
-                border-radius: 10px 10px 0 0;
-                border: 2px solid $primaryColor;
-                border-bottom: none;
-                text-align: center;
-                cursor: pointer;
-            }
-
-            .scene__buttonOn {
-                background-color: $primaryColor;
-            }
-
-
-            .scene {
-                margin: auto;
-                width: 100%;
-                height: 224px;
-                perspective: 600px;
+            .teacerClassesVideos {
                 width: 275px;
-                border: 2px solid $primaryColor;
+                height: 275px;
+                perspective: 600px;
                 border-top: none;
                 border-radius: 0 0 10px 10px;
-                // background: radial-gradient(circle, $secondaryColor 0%, rgba(0,0,0,0) 60%);
 
-                #scene__objectFlip {
-                    transform: translateX(-100%) rotateY(-180deg);
-                }
-
-                .scene__object {
-                    position: relative;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 275px;
-                    margin: auto;
-                    height: 100%;
-                    cursor: pointer;
-                    transform-style: preserve-3d;
-                    transform-origin: center right;
-                    transition: transform 1050ms ease-in-out 100ms;
-
-                    .scene__objectVideo1 {
-                        position: absolute;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 100%;
-                        height: min-content;
-                        line-height: 260px;
-                        color: white;
-                        text-align: center;
-                        font-weight: bold;
-                        font-size: 40px;
-                        backface-visibility: hidden;
-                        transform: rotateY(180deg);
-                        padding: 10px 0;
-
-                    }
-
-                    .scene__objectVideo2 {
-                        position: absolute;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 100%;
-                        height: min-content;
-                        line-height: 260px;
-                        color: white;
-                        text-align: center;
-                        font-weight: bold;
-                        font-size: 40px;
-                        backface-visibility: hidden;
-                        // border: 2px solid $secondaryColor;
-                        padding: 15px 0;
-                    }
-
-
-
-                }
-            }
-        }
-    }
-
-    .teacerClassesVideosContainer {
-        width: 275px;
-        margin: 40px auto;
-        .cubeButtons {
-            // margin: auto;
-            width: 100%;
-            height: 50px;
-            display: flex;
-            margin-bottom: 2px;
-
-            button {
-                all: unset;
-                margin-bottom: 2px;
-                width: inherit;
-                height: 100%;
-                border-radius: 10px 10px 0 0;
-                border: 2px solid $primaryColor;
-                border-bottom: none;
-                text-align: center;
-                cursor: pointer;
-            }
-        }
-
-        .teacerClassesVideos {
-            width: 275px;
-            height: 275px;
-            perspective: 600px;
-            border-top: none;
-            border-radius: 0 0 10px 10px;
-
-            h3 {
-                width: 100%;
-                margin-bottom: 0;
-                text-align: center;
-                margin-top: 38px;
-            }
-
-            .cube {
-                width: 100%;
-                height: 100%;
-                position: relative;
-                transform-style: preserve-3d;
-                transform: translateZ(-135px);
-                transition: transform 3s;
-            }
-
-            .cubeSideFront,
-            .cubeSideRight,
-            .cubeSideBack,
-            .cubeSideLeft,
-            .cubeSideTop,
-            .cubeSideBottom {
-                position: absolute;
-                // border: 2px solid black;
-                // line-height: 200px;
-                // font-size: 40px;
-                font-weight: bold;
-                // color: white;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                height: 100%;
-                width: 100%;
-
-                video {
+                h3 {
                     width: 100%;
+                    margin-bottom: 0;
+                    text-align: center;
+                    margin-top: 38px;
                 }
-            }
 
-            .cubeSideFront {
-                transform: rotateY(0deg) translateZ(135px);
-                background-color: $primaryColor;
-            }
+                .cube {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    transform-style: preserve-3d;
+                    transform: translateZ(-135px);
+                    transition: transform 3s;
+                }
 
-            .cubeSideRight {
-                transform: rotateY(90deg) translateZ(135px);
-                background-color: $primaryColor;
-            }
+                .cubeSideFront,
+                .cubeSideRight,
+                .cubeSideBack,
+                .cubeSideLeft,
+                .cubeSideTop,
+                .cubeSideBottom {
+                    position: absolute;
+                    // border: 2px solid black;
+                    // line-height: 200px;
+                    // font-size: 40px;
+                    font-weight: bold;
+                    // color: white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
 
-            .cubeSideBack {
-                transform: rotateY(180deg) translateZ(135px);
-                background-color: $secondaryColor;
-            }
+                    video {
+                        width: 100%;
+                    }
+                }
 
-            .cubeSideLeft {
-                transform: rotateY(-90deg) translateZ(135px);
-                background-color: $secondaryColor;
-            }
+                .cubeSideFront {
+                    transform: rotateY(0deg) translateZ(135px);
+                    background-color: $primaryColor;
+                }
 
-            .cubeSideTop {
-                transform: rotateX(90deg) translateZ(135px);
-                background-color: $primaryColor;
-            }
+                .cubeSideRight {
+                    transform: rotateY(90deg) translateZ(135px);
+                    background-color: $primaryColor;
+                }
 
-            .cubeSideBottom {
-                transform: rotateX(-90deg) translateZ(135px);
-                background-color: $primaryColor;
-            }
+                .cubeSideBack {
+                    transform: rotateY(180deg) translateZ(135px);
+                    background-color: $secondaryColor;
+                }
 
-            .cube#showFront {
-                transform: translateZ(-135px) rotateY(0deg);
-            }
+                .cubeSideLeft {
+                    transform: rotateY(-90deg) translateZ(135px);
+                    background-color: $secondaryColor;
+                }
 
-            .cube#showRight {
-                transform: translateZ(-135px) rotateY(-90deg);
-            }
+                .cubeSideTop {
+                    transform: rotateX(90deg) translateZ(135px);
+                    background-color: $primaryColor;
+                }
 
-            .cube#showBack {
-                transform: translateZ(-135px) rotateY(-180deg);
-            }
+                .cubeSideBottom {
+                    transform: rotateX(-90deg) translateZ(135px);
+                    background-color: $primaryColor;
+                }
 
-            .cube#showLeft {
-                transform: translateZ(-135px) rotateY(90deg);
-            }
+                .cube#showFront {
+                    transform: translateZ(-135px) rotateY(0deg);
+                }
 
-            .cube#showTop {
-                transform: translateZ(-135px) rotateX(-90deg);
-            }
+                .cube#showRight {
+                    transform: translateZ(-135px) rotateY(-90deg);
+                }
 
-            .cube#showBottom {
-                transform: translateZ(-135px) rotateX(90deg);
+                .cube#showBack {
+                    transform: translateZ(-135px) rotateY(-180deg);
+                }
+
+                .cube#showLeft {
+                    transform: translateZ(-135px) rotateY(90deg);
+                }
+
+                .cube#showTop {
+                    transform: translateZ(-135px) rotateX(-90deg);
+                }
+
+                .cube#showBottom {
+                    transform: translateZ(-135px) rotateX(90deg);
+                }
             }
         }
     }
-}
 
     .blogTitle {
         width: 100%;
         text-align: center;
     }
 
-    .blogVideoContainer {
-        height: 200px;
-        width: 120px;
-        display: flex;
+    #scene__buttonsCarousel{
+        width: 100%;
+        text-align: center;
         justify-content: center;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-
-        &:hover {
-            overflow: visible;
+        button{
+            max-width: 137px;
         }
+    }
+    .InstagramScene {
+        border: 1px solid #CCC;
+        position: relative;
+        width: 280px;
+        height: 180px;
+        margin: -10px auto 40px auto;
+        perspective: 1000px;
 
-        .blogVideo {
-            height: 200px;
 
-            &:hover {
+        .instagramCarousel {
+            width: 100%;
+            height: 100%;
+            // background-color: red;
+            position: absolute;
+            left: -20px;
+            transform: translateZ(-$carousel__cell-width);
+            transform-style: preserve-3d;
+            transition: transform 1s;
+
+            .instagramCarouselCell {
                 position: absolute;
-                z-index: 1;
-                height: 400px;
-                max-height: 80vh;
+                width: 120px;
+                height: 156px;
+                left: 97px;
+                top: 10px;
+                // background-color: rgb(238, 255, 0);
+                line-height: 116px;
+                font-size: 80px;
+                font-weight: bold;
+                color: white;
+                text-align: center;
+
+                &:nth-child(1) {
+                    transform: rotateY(0deg) translateZ($carousel__cell-width);
+                }
+
+                &:nth-child(2) {
+                    transform: rotateY(40deg) translateZ($carousel__cell-width);
+                }
+
+                &:nth-child(3) {
+                    transform: rotateY(80deg) translateZ($carousel__cell-width);
+                }
+
+                &:nth-child(4) {
+                    transform: rotateY(120deg) translateZ($carousel__cell-width);
+                }
+
+                &:nth-child(5) {
+                    transform: rotateY(160deg) translateZ($carousel__cell-width);
+                }
+
+                &:nth-child(6) {
+                    transform: rotateY(200deg) translateZ($carousel__cell-width);
+                }
+
+                &:nth-child(7) {
+                    transform: rotateY(240deg) translateZ($carousel__cell-width);
+                }
+
+                &:nth-child(8) {
+                    transform: rotateY(280deg) translateZ($carousel__cell-width);
+                }
+
+                &:nth-child(9) {
+                    transform: rotateY(320deg) translateZ($carousel__cell-width);
+                }
             }
         }
     }
+
+    // .blogVideoContainer {
+    //     height: 200px;
+    //     width: 120px;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     position: relative;
+    //     overflow: hidden;
+
+    //     &:hover {
+    //         overflow: visible;
+    //     }
+
+    //     .blogVideo {
+    //         height: 200px;
+
+    //         &:hover {
+    //             position: absolute;
+    //             z-index: 1;
+    //             height: 400px;
+    //             max-height: 80vh;
+    //         }
+    //     }
+    // }
 }
 
 @media all and (min-width: 769px) {
@@ -305,17 +411,20 @@
         .blogVideoContainer {
             min-width: 250px;
         }
-        .topContainer{
+
+        .topContainer {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
             align-items: flex-end;
-            h2{
+
+            h2 {
                 width: 100%;
                 text-align: center;
             }
-            .startLearning{
-                .startLearningVideos{
+
+            .startLearning {
+                .startLearningVideos {
                     height: 372px;
                 }
             }
