@@ -80,7 +80,7 @@ const SingleStudent = () => {
                 const JWT = sessionStorage.getItem('token')
                 const res = await fetch(
                     // 'http://thinkthaithai.vercel.app/api/students'
-                    `https://www.thikthaithai.com/api/students/${studentId}`
+                    `https://www.thinkthaithai.com/api/students/${studentId}`
                     ,
                     {
                         method: 'GET',

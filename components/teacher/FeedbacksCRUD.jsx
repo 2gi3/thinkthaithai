@@ -39,7 +39,7 @@ const FeedbacksCRUD = () => {
         }
         )
        
-        fetch("https://www.thikthaithai.com/api/feedbacks", {
+        fetch("https://www.thinkthaithai.com/api/feedbacks", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

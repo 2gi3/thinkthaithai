@@ -22,7 +22,7 @@ const NewStudentForm = () => {
             password
         })
         // console.log(userData)
-        fetch("https://www.thikthaithai.com/api/students", {
+        fetch("https://www.thinkthaithai.com/api/students", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
