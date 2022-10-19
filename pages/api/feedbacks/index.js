@@ -65,8 +65,8 @@ export default async (req, res) => {
                             // }
                         }
                     );
-                    const student = await Feedback.create(body);
-                    res.status(201).json({ success: true, data: student });
+                    const feedback = await Feedback.create(body);
+                    res.status(201).json({ success: true, data: feedback });
                     // });  
                     // part 3/3 of route authorisation start    
                 } else {
