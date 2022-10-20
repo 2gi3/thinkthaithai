@@ -11,21 +11,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://www.thinkthaithai.com/api/feedbacks', 
-  {
-    method: 'GET',
-    headers:{
-  // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOiI2MzE5N2JlMjk2NGIwN2I2ODkwYTQ0ZjciLCJpYXQiOjE2NjI2MTQ1MzEsImV4cCI6MTY2MjcwMDkzMX0.71pv30-6bcG8xvYT8U3azxSrYeDkKyjAieUR0SjNlCA"
-  }}
+  const res = await fetch('https://www.thinkthaithai.com/api/feedbacks',
+    {
+      method: 'GET',
+      headers: {
+        // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOiI2MzE5N2JlMjk2NGIwN2I2ODkwYTQ0ZjciLCJpYXQiOjE2NjI2MTQ1MzEsImV4cCI6MTY2MjcwMDkzMX0.71pv30-6bcG8xvYT8U3azxSrYeDkKyjAieUR0SjNlCA"
+      }
+    }
   );
-  const rawData= await res.json();
+  const rawData = await res.json();
   const data = rawData.data
   console.log(data)
 
   return { props: { data } }
 }
 
-export default function Home({data}) {
+export default function Home({ data }) {
   const [value, toggleValue] = useToggle(false)
 
   // --Start-- Function and options object to pass in the intersectionObserver inside useEffect
@@ -187,75 +188,25 @@ export default function Home({data}) {
           </div>
         </div>
         <div className={styles.students}>
-        <h3 className={styles.studentsTitle}> What my students say about me </h3>
-
-
-        {data.map( (feedback, index) => 
-        index < 3 ?
-        <div key={feedback._id} className={styles.feedback}>
-          <div className={styles.feedbackPicture}>
-          <Image src={feedback.imageUrl} width='100' height='100' alt='The picture of a student' />
-        </div>
-           <div className={styles.feedbackText}>
-          <h3 className={styles.feedbackHeader}>{feedback.feedbackTitle}</h3>
-          <p className={styles.feedbackBody}>
-            {feedback.content}
-          </p>
-          <p className={styles.feedbackFooter}>
-            {feedback.studentName}, {feedback.studentJob} <br/> {feedback.studentLocation}.
-          </p>
-        </div>
-        </div> 
-        : <></>
-      )}  
-
-
-          {/* <div className={styles.feedback}>
-            <div className={styles.feedbackPicture}>
-              <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />
-            </div>
-            <div className={styles.feedbackText}>
-              <h3 className={styles.feedbackHeader}>So Much Fun</h3>
-              <p className={styles.feedbackBody}>&quot;Kap khoon ka! Thank you Natt, I had so much fun! Your lesson structure was very neat and useful,
-                and it was very relevant! I feel like I’m ready to visit Thailand now! 😍&quot;
-              </p>
-              <p className={styles.feedbackFooter}>
-                Shanen Li Student, Hong Kong
-              </p>
-            </div>
-          </div> */}
-          {/* <div className={styles.feedback}>
-            <div className={styles.feedbackPicture}>
-              <Image src='/students/saru.png' width='100' height='100' alt='The picture of a student' />
-            </div>
-            <div className={styles.feedbackText}>
-              <h3 className={styles.feedbackHeader}>I totally recommend her lessons</h3>
-              <p className={styles.feedbackBody}>&quot;Great lesson! Natt’s class was very cozy and relaxed, she is so friendly and
-                easy to talk to, but she also prepared really nice materials with a clear and systematic structure,
-                that covered vocabulary, expressions and dialogues. Also, she sent me the pronunciation for me to practice
-                and gave me meaningful homework. During the lesson we practiced pronunciation, talked about the uses,
-                and she let me build my own examples. I totally recommend her lessons!&quot;
-              </p>
-              <p className={styles.feedbackFooter}>
-                Saru Salvador, Spanish Teacher, Germany
-              </p>
-            </div>
-          </div> */}
-          {/* <div className={styles.feedback}>
-            <div className={styles.feedbackPicture}>
-              <Image className={styles.feedbackPicture} src='/students/Emily_.jpg' width='100' height='100' alt='The picture of a student' />
-            </div>
-            <div className={styles.feedbackText}>
-              <h3 className={styles.feedbackHeader}>Very kind teacher</h3>
-              <p className={styles.feedbackBody}> &quot;Natt is a very kind teacher who taught me pronunciation practice patiently.
-                Let me to improve after each class. Before teaching a new vowel, Natt would help me review what I had
-                learned to strengthen my memory. Thanks, teacher Natt.&quot;
-              </p>
-              <p className={styles.feedbackFooter}>
-                Emily Huang Accountant , Taiwan
-              </p>
-            </div>
-          </div> */}
+          <h3 className={styles.studentsTitle}> What my students say about me </h3>
+          {data.map((feedback, index) =>
+            index < 3 ?
+              <div key={feedback._id} className={styles.feedback}>
+                <div className={styles.feedbackPicture}>
+                  <Image src={feedback.imageUrl} width='100' height='100' alt='The picture of a student' />
+                </div>
+                <div className={styles.feedbackText}>
+                  <h3 className={styles.feedbackHeader}>{feedback.feedbackTitle}</h3>
+                  <p className={styles.feedbackBody}>
+                    {feedback.content}
+                  </p>
+                  <p className={styles.feedbackFooter}>
+                    {feedback.studentName}, {feedback.studentJob} <br /> {feedback.studentLocation}.
+                  </p>
+                </div>
+              </div>
+              : <></>
+          )}
         </div>
       </div>
       <div className={styles.pricingContainer}>
