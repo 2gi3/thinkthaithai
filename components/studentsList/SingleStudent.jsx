@@ -20,7 +20,7 @@ const SingleStudent = () => {
             password: student.password
         })
         // console.log(userData)
-        fetch(`https://www.thikthaithai.com/api/students/${id}`, {
+        fetch(`https://www.thinkthaithai.com/api/students/${id}`, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -51,7 +51,7 @@ const SingleStudent = () => {
         //     password: student.password
         // })
         // console.log(userData)
-        fetch(`https://www.thikthaithai.com/api/students/${id}`, {
+        fetch(`https://www.thinkthaithai.com/api/students/${id}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',

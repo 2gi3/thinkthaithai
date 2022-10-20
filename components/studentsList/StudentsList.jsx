@@ -14,7 +14,6 @@ const StudentsList = () => {
             const fetchData = async () => {
                 const JWT = sessionStorage.getItem('token')
                 const res = await fetch(
-                    // 'http://thinkthaithai.vercel.app/api/students'
                     'https://www.thinkthaithai.com/api/students'
                     ,
                     {
