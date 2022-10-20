@@ -10,7 +10,22 @@ import useToggle from '../functions/useToggle'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const res = await fetch('https://www.thinkthaithai.com/api/feedbacks', 
+  {
+    method: 'GET',
+    headers:{
+  // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOiI2MzE5N2JlMjk2NGIwN2I2ODkwYTQ0ZjciLCJpYXQiOjE2NjI2MTQ1MzEsImV4cCI6MTY2MjcwMDkzMX0.71pv30-6bcG8xvYT8U3azxSrYeDkKyjAieUR0SjNlCA"
+  }}
+  );
+  const rawData= await res.json();
+  const data = rawData.data
+  console.log(data)
+
+  return { props: { data } }
+}
+
+export default function Home({data}) {
   const [value, toggleValue] = useToggle(false)
 
   // --Start-- Function and options object to pass in the intersectionObserver inside useEffect
@@ -172,8 +187,30 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.students}>
-          <h3 className={styles.studentsTitle}> What my students say about me </h3>
-          <div className={styles.feedback}>
+        <h3 className={styles.studentsTitle}> What my students say about me </h3>
+
+
+        {data.map( (feedback, index) => 
+        index < 3 ?
+        <div key={feedback._id} className={styles.feedback}>
+          <div className={styles.feedbackPicture}>
+          <Image src={feedback.imageUrl} width='100' height='100' alt='The picture of a student' />
+        </div>
+           <div className={styles.feedbackText}>
+          <h3 className={styles.feedbackHeader}>{feedback.feedbackTitle}</h3>
+          <p className={styles.feedbackBody}>
+            {feedback.content}
+          </p>
+          <p className={styles.feedbackFooter}>
+            {feedback.studentName}, {feedback.studentJob} <br/> {feedback.studentLocation}.
+          </p>
+        </div>
+        </div> 
+        : <></>
+      )}  
+
+
+          {/* <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
               <Image src='/students/Shannen Li_HK.png' width='100' height='100' alt='The picture of a student' />
             </div>
@@ -186,8 +223,8 @@ export default function Home() {
                 Shanen Li Student, Hong Kong
               </p>
             </div>
-          </div>
-          <div className={styles.feedback}>
+          </div> */}
+          {/* <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
               <Image src='/students/saru.png' width='100' height='100' alt='The picture of a student' />
             </div>
@@ -203,8 +240,8 @@ export default function Home() {
                 Saru Salvador, Spanish Teacher, Germany
               </p>
             </div>
-          </div>
-          <div className={styles.feedback}>
+          </div> */}
+          {/* <div className={styles.feedback}>
             <div className={styles.feedbackPicture}>
               <Image className={styles.feedbackPicture} src='/students/Emily_.jpg' width='100' height='100' alt='The picture of a student' />
             </div>
@@ -218,7 +255,7 @@ export default function Home() {
                 Emily Huang Accountant , Taiwan
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={styles.pricingContainer}>

@@ -65,32 +65,7 @@ const feedbacks = ({ data }) => {
           </p>
         </div>
         </div>
-      )}     
-      <div className={styles.feedback}>
-        <div className={styles.feedbackPicture}>
-          <Image className={styles.feedbackPicture} src='/students/jojo3.1.jpg' width='100' height='100' alt='The picture of a student' />
-        </div>
-        <div className={styles.feedbackText}>
-          <p className={styles.feedbackBody}>kruu Natt is a very talkative, passionate nice person. She is very good in Thai and English.
-            I learned a lot from her about thai speaking. I enjoy every lesson with Kruu Natt very much.
-          </p>
-          <p className={styles.feedbackFooter}>
-            Jo Jo Sales manager, Hong Kong.
-          </p>
-        </div>
-      </div>
-      <div className={styles.feedback}>
-        <div className={styles.feedbackPicture}>
-          <Image className={styles.feedbackPicture} src='/students/Chi_Hui_Malysia.jpg' width='100' height='100' alt='The picture of a student' />
-        </div>
-        <div className={styles.feedbackText}>
-          <p className={styles.feedbackBody}>Natt is very friendly , I like her teaching style which makes the lesson relaxed and enjoyable!
-          </p>
-          <p className={styles.feedbackFooter}>
-            Chi Hui, student, Malaysia.
-          </p>
-        </div>
-      </div>
+      )}    
       <div className={styles.feedback}>
         <div className={styles.feedbackPicture}>
             <Image className={styles.feedbackPicture} src='/joner.PNG' width='100' height='100' alt='The picture of a student' />
