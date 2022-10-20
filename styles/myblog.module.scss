@@ -1,5 +1,6 @@
 @use "styles" as *;
 $carousel__cell-width: 165px;
+$cube-translateZ: 137px;
 
 .blogContainer {
     display: flex;
@@ -47,7 +48,6 @@ $carousel__cell-width: 165px;
     .topContainer {
         .startLearning {
             margin: 20px auto;
-            // border: 1px solid $primaryColor;
             padding: 10px 0;
             display: flex;
             flex-wrap: wrap;
@@ -65,35 +65,6 @@ $carousel__cell-width: 165px;
 
             .startLearningVideos {
                 width: 100%;
-                // display: flex;
-                // flex-wrap: wrap;
-                // justify-content: space-evenly;
-
-                // .scene__buttons {
-                //     margin: auto;
-                //     width: 275px;
-                //     height: 50px;
-                //     display: flex;
-                //     margin-bottom: 2px;
-                //     ;
-                // }
-
-                // .scene__buttonOn,
-                // .scene__buttonOff {
-                //     all: unset;
-                //     width: 50%;
-                //     height: 100%;
-                //     border-radius: 10px 10px 0 0;
-                //     border: 2px solid $primaryColor;
-                //     border-bottom: none;
-                //     text-align: center;
-                //     cursor: pointer;
-                // }
-
-                // .scene__buttonOn {
-                //     background-color: $primaryColor;
-                // }
-
 
                 .scene {
                     margin: auto;
@@ -123,24 +94,7 @@ $carousel__cell-width: 165px;
                         transform-origin: center right;
                         transition: transform 1050ms ease-in-out 100ms;
 
-                        .scene__objectVideo1 {
-                            position: absolute;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: 100%;
-                            height: min-content;
-                            line-height: 260px;
-                            color: white;
-                            text-align: center;
-                            font-weight: bold;
-                            font-size: 40px;
-                            backface-visibility: hidden;
-                            transform: rotateY(180deg);
-                            padding: 10px 0;
-
-                        }
-
+                        .scene__objectVideo1,
                         .scene__objectVideo2 {
                             position: absolute;
                             display: flex;
@@ -154,8 +108,12 @@ $carousel__cell-width: 165px;
                             font-weight: bold;
                             font-size: 40px;
                             backface-visibility: hidden;
-                            // border: 2px solid $secondaryColor;
-                            padding: 15px 0;
+                            padding: 10px 0;
+
+                        }
+
+                        .scene__objectVideo1 {
+                            transform: rotateY(180deg);
                         }
 
 
@@ -208,9 +166,8 @@ $carousel__cell-width: 165px;
                     height: 100%;
                     position: relative;
                     transform-style: preserve-3d;
-                    transform: translateZ(-135px);
-                    transition: transform 3s;
-                }
+                    transform: translateZ(-$cube-translateZ);
+                    transition: transform 1050ms ease-in-out 100ms;                }
 
                 .cubeSideFront,
                 .cubeSideRight,
@@ -219,11 +176,7 @@ $carousel__cell-width: 165px;
                 .cubeSideTop,
                 .cubeSideBottom {
                     position: absolute;
-                    // border: 2px solid black;
-                    // line-height: 200px;
-                    // font-size: 40px;
                     font-weight: bold;
-                    // color: white;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -236,57 +189,57 @@ $carousel__cell-width: 165px;
                 }
 
                 .cubeSideFront {
-                    transform: rotateY(0deg) translateZ(135px);
+                    transform: rotateY(0deg) translateZ($cube-translateZ);
                     background-color: $primaryColor;
                 }
 
                 .cubeSideRight {
-                    transform: rotateY(90deg) translateZ(135px);
+                    transform: rotateY(90deg) translateZ($cube-translateZ);
                     background-color: $primaryColor;
                 }
 
                 .cubeSideBack {
-                    transform: rotateY(180deg) translateZ(135px);
+                    transform: rotateY(180deg) translateZ($cube-translateZ);
                     background-color: $secondaryColor;
                 }
 
                 .cubeSideLeft {
-                    transform: rotateY(-90deg) translateZ(135px);
+                    transform: rotateY(-90deg) translateZ($cube-translateZ);
                     background-color: $secondaryColor;
                 }
 
                 .cubeSideTop {
-                    transform: rotateX(90deg) translateZ(135px);
+                    transform: rotateX(90deg) translateZ($cube-translateZ);
                     background-color: $primaryColor;
                 }
 
                 .cubeSideBottom {
-                    transform: rotateX(-90deg) translateZ(135px);
+                    transform: rotateX(-90deg) translateZ($cube-translateZ);
                     background-color: $primaryColor;
                 }
 
                 .cube#showFront {
-                    transform: translateZ(-135px) rotateY(0deg);
+                    transform: translateZ(-$cube-translateZ) rotateY(0deg);
                 }
 
                 .cube#showRight {
-                    transform: translateZ(-135px) rotateY(-90deg);
+                    transform: translateZ(-$cube-translateZ) rotateY(-90deg);
                 }
 
                 .cube#showBack {
-                    transform: translateZ(-135px) rotateY(-180deg);
+                    transform: translateZ(-$cube-translateZ) rotateY(-180deg);
                 }
 
                 .cube#showLeft {
-                    transform: translateZ(-135px) rotateY(90deg);
+                    transform: translateZ(-$cube-translateZ) rotateY(90deg);
                 }
 
                 .cube#showTop {
-                    transform: translateZ(-135px) rotateX(-90deg);
+                    transform: translateZ(-$cube-translateZ) rotateX(-90deg);
                 }
 
                 .cube#showBottom {
-                    transform: translateZ(-135px) rotateX(90deg);
+                    transform: translateZ(-$cube-translateZ) rotateX(90deg);
                 }
             }
         }
@@ -334,7 +287,6 @@ $carousel__cell-width: 165px;
                 height: 156px;
                 left: 97px;
                 top: 10px;
-                // background-color: rgb(238, 255, 0);
                 line-height: 116px;
                 font-size: 80px;
                 font-weight: bold;
@@ -380,30 +332,7 @@ $carousel__cell-width: 165px;
         }
     }
 
-    // .blogVideoContainer {
-    //     height: 200px;
-    //     width: 120px;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     position: relative;
-    //     overflow: hidden;
-
-    //     &:hover {
-    //         overflow: visible;
-    //     }
-
-    //     .blogVideo {
-    //         height: 200px;
-
-    //         &:hover {
-    //             position: absolute;
-    //             z-index: 1;
-    //             height: 400px;
-    //             max-height: 80vh;
-    //         }
-    //     }
-    // }
+  
 }
 
 @media all and (min-width: 769px) {

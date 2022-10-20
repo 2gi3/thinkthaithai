@@ -82,18 +82,6 @@ const feedbacks = ({ data }) => {
       </div>
       <div className={styles.feedback}>
         <div className={styles.feedbackPicture}>
-          <Image className={styles.feedbackPicture} src='/students/Linsey_USA.jpg' width='100' height='100' alt='The picture of a student' />
-        </div>
-        <div className={styles.feedbackText}>
-          <p className={styles.feedbackBody}>Thank you Kru Natt. You are spectacular at helping me feel confident and able in my limited Thai language skills.
-            Thanks so much. Happy New Year to you and your family. </p>
-          <p className={styles.feedbackFooter}>
-            Lindsay, Expert Elderly care, USA.
-          </p>
-        </div>
-      </div>
-      <div className={styles.feedback}>
-        <div className={styles.feedbackPicture}>
           <Image className={styles.feedbackPicture} src='/students/amanda-1-100x100.jpg' width='100' height='100' alt='The picture of a student' />
         </div>
         <div className={styles.feedbackText}>
