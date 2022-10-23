@@ -14,44 +14,44 @@ const pricing = () => {
     return (<>
 
         <div className={styles.logo}>
-        <Head>
-        <title>ThinkThaiThai</title>
-        <meta name="description" content="Learn thai test" />
-        {/* <meta property="og:image" content="/1.png" /> */}
-        <meta property="og:url" content="https://www.thikthaithai.com/" />
-        <meta property="og:type" content="website" />
+            <Head>
+                <title>ThinkThaiThai</title>
+                <meta name="description" content="Learn thai test" />
+                {/* <meta property="og:image" content="/1.png" /> */}
+                <meta property="og:url" content="https://www.thikthaithai.com/" />
+                <meta property="og:type" content="website" />
 
-        <meta
-          property="og:title"
-          content="Learn Thai language!"
-        />
+                <meta
+                    property="og:title"
+                    content="Learn Thai language!"
+                />
 
-        <meta
-          property="og:description"
-          content="Explore the learning material and book a trial lesson"
-        />
+                <meta
+                    property="og:description"
+                    content="Explore the learning material and book a trial lesson"
+                />
 
-        <meta
-          property="og:image"
-          content={"https://www.thikthaithai.com/1.png"}
-        />
+                <meta
+                    property="og:image"
+                    content={"https://www.thikthaithai.com/1.png"}
+                />
 
-        <link rel="icon" href="/logo.webp" />
-      </Head>
+                <link rel="icon" href="/logo.webp" />
+            </Head>
             <h1>ThinkThaiThai</h1>
         </div>
         <div className={styles.lessonsInfo}>
             <div className={styles.normalLessons}>
                 <h3>Regular lessons</h3>
-            <p>
-                 Last 50 minutes, and you will receive homeworks and study material to prepare yourself for the next one.
-            </p>
+                <p>
+                    Last 50 minutes, and you will receive homeworks and study material to prepare yourself for the next one.
+                </p>
             </div>
             <div className={styles.trialLessons}>
                 <h3>Trial lessons</h3>
-            <p>
-                Last 25 minutes and are intended for new students.
-            </p>
+                <p>
+                    Last 25 minutes and are intended for new students.
+                </p>
             </div>
         </div>
         <div className={styles.pricingContainer}>
@@ -120,9 +120,9 @@ const pricing = () => {
                 {/* </button>  */}
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick" />
-                    <input type="hidden" name="hosted_button_id" value="UJFMQGSW7Z9TG" />
+                    <input type="hidden" name="hosted_button_id" value="M9WDJ2TJL3KQU" />
                     <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!" />
-                    <Image alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
                 </form>
 
             </div>
