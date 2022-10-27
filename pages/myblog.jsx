@@ -10,7 +10,6 @@ export const getStaticProps = async () => {
     // const URL = 'https://graph.instagram.com/me/media?fields=id,username,media_url,timestamp,media_type,permalink&access_token=IGQVJWbFBHNE5jTENuOXJDVlF4cjJOa0lnUUNQZA1pTeTdTN0NUZA3piS2ZACX3BIcTdsTmpDYWl5aUZAlc1gxaTcxcVJsQXB6eElENUdGR2RyNFExYVlmZAGR5eHRURndYUk5iN0ttT2kxN2RLWW1semRpTQZDZD'
     const res = await fetch(`https://graph.instagram.com/me/media?fields=id,caption,username,thumbnail_url,media_url,timestamp,media_type,permalink&access_token=${instagramToken}`);
     const feed = await res.json();
-    console.log(feed.data)
 
     return {
         props: { feed },
@@ -94,12 +93,12 @@ const MyBlog = ({ feed }) => {
                             <div className={styles.scene__object} id={value === false ? styles.scene__objectFlip : null}>
                                 <div className={styles.scene__objectVideo1} >
                                     <iframe src="https://drive.google.com/file/d/1djizhCmnKYSYVg6uYXu1pEeo0XvE8DsB/preview"
-                                        width="245" height="184" allowFullScreen="">
+                                        width="245" height="184" allowFullScreen={true}>
                                     </iframe>
                                 </div>
                                 <div className={styles.scene__objectVideo2}>
                                     <iframe src="https://drive.google.com/file/d/1Kle6aubivBUFGVwvpFsO9k1kHWehbRzG/preview"
-                                        width="245" height="184" allowFullScreen="">
+                                        width="245" height="184" allowFullScreen={true}>
                                     </iframe>
                                 </div>
                             </div>
@@ -132,7 +131,7 @@ const MyBlog = ({ feed }) => {
                                 <h3>Writing</h3>
                                 {/* <p>back</p> */}
                                 <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824840/thinkthaithai/Reading_wofifh.mp4"
-                                    controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
+                                    controls height='' width='280' loading="lazy" allowFullScreen={true} frameBorder="0">
                                 </video>
                             </div>
 
@@ -143,7 +142,7 @@ const MyBlog = ({ feed }) => {
                                 <h3>Conversation</h3>
                                 {/* <p>top</p> */}
                                 <video src="/videos/conversation2.mp4" controls height='' width='280'
-                                    loading="lazy" allowFullScreen="" frameBorder="0">
+                                    loading="lazy" allowFullScreen={true} frameBorder="0">
                                 </video>
                             </div>
                             <div className={styles.cubeSideBottom}>
@@ -151,7 +150,7 @@ const MyBlog = ({ feed }) => {
                                 <h3>Speaking</h3>
                                 {/* <p>front</p> */}
                                 <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824864/thinkthaithai/speaking_chsr3p.mp4"
-                                    controls height='' width='280' loading="lazy" allowFullScreen="" frameBorder="0">
+                                    controls height='' width='280' loading="lazy" allowFullScreen={true} frameBorder="0">
                                 </video>
                             </div>
 
@@ -194,7 +193,7 @@ const MyBlog = ({ feed }) => {
                                 <video className={styles.blogVideo} key={post.id} src={post.media_url} controls type="video/mp4"
                                     // height='160'
                                     width={carouselCellWidth}
-                                    loading="lazy" allowFullScreen="true" frameBorder="0">
+                                    loading="lazy" allowFullScreen={true} frameBorder="0">
                                 </video>
                                 {/* </Link> */}
                             </div> : <></>

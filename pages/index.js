@@ -193,7 +193,7 @@ export default function Home({ data }) {
             index < 3 ?
               <div key={feedback._id} className={styles.feedback}>
                 <div className={styles.feedbackPicture}>
-                  <Image src={feedback.imageUrl} width='100' height='100' alt='The picture of a student' />
+                  <Image src={feedback.imageUrl} width='100' height='100' alt='a student' />
                 </div>
                 <div className={styles.feedbackText}>
                   <h3 className={styles.feedbackHeader}>{feedback.feedbackTitle}</h3>
