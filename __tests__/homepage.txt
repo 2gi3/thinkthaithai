@@ -1,0 +1,18 @@
+// import { render, screen, waitFor } from '@testing-library/react'
+// import '@testing-library/jest-dom'
+// import feedbacks from '../__mocks__/feedbacks.json'
+// import Home from '../pages'
+
+
+
+// describe('Homepage', () => {
+//     const prop = feedbacks.data
+//     beforeEach(() => {
+//         render(<Home data={prop} />)
+//     })
+//     it('displays the title', () => {
+//         const title = screen.getByText(/ThinkThaiThai/i)
+//         expect(title).toBeInTheDocument()
+//     })
+// })
+

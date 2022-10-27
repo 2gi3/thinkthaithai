@@ -24,6 +24,7 @@ const MyBlog = ({ feed }) => {
     const [cubeValue, setCubeValue] = useState("showBottom")
     const carouselCellWidth = 100
     const carouselLength = 9
+    const last7videos= data.slice(-carouselLength)
     const carouselIndex = useRef(0)
     const [carouselAngle, setCarouselAngle] = useState("")
 
@@ -160,7 +161,7 @@ const MyBlog = ({ feed }) => {
             </div>
             <h1 className={styles.blogTitle}>My instagram posts</h1>
             <div className={styles.scene__buttons} id={styles.scene__buttonsCarousel}>
-                <button className={styles.scene__buttonOff}
+                <button className={styles.carousel__button}
                     onClick={() => {
                          carouselIndex.current = carouselIndex.current - 1; rotateCarousel();
                         console.log(carouselIndex)
@@ -169,7 +170,7 @@ const MyBlog = ({ feed }) => {
                     Previous
                 </button>
                 <button
-                    className={styles.scene__buttonOff}
+                    className={styles.carousel__button}
                     onClick={() => {
                          carouselIndex.current = carouselIndex.current + 1; rotateCarousel();
                         console.log(carouselIndex)
@@ -180,7 +181,7 @@ const MyBlog = ({ feed }) => {
             </div>
             <div className={styles.InstagramScene}>
                 <div className={styles.instagramCarousel} style={{ transform: `translateZ(-165px) rotateY(${carouselAngle}deg)` }}>
-                    {data.map((post, index) => (
+                    {last7videos.map((post, index) => (
                         // <Link key={post.id} href={post.media_url} >
                         //     <div>
                         //         {/* <p>{post.caption}</p> */}
