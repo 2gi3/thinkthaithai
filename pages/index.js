@@ -23,7 +23,10 @@ export const getStaticProps = async () => {
   const data = rawData.data
   console.log(data)
 
-  return { props: { data } }
+  return {
+    props: { data },
+    revalidate: 5
+  }
 }
 
 export default function Home({ data }) {
