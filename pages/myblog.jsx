@@ -5,25 +5,30 @@ import Image from 'next/image'
 import useToggle from '../functions/useToggle'
 import { useState, useRef } from 'react'
 
-export const getStaticProps = async () => {
-    const instagramToken = process.env.I_KEY
-    // const URL = 'https://graph.instagram.com/me/media?fields=id,username,media_url,timestamp,media_type,permalink&access_token=IGQVJWbFBHNE5jTENuOXJDVlF4cjJOa0lnUUNQZA1pTeTdTN0NUZA3piS2ZACX3BIcTdsTmpDYWl5aUZAlc1gxaTcxcVJsQXB6eElENUdGR2RyNFExYVlmZAGR5eHRURndYUk5iN0ttT2kxN2RLWW1semRpTQZDZD'
-    const res = await fetch(`https://graph.instagram.com/me/media?fields=id,caption,username,thumbnail_url,media_url,timestamp,media_type,permalink&access_token=${instagramToken}`);
-    const feed = await res.json();
+//1/3 deactivate getStaticProps 
+//getStaticProps not in use because instagram videos are not updated often enouth and they may expire
+// export const getStaticProps = async () => {
+//     const instagramToken = process.env.I_KEY
+//     // const URL = 'https://graph.instagram.com/me/media?fields=id,username,media_url,timestamp,media_type,permalink&access_token=IGQVJWbFBHNE5jTENuOXJDVlF4cjJOa0lnUUNQZA1pTeTdTN0NUZA3piS2ZACX3BIcTdsTmpDYWl5aUZAlc1gxaTcxcVJsQXB6eElENUdGR2RyNFExYVlmZAGR5eHRURndYUk5iN0ttT2kxN2RLWW1semRpTQZDZD'
+//     const res = await fetch(`https://graph.instagram.com/me/media?fields=id,caption,username,thumbnail_url,media_url,timestamp,media_type,permalink&access_token=${instagramToken}`);
+//     const feed = await res.json();
 
-    return {
-        props: { feed },
-        revalidate:5
-    }
-}
+//     return {
+//         props: { feed },
+//         revalidate:5
+//     }
+// }
 
-const MyBlog = ({ feed }) => {
-    const data = feed.data
+const MyBlog = (
+    // { feed } //2/3 deactivate getStaticProps 
+    ) => {
+    // const data = feed.data //3/3 deactivate getStaticProps 
     const [value, toggleValue] = useToggle(false)
     const [cubeValue, setCubeValue] = useState("showBottom")
     const carouselCellWidth = 100
     const carouselLength = 9
-    const last7videos= data.slice(-carouselLength)
+    // const last9videos= data.slice(-carouselLength)
+    const last9videos = ['/videos/9.mp4', '/videos/8.mp4', '/videos/7.mp4', '/videos/6.mp4', '/videos/5.mp4', '/videos/4.mp4', '/videos/3.mp4', '/videos/2.mp4', '/videos/1.mp4',]
     const carouselIndex = useRef(0)
     const [carouselAngle, setCarouselAngle] = useState("")
 
@@ -149,6 +154,9 @@ const MyBlog = ({ feed }) => {
                                 {/* <Image src='/temple.webp' width='400px' height='400px' alt='A picture of teacher Nat'></Image> */}
                                 <h3>Speaking</h3>
                                 {/* <p>front</p> */}
+                                {/* <iframe src="https://drive.google.com/file/d/16FzzrN4_4EaVZKyibsviwN4qnPEvckuC/preview"
+                                 width="640" height="480" allow="autoplay">                                    
+                                 </iframe> */}
                                 <video src="https://res.cloudinary.com/gippolito/video/upload/v1661824864/thinkthaithai/speaking_chsr3p.mp4"
                                     controls height='' width='280' loading="lazy" allowFullScreen={true} frameBorder="0">
                                 </video>
@@ -180,7 +188,7 @@ const MyBlog = ({ feed }) => {
             </div>
             <div className={styles.InstagramScene}>
                 <div className={styles.instagramCarousel} style={{ transform: `translateZ(-165px) rotateY(${carouselAngle}deg)` }}>
-                    {last7videos.map((post, index) => (
+                    {last9videos.map((post, index) => (
                         // <Link key={post.id} href={post.media_url} >
                         //     <div>
                         //         {/* <p>{post.caption}</p> */}
@@ -188,9 +196,9 @@ const MyBlog = ({ feed }) => {
                         //     </div>
                         // </Link>
                         index < carouselLength ?
-                            <div className={styles.instagramCarouselCell} key={post.id}>
+                            <div className={styles.instagramCarouselCell} key={index}>
                                 {/* <Link key={post.id} href={post.permalink} > */}
-                                <video className={styles.blogVideo} key={post.id} src={post.media_url} controls type="video/mp4"
+                                <video className={styles.blogVideo}src={post} controls type="video/mp4"
                                     // height='160'
                                     width={carouselCellWidth}
                                     loading="lazy" allowFullScreen={true} frameBorder="0">
