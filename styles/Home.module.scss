@@ -121,6 +121,7 @@
       background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) right;
       background-size: 350% 100%;
       transition: all 1500ms ease-in-out;
+      
 
       &:hover {
         cursor: pointer;
@@ -392,6 +393,22 @@
       border: 3px solid $primaryColor;
       // outline-offset: -5px;
       color: $secondaryColor;
+      transition: box-shadow 500ms;
+      box-shadow:
+      1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            // 1px 5px 1px #919191,
+            // 1px 6px 1px #919191,
+            // 1px 7px 1px #919191,
+            1px 7px 3px rgb(16 16 16 / 40%),
+            1px 11px 6px rgb(16 16 16 / 20%),
+            1px 15px 15px rgb(16 16 16 / 20%),
+            1px 17px 27px rgb(16 16 16 / 40%); 
+            &:active{
+        box-shadow: none;
+      }
 
       // opacity: 0;
       // animation: Home_fadeIn__xU7qo 600ms ease-in 850ms forwards;
@@ -429,10 +446,24 @@
       height: 55px;
       width: 55px;
       background: $secondaryColor;
-      outline: 3px solid $primaryBackground;
+      // outline: 3px solid $primaryBackground;
       font-size: 17px;
       font-weight: 900;
       letter-spacing: 1px;
+      transition: box-shadow 2s;
+      box-shadow:
+      1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            // 1px 5px 1px #919191,
+            // 1px 6px 1px #919191,
+            // 1px 7px 1px #919191,
+            1px 7px 3px rgb(16 16 16 / 40%),
+            1px 11px 6px rgb(16 16 16 / 20%),
+            1px 15px 15px rgb(16 16 16 / 20%),
+            1px 17px 27px rgb(16 16 16 / 40%); 
+
       &:nth-child(3n-2){
         animation: contactsLoader 900ms ease-in  forwards
     }
@@ -444,6 +475,11 @@
     }
       &:hover {
         cursor: pointer;
+      }
+      &:active,
+      &:focus,
+      &:focus-visible{
+        box-shadow: none;
       }
     }
   }
@@ -475,6 +511,19 @@
     outline: 4px solid $secondaryColor;
     background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) right;
     background-size: 350% 100%;
+    transition: box-shadow 2000ms;
+    box-shadow:
+      1px 1px #919191,
+      1px 2px 1px #919191,
+      1px 3px 1px #919191,
+      1px 4px 1px #919191,
+      // 1px 5px 1px #919191,
+      // 1px 6px 1px #919191,
+      // 1px 7px 1px #919191,
+      1px 7px 3px rgb(16 16 16 / 40%),
+      1px 11px 6px rgb(16 16 16 / 20%),
+      1px 15px 15px rgb(16 16 16 / 20%),
+      1px 17px 27px rgb(16 16 16 / 40%);
     transition: all 1500ms ease-in-out;
 
     &:hover {
@@ -601,6 +650,18 @@
         h1 {
           font-size: 4rem;
           color: $secondaryColor;
+          text-shadow:
+      1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            // 1px 5px 1px #919191,
+            // 1px 6px 1px #919191,
+            // 1px 7px 1px #919191,
+            1px 7px 3px rgb(16 16 16 / 40%),
+            1px 11px 6px rgb(16 16 16 / 20%),
+            1px 15px 15px rgb(16 16 16 / 20%),
+            1px 17px 27px rgb(16 16 16 / 40%); 
         }
       }
 

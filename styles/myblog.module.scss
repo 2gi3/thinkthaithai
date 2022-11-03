@@ -17,6 +17,19 @@ $cube-translateZ: 137px;
         h1 {
             font-size: 4rem;
             color: $secondaryColor;
+            transition: text-shadow 2000ms;
+                text-shadow:
+                  1px 1px #919191,
+                  1px 2px 1px #919191,
+                  1px 3px 1px #919191,
+                  1px 4px 1px #919191,
+                  // 1px 5px 1px #919191,
+                  // 1px 6px 1px #919191,
+                  // 1px 7px 1px #919191,
+                  1px 7px 3px rgb(16 16 16 / 40%),
+                  1px 11px 6px rgb(16 16 16 / 20%),
+                  1px 15px 15px rgb(16 16 16 / 20%),
+                  1px 17px 27px rgb(16 16 16 / 40%);
         }
     }
 

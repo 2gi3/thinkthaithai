@@ -44,7 +44,6 @@ export default function Home({ data }) {
     const fronLower = from.toLowerCase()
     const toLower = to.toLowerCase()
     const myHeaders = new Headers();
-    const exchangeKey = process.env.NEXT_PUBLIC_CURRENCY_EXCHANGE_API_KEY
     myHeaders.append("apikey", `${process.env.NEXT_PUBLIC_CURRENCY_EXCHANGE_API_KEY}`);
 
     const requestOptions = {
