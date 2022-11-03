@@ -31,6 +31,37 @@ export const getStaticProps = async () => {
 
 export default function Home({ data }) {
   const [value, toggleValue] = useToggle(false)
+  const [currencyContainer, setCurrencyContainer] = useToggle(false)
+  const teacherCurrency = 'thb'
+  const [studentCurrency, setStudentCurrency] = useState(<span>&#3647;</span>)
+  const trialLessonPrice = 170
+  const [displayedPrice, setDisplayedPrice] =useState(trialLessonPrice)
+  const availableCurrencies =['AUD','CNY','EUR','GBP','HKD','KRW','JPY','TWD','USD', ]
+
+  const getExchangeRates = async (from, to, amount) => {
+    console.log(process.env.CURRENCY_EXCHANGE_API_KEY)
+    
+    const fronLower = from.toLowerCase()
+    const toLower = to.toLowerCase()
+    const myHeaders = new Headers();
+    const exchangeKey = process.env.NEXT_PUBLIC_CURRENCY_EXCHANGE_API_KEY
+    myHeaders.append("apikey", `${process.env.NEXT_PUBLIC_CURRENCY_EXCHANGE_API_KEY}`);
+
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+      headers: myHeaders
+    }
+
+
+    const res = await fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`, requestOptions)
+    const data = await res.json();
+    const costInNewCurrency = data.result
+    setDisplayedPrice((costInNewCurrency).toFixed(2))
+    setStudentCurrency(to)
+    currencyContainer===true? setCurrencyContainer(false) : setCurrencyContainer(true)//closes the currencyContainer
+    return (costInNewCurrency)
+  }
 
   // --Start-- Function and options object to pass in the intersectionObserver inside useEffect
   const [isVisible, setIsVisible] = useState(true)
@@ -54,7 +85,6 @@ export default function Home({ data }) {
 
 
   useEffect(() => {
-
     // --Start-- detect when the button ("book a $5 trial lesson") is outside of the viewport
     const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = targetRef.current;
@@ -213,15 +243,37 @@ export default function Home({ data }) {
         </div>
       </div>
       <div className={styles.pricingContainer}>
+        <div className={styles.pricingContainerExchangeButton}>
+          <button onClick={()=>{
+            currencyContainer===true? setCurrencyContainer(false) : setCurrencyContainer(true)
+          }}>
+            {currencyContainer===true? <FontAwesomeIcon icon={faXmark} />
+           : <Image src={'/forex.png'} width='55' height='55' alt='forex' />}
+            {/* <FontAwesomeIcon icon={faXmark} /> */}
+          </button>
+        </div>
+        <div className={currencyContainer=== true? styles.currencyListContainer : styles.currencyListContainerOff}>
+            {availableCurrencies.map((currency, index)=>(
+              <button key={index}
+               onClick={()=>{
+                getExchangeRates(teacherCurrency, currency, trialLessonPrice)
+              }}
+              >
+                <span>{currency}</span>
+              {/* <Image src={'/forex.png'} width='55' height='55' alt='forex' /> */}
+              </button>
+            ))}
+            
+        </div>
         <div className={styles.pricingContainerHeader} >
           <h3>
             Start learning now
           </h3>
-          <p>with a &#3647;170 trial Lesson!</p>
+          <p>with a {studentCurrency}{displayedPrice} trial Lesson!</p>
         </div>
         <Link href='/pricing'>
           <div className={styles.pricingContainerLink}>
-            <p> <span>MORE ABOUT</span> PRICING</p>
+            <p> <span>MORE ABOUT</span> PRICING</p> 
           </div>
         </Link>
         <p className={styles.priceContainerFooter}>Learning materials, homeworks and exercices always included </p>

@@ -1,6 +1,13 @@
-Solo account: FREE (explore learning material and learn basics by yourself)
-Basic account: $x/month (includes: Q&A by text and/or voiceMessage (subject to availability)).
-premium account: $x/month (includes one 101 lesson x week)
-premium Plus: $x/month ( includes x 101 lessons x month)
+currencies:
+USD,
+GBP,
+Euro,
+Cina,
+Japan,
+Korea,
+Taiwan,
+Hong Kong.
+
+const availableCurrencies =['AUD','CNY','EUR','GBP','HKD','KRW','JPY','THB','TWD','USD', ]
 
 

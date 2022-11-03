@@ -24,9 +24,27 @@
   }
 }
 
+@keyframes contactsLoader {
+  0% {
+      opacity: 0;
+    transform: translateY(75vh)
+  }
+  30%{
+      opacity: 1;
+  }
+  80%{
+    transform: translateY(-40px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .background {
   display: none;
 }
+
 .backgroundMobile {
   position: absolute;
   z-index: -1;
@@ -82,7 +100,8 @@
         color: black;
         text-shadow: 1px 1px 1px white;
         font-weight: 600;
-        &:first-child{
+
+        &:first-child {
           font-weight: 700;
           font-size: 19px;
           color: $secondaryColor;
@@ -343,11 +362,96 @@
 }
 
 .pricingContainer {
+  position: relative;
   max-width: 600px;
   padding: 0 20px;
 
   margin: 60px auto;
   text-align: center;
+
+  .pricingContainerExchangeButton {
+    position: absolute;
+    top: -70px;
+    right: 10px;
+    // border: 2px solid $primaryColor;
+    // border-radius: 50%;
+    // height: 55px;
+    // width: 55px;
+
+    button {
+      all: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 55px;
+      width: 55px;
+      // padding: 9px;
+      background-color: $primaryBackground;
+      border: none;
+      border-radius: 50%;
+      border: 3px solid $primaryColor;
+      // outline-offset: -5px;
+      color: $secondaryColor;
+
+      // opacity: 0;
+      // animation: Home_fadeIn__xU7qo 600ms ease-in 850ms forwards;
+      svg {
+        width: 29px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  .currencyListContainer {
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    inset: 0;
+    width: 280px;
+    border-radius: $borderRadius;
+    outline: 3px solid #ff5d4f;
+    // border: 3px solid white;
+    background: $primaryBackground;
+
+    button {
+      all: unset;
+      margin: 10px;
+      border: 2px solid $primaryColor;
+      border-radius: 50%;
+      height: 55px;
+      width: 55px;
+      background: $secondaryColor;
+      outline: 3px solid $primaryBackground;
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      &:nth-child(3n-2){
+        animation: contactsLoader 900ms ease-in  forwards
+    }
+    &:nth-child(3n-1){
+        animation: contactsLoader 950ms ease-in forwards
+    }
+    &:nth-child(3n){
+        animation: contactsLoader 1000ms ease-in  forwards
+    }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .currencyListContainerOff {
+    display: none;
+  }
+
 
   .pricingContainerHeader {
     h3 {
@@ -399,10 +503,11 @@
 
 
 @media all and (min-width: 361px) and (max-width:768px) {
+
   // .background {
   //   width: 70vw;
   // }
-  .backgroundMobile{
+  .backgroundMobile {
     height: 500px;
   }
 
@@ -442,22 +547,23 @@
 @media all and (min-width: 769px) {
   .background {
     position: absolute;
-  z-index: -1;
-  // width: 100vw;
-  height: 87vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  right: 0px;
-  // top: 30px;
-  // opacity: 0.5;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+    z-index: -1;
+    // width: 100vw;
+    height: 87vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0px;
+    // top: 30px;
+    // opacity: 0.5;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     width: 65vw;
     top: unset;
   }
-  .backgroundMobile{
+
+  .backgroundMobile {
     display: none;
   }
 
@@ -479,7 +585,8 @@
 
         .list {
           padding: 20px 0;
-          &:first-child{
+
+          &:first-child {
             color: inherit;
             font-size: inherit;
             text-shadow: none;
