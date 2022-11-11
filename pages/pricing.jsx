@@ -8,12 +8,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 
-const pricing = () => {
+const Pricing = () => {
     const price100 = "price_1LaO82A9zEY10SLQnsojks9L"
     const price180 = "price_1LaO8rA9zEY10SLQvFuvrMxf"
     const price300 = "price_1LaO9KA9zEY10SLQNXETXalI"
 
-    const [value, toggleValue] = useToggle(false)
+    // const [value, toggleValue] = useToggle(false)
     const [currencyContainer, setCurrencyContainer] = useToggle(false)
     const teacherCurrency = 'thb'
     const [studentCurrency, setStudentCurrency] = useState(<span>&#3647;</span>)
@@ -172,4 +172,4 @@ const pricing = () => {
     )
 }
 
-export default pricing
+export default Pricing
