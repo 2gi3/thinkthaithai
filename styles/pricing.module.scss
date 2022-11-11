@@ -1,5 +1,22 @@
 @use "styles" as *;
 
+@keyframes contactsLoader {
+    0% {
+        opacity: 0;
+      transform: translateY(75vh)
+    }
+    30%{
+        opacity: 1;
+    }
+    80%{
+      transform: translateY(-40px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+
 .logo {
     display: none;
     text-align: center;
@@ -112,6 +129,125 @@
         outline: 5px solid $secondaryColor;
     }
 }
+
+.pricingContainerExchangeButton {
+    position: relative;
+    width: 310px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      all: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 55px;
+      width: 55px;
+      // padding: 9px;
+      background-color: $primaryBackground;
+      border: none;
+      border-radius: 50%;
+      border: 3px solid $primaryColor;
+      // outline-offset: -5px;
+      color: $secondaryColor;
+      transition: box-shadow 500ms;
+      box-shadow:
+      1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            // 1px 5px 1px #919191,
+            // 1px 6px 1px #919191,
+            // 1px 7px 1px #919191,
+            1px 7px 3px rgb(16 16 16 / 40%),
+            1px 11px 6px rgb(16 16 16 / 20%),
+            1px 15px 15px rgb(16 16 16 / 20%),
+            1px 17px 27px rgb(16 16 16 / 40%); 
+            &:active{
+        box-shadow: none;
+      }
+
+      // opacity: 0;
+      // animation: Home_fadeIn__xU7qo 600ms ease-in 850ms forwards;
+      svg {
+        width: 29px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  .currencyListContainer {
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    inset: 0;
+    top: 618px;
+    width: 280px;
+    height: 264px;
+    margin: auto;
+    border-radius: $borderRadius;
+    outline: 3px solid #ff5d4f;
+    // border: 3px solid white;
+    background: $primaryBackground;
+
+    button {
+      all: unset;
+      margin: 10px;
+      border: 2px solid $primaryColor;
+      border-radius: 50%;
+      height: 55px;
+      width: 55px;
+      background: $secondaryColor;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      transition: box-shadow 2s;
+      box-shadow:
+      1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            // 1px 5px 1px #919191,
+            // 1px 6px 1px #919191,
+            // 1px 7px 1px #919191,
+            1px 7px 3px rgb(16 16 16 / 40%),
+            1px 11px 6px rgb(16 16 16 / 20%),
+            1px 15px 15px rgb(16 16 16 / 20%),
+            1px 17px 27px rgb(16 16 16 / 40%); 
+
+      &:nth-child(3n-2){
+        animation: contactsLoader 900ms ease-in  forwards
+    }
+    &:nth-child(3n-1){
+        animation: contactsLoader 950ms ease-in forwards
+    }
+    &:nth-child(3n){
+        animation: contactsLoader 1000ms ease-in  forwards
+    }
+      &:hover {
+        cursor: pointer;
+      }
+      &:active,
+      &:focus,
+      &:focus-visible{
+        box-shadow: none;
+      }
+    }
+  }
+
+  .currencyListContainerOff {
+    display: none;
+  }
 
 @media all and (min-width: 769px) {
     .logo{

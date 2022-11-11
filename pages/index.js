@@ -125,7 +125,7 @@ export default function Home({ data }) {
         <Image src='/natMobile.webp' width='557px' height='615' alt='teacher nat'></Image>
       </div>
       <div className={styles.background}>
-        <Image src='/nat2.jpg' width='448px' height='597' alt='teacher nat'></Image>
+        <Image src='/heroNoBG.webp' width='448px' height='597' alt='teacher nat'></Image>
       </div>
       <div ref={targetRef} className={styles.container}>
         <div className={styles.titleContainer}>
@@ -247,7 +247,7 @@ export default function Home({ data }) {
             currencyContainer===true? setCurrencyContainer(false) : setCurrencyContainer(true)
           }}>
             {currencyContainer===true? <FontAwesomeIcon icon={faXmark} />
-           : <Image src={'/forex.png'} width='55' height='55' alt='forex' />}
+           : <Image src={'/xchangeBig.webp'} width='55' height='55' alt='forex' />}
             {/* <FontAwesomeIcon icon={faXmark} /> */}
           </button>
         </div>

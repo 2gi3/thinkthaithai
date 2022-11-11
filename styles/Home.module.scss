@@ -59,6 +59,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  // filter:drop-shadow(10px 10px 10px #919191)
 }
 
 .container {
@@ -610,6 +611,7 @@
     background-position: center;
     width: 65vw;
     top: unset;
+    filter:drop-shadow(10px 10px 10px #919191)
   }
 
   .backgroundMobile {
