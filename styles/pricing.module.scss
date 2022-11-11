@@ -56,7 +56,7 @@
     }
 }
 .pricingContainer {
-    width: 310px;
+    width: 300px;
     margin: auto;
     color: aqua;
     display: grid;
@@ -132,7 +132,7 @@
 
 .pricingContainerExchangeButton {
     position: relative;
-    width: 310px;
+    width: 300px;
     margin: auto;
     display: flex;
     justify-content: flex-end;
@@ -142,13 +142,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-right: 30px;
       height: 55px;
       width: 55px;
       // padding: 9px;
       background-color: $primaryBackground;
       border: none;
       border-radius: 50%;
-      border: 3px solid $primaryColor;
+      border: 3px solid $secondaryColor;
       // outline-offset: -5px;
       color: $secondaryColor;
       transition: box-shadow 500ms;
@@ -190,7 +191,7 @@
     justify-content: space-around;
     align-items: center;
     inset: 0;
-    top: 618px;
+    top: 430px;
     width: 280px;
     height: 264px;
     margin: auto;
@@ -253,4 +254,12 @@
     .logo{
         display: block;
     }
+    .pricingContainerExchangeButton {
+      button{
+        margin-right: -80px;
+      }
+    .currencyListContainer{
+        top: 700px;
+    }
+  }
 }

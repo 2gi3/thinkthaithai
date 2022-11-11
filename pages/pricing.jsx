@@ -17,10 +17,13 @@ const pricing = () => {
     const [currencyContainer, setCurrencyContainer] = useToggle(false)
     const teacherCurrency = 'thb'
     const [studentCurrency, setStudentCurrency] = useState(<span>&#3647;</span>)
-    const trialLessonPrice = 170
+    let trialLessonPrice = 170
     const [displayedPrice, setDisplayedPrice] =useState(trialLessonPrice)
+    const [fiveLessons, setFiveLessons] = useState(Math.ceil(trialLessonPrice*22.058))
+    const [tenLessons, setTenLessons] = useState(Math.ceil(trialLessonPrice*42.352))
+    const [twentyLessons, setTwentyLessons] = useState(Math.ceil(trialLessonPrice*76.47))
     const availableCurrencies =['AUD','CNY','EUR','GBP','HKD','KRW','JPY','TWD','USD', ]
-  
+    // .toFixed(2)
     const getExchangeRates = async (from, to, amount) => {
       console.log(process.env.CURRENCY_EXCHANGE_API_KEY)
       
@@ -40,6 +43,9 @@ const pricing = () => {
       const data = await res.json();
       const costInNewCurrency = data.result
       setDisplayedPrice((costInNewCurrency).toFixed(2))
+      setFiveLessons((costInNewCurrency*22.058).toFixed(2))
+      setTenLessons((costInNewCurrency*42.352).toFixed(2))
+      setTwentyLessons((costInNewCurrency*76.47).toFixed(2))
       setStudentCurrency(to)
       currencyContainer===true? setCurrencyContainer(false) : setCurrencyContainer(true)//closes the currencyContainer
       return (costInNewCurrency)
@@ -115,7 +121,7 @@ const pricing = () => {
         <div className={styles.pricingContainer}>
             <h1 className={styles.pricingHeader}> Pricing in THB</h1>
             <p>Trial Lesson</p>
-            <p>&#3647;170</p>
+            <p>{studentCurrency}{displayedPrice}</p>
             <div className={styles.buyButton}>
                 {/* --START--PAypal button $5 */}
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -127,7 +133,8 @@ const pricing = () => {
                 {/* --END--PAypal button $5 */}
             </div>
             <p>5 Lessons</p>
-            <p>&#3647;3,750</p>
+            {/* <p>&#3647;3,750</p> */}
+            <p>{studentCurrency}{fiveLessons}</p>
             <div className={styles.buyButton}>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick" />
@@ -137,7 +144,8 @@ const pricing = () => {
                 </form>
             </div>
             <p>10 Lessons</p>
-            <p>&#3647;7,200</p>
+            {/* <p>&#3647;7,200</p> */}
+            <p>{studentCurrency}{tenLessons}</p>
             <div className={styles.buyButton}>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick" />
@@ -147,7 +155,8 @@ const pricing = () => {
                 </form>
             </div>
             <p>20 Lessons</p>
-            <p>&#3647;13,000</p>
+            {/* <p>&#3647;13,000</p> */}
+            <p>{studentCurrency}{twentyLessons}</p>
             <div className={styles.buyButton}>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick" />
