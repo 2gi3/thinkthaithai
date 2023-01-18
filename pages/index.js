@@ -1,87 +1,97 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import Footer from '../components/footer/Footer'
-import NavBar from '../components/navBar/NavBar'
-import styles from '../styles/Home.module.scss'
-import { useState, useRef, useMemo, useEffect } from 'react'
-import Contacts from '../components/contacts/Contacts'
-import useToggle from '../functions/useToggle'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "../styles/Home.module.scss";
+import { useState, useRef, useMemo, useEffect } from "react";
+import Contacts from "../components/contacts/Contacts";
+import useToggle from "../functions/useToggle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://www.thinkthaithai.com/api/feedbacks',
-    {
-      method: 'GET',
-      headers: {
-        // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOiI2MzE5N2JlMjk2NGIwN2I2ODkwYTQ0ZjciLCJpYXQiOjE2NjI2MTQ1MzEsImV4cCI6MTY2MjcwMDkzMX0.71pv30-6bcG8xvYT8U3azxSrYeDkKyjAieUR0SjNlCA"
-      }
-    }
-  );
+  const res = await fetch("https://www.thinkthaithai.com/api/feedbacks", {
+    method: "GET",
+    headers: {
+      // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOiI2MzE5N2JlMjk2NGIwN2I2ODkwYTQ0ZjciLCJpYXQiOjE2NjI2MTQ1MzEsImV4cCI6MTY2MjcwMDkzMX0.71pv30-6bcG8xvYT8U3azxSrYeDkKyjAieUR0SjNlCA"
+    },
+  });
   const rawData = await res.json();
-  const data = rawData.data
-  console.log(data)
+  const data = rawData.data;
+  console.log(data);
 
   return {
     props: { data },
-    revalidate: 5
-  }
-}
+    revalidate: 5,
+  };
+};
 
 export default function Home({ data }) {
-  const [value, toggleValue] = useToggle(false)
-  const [currencyContainer, setCurrencyContainer] = useToggle(false)
-  const teacherCurrency = 'thb'
-  const [studentCurrency, setStudentCurrency] = useState(<span>&#3647;</span>)
-  const trialLessonPrice = 170
-  const [displayedPrice, setDisplayedPrice] =useState(trialLessonPrice)
-  const availableCurrencies =['AUD','CNY','EUR','GBP','HKD','KRW','JPY','TWD','USD', ]
+  const [value, toggleValue] = useToggle(false);
+  const [currencyContainer, setCurrencyContainer] = useToggle(false);
+  const teacherCurrency = "thb";
+  const [studentCurrency, setStudentCurrency] = useState(<span>&#3647;</span>);
+  const trialLessonPrice = 170;
+  const [displayedPrice, setDisplayedPrice] = useState(trialLessonPrice);
+  const availableCurrencies = [
+    "AUD",
+    "CNY",
+    "EUR",
+    "GBP",
+    "HKD",
+    "KRW",
+    "JPY",
+    "TWD",
+    "USD",
+  ];
 
   const getExchangeRates = async (from, to, amount) => {
-    console.log(process.env.CURRENCY_EXCHANGE_API_KEY)
-    
-    const fronLower = from.toLowerCase()
-    const toLower = to.toLowerCase()
+    console.log(process.env.CURRENCY_EXCHANGE_API_KEY);
+
+    const fronLower = from.toLowerCase();
+    const toLower = to.toLowerCase();
     const myHeaders = new Headers();
-    myHeaders.append("apikey", `${process.env.NEXT_PUBLIC_CURRENCY_EXCHANGE_API_KEY}`);
+    myHeaders.append(
+      "apikey",
+      `${process.env.NEXT_PUBLIC_CURRENCY_EXCHANGE_API_KEY}`
+    );
 
     const requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-      headers: myHeaders
-    }
+      method: "GET",
+      redirect: "follow",
+      headers: myHeaders,
+    };
 
-
-    const res = await fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`, requestOptions)
+    const res = await fetch(
+      `https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`,
+      requestOptions
+    );
     const data = await res.json();
-    const costInNewCurrency = data.result
-    setDisplayedPrice((costInNewCurrency).toFixed(2))
-    setStudentCurrency(to)
-    currencyContainer===true? setCurrencyContainer(false) : setCurrencyContainer(true)//closes the currencyContainer
-    return (costInNewCurrency)
-  }
+    const costInNewCurrency = data.result;
+    setDisplayedPrice(costInNewCurrency.toFixed(2));
+    setStudentCurrency(to);
+    currencyContainer === true
+      ? setCurrencyContainer(false)
+      : setCurrencyContainer(true); //closes the currencyContainer
+    return costInNewCurrency;
+  };
 
   // --Start-- Function and options object to pass in the intersectionObserver inside useEffect
-  const [isVisible, setIsVisible] = useState(true)
-  const targetRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(true);
+  const targetRef = useRef(null);
 
-  const callbackFunction = entries => {
+  const callbackFunction = (entries) => {
     const entry = entries[0];
-    setIsVisible(entry.isIntersecting)
-    console.log(entry.isIntersecting)
-  }
+    setIsVisible(entry.isIntersecting);
+    console.log(entry.isIntersecting);
+  };
   const options = useMemo(() => {
-    return (
-      {
-        root: null,
-        threshold: 0,
-        rootMargin: '100px 0px 0px 0px'
-      }
-    )
+    return {
+      root: null,
+      threshold: 0,
+      rootMargin: "100px 0px 0px 0px",
+    };
   }, []);
   // --End-- Function and options object to pass in the intersectionObserver inside useEffect
-
 
   useEffect(() => {
     // --Start-- detect when the button ("book a $5 trial lesson") is outside of the viewport
@@ -91,9 +101,9 @@ export default function Home({ data }) {
 
     return () => {
       if (currentTarget) observer.observe(currentTarget);
-    }
+    };
     // --End-- detect when the button ("book a $5 trial lesson") is outside of the viewport
-  }, [targetRef, options])
+  }, [targetRef, options]);
 
   return (
     <>
@@ -104,10 +114,7 @@ export default function Home({ data }) {
         <meta property="og:url" content="https://www.thikthaithai.com/" />
         <meta property="og:type" content="website" />
 
-        <meta
-          property="og:title"
-          content="Learn Thai language!"
-        />
+        <meta property="og:title" content="Learn Thai language!" />
 
         <meta
           property="og:description"
@@ -121,12 +128,29 @@ export default function Home({ data }) {
 
         <link rel="icon" href="/logo.webp" />
       </Head>
-      <div className={styles.backgroundMobile}>
-        <Image src='/natMobile.webp' width='557px' height='615' alt='teacher nat'></Image>
-      </div>
-      <div className={styles.background}>
-        <Image src='/heroNoBG.webp' width='448px' height='597' alt='teacher nat'></Image>
-      </div>
+      <picture className={styles.background2}>
+        <source
+          media="(max-width: 768px)"
+          srcSet="/natMobile.webp 768w"
+          sizes="100vw"
+        />
+        <source srcSet="/heroNoBG.webp 1280w" sizes="1280px" />
+        <img loading="eager" src="/heroNoBG.webp" />
+        {/* <source
+          media="max-width: 769px"
+          srcSet="/natMobile.webp"
+          sizes="769px"
+        /> */}
+        {/* <source srcSet="/heroNoBG.webp" /> */}
+        {/* <img
+          src="/heroNoBG.webp"
+          // srcSet="/natMobile.webp 769w, /heroNoBG.webp 770w"
+          // sizes="(max-width: 769px) 769px, 770px"
+          width="448px"
+          height="597"
+          alt="teacher nat"
+        /> */}
+      </picture>
       <div ref={targetRef} className={styles.container}>
         <div className={styles.titleContainer}>
           <div className={styles.logo}>
@@ -139,21 +163,25 @@ export default function Home({ data }) {
           </ul>
           {/* Toggle the button's class according to whether or not the button is visible in the viewport  */}
           {/* <Link href='https://www.paypal.com/webapps/hermes?token=2LP71852KR243514U&useraction=commit&mfid=1661951713535_f7632277b2f02'> */}
-          <Link href='/pricing'>
+          <Link href="/pricing">
             <button
-              className={isVisible === true ? styles.button : styles.buttonFixed} > trial lesson
+              className={
+                isVisible === true ? styles.button : styles.buttonFixed
+              }
+            >
+              {" "}
+              trial lesson
             </button>
           </Link>
         </div>
-        <div className={styles.imageContainer}>
-        </div>
+        <div className={styles.imageContainer}></div>
       </div>
       <div className={styles.coursesContainer}>
         <div className={styles.message}>
           <h1>Speak Thai confidently</h1>
           <p>
-            With a personalised study plan, tailored learning materials,
-            and flexible teaching techniques that adapt to your own learning style
+            With a personalised study plan, tailored learning materials, and
+            flexible teaching techniques that adapt to your own learning style
           </p>
         </div>
         <div className={styles.courses}>
@@ -161,25 +189,43 @@ export default function Home({ data }) {
             <div className={styles.SpeakingAndListening}>
               <h3>Speaking and listening</h3>
               <div className={styles.course}>
-                <p>Simulate <strong>real life situations</strong> with your teacher.</p>
-                <p> Watch <strong> Thai drama</strong> </p>
-                <p> learn your favourite <strong>songs</strong></p>
-                <p> and listen to <strong> podcasts</strong></p>
+                <p>
+                  Simulate <strong>real life situations</strong> with your
+                  teacher.
+                </p>
+                <p>
+                  {" "}
+                  Watch <strong> Thai drama</strong>{" "}
+                </p>
+                <p>
+                  {" "}
+                  learn your favourite <strong>songs</strong>
+                </p>
+                <p>
+                  {" "}
+                  and listen to <strong> podcasts</strong>
+                </p>
               </div>
               <h3>Gain the confidence to engage in daily conversations</h3>
             </div>
             <div className={styles.writingAndReading}>
               <h3>Reading and writing</h3>
               <div className={styles.course}>
-                <p> Learn the <strong>Thai alphabet and grammar</strong>, </p>
+                <p>
+                  {" "}
+                  Learn the <strong>Thai alphabet and grammar</strong>,{" "}
+                </p>
                 <p> Understand and practice Thai tones and reading accuracy </p>
                 <p> learn from official Thai primary school books</p>
               </div>
-              <h3>All you need to explore thai social media, chats, news and literature</h3>
+              <h3>
+                All you need to explore thai social media, chats, news and
+                literature
+              </h3>
             </div>
           </div>
           <div className={styles.needs}>
-            <h3>Prioritise the vocabulary most relevant to your own life  </h3>
+            <h3>Prioritise the vocabulary most relevant to your own life </h3>
             <p>Holiday</p>
             <p>Business</p>
             <p>Family</p>
@@ -189,29 +235,45 @@ export default function Home({ data }) {
       <div className={styles.peopleContainer}>
         <h3 className={styles.teacherTitle}> Know your teacher </h3>
         <div className={styles.teacher}>
-
           <div className={styles.teacherVideo}>
-            <iframe src="https://drive.google.com/file/d/18T5UaTOLQulNkiT2GNw-hCTa8HxAeise/preview"
-              width="274" height="205" loading="lazy">
-            </iframe>
+            <iframe
+              src="https://drive.google.com/file/d/18T5UaTOLQulNkiT2GNw-hCTa8HxAeise/preview"
+              width="274"
+              height="205"
+              loading="lazy"
+            ></iframe>
             <div className={styles.teacherIntroduction}>
               <p>
-                In my 5 years of experience teaching Thai language, I have helped hundreds of students achieve their goals!
+                In my 5 years of experience teaching Thai language, I have
+                helped hundreds of students achieve their goals!
               </p>
-              <Link href='/aboutme'><a> Find out more <span>About Me</span></a></Link>
+              <Link href="/aboutme">
+                <a>
+                  {" "}
+                  Find out more <span>About Me</span>
+                </a>
+              </Link>
               <p>
                 And feel free to
-                <button onClick={() => {
-                  value === true ? toggleValue(false) : toggleValue(true);
-                }}>
+                <button
+                  onClick={() => {
+                    value === true ? toggleValue(false) : toggleValue(true);
+                  }}
+                >
                   contact me
                 </button>
                 if you have any question.
               </p>
-              <div className={value === false ? styles.contactsOff : styles.contactsOn}>
-                <button onClick={() => {
-                  value === true ? toggleValue(false) : toggleValue(true);
-                }}>
+              <div
+                className={
+                  value === false ? styles.contactsOff : styles.contactsOn
+                }
+              >
+                <button
+                  onClick={() => {
+                    value === true ? toggleValue(false) : toggleValue(true);
+                  }}
+                >
                   <FontAwesomeIcon icon={faXmark} />
                 </button>
                 <Contacts />
@@ -220,63 +282,98 @@ export default function Home({ data }) {
           </div>
         </div>
         <div className={styles.students}>
-          <h3 className={styles.studentsTitle}> What my students say about me </h3>
+          <h3 className={styles.studentsTitle}>
+            {" "}
+            What my students say about me{" "}
+          </h3>
           {data.map((feedback, index) =>
-            index < 3 ?
+            index < 3 ? (
               <div key={feedback._id} className={styles.feedback}>
                 <div className={styles.feedbackPicture}>
-                  <Image src={feedback.imageUrl} width='100' height='100' alt='a student' />
+                  <Image
+                    src={feedback.imageUrl}
+                    width="100"
+                    height="100"
+                    alt="a student"
+                  />
                 </div>
                 <div className={styles.feedbackText}>
-                  <h3 className={styles.feedbackHeader}>{feedback.feedbackTitle}</h3>
-                  <p className={styles.feedbackBody}>
-                    {feedback.content}
-                  </p>
+                  <h3 className={styles.feedbackHeader}>
+                    {feedback.feedbackTitle}
+                  </h3>
+                  <p className={styles.feedbackBody}>{feedback.content}</p>
                   <p className={styles.feedbackFooter}>
-                    {feedback.studentName}, {feedback.studentJob} <br /> {feedback.studentLocation}.
+                    {feedback.studentName}, {feedback.studentJob} <br />{" "}
+                    {feedback.studentLocation}.
                   </p>
                 </div>
               </div>
-              : <></>
+            ) : (
+              <></>
+            )
           )}
         </div>
       </div>
       <div className={styles.pricingContainer}>
         <div className={styles.pricingContainerExchangeButton}>
-          <button onClick={()=>{
-            currencyContainer===true? setCurrencyContainer(false) : setCurrencyContainer(true)
-          }}>
-            {currencyContainer===true? <FontAwesomeIcon icon={faXmark} />
-           : <Image src={'/xchangeBig.webp'} width='55' height='55' alt='forex' />}
+          <button
+            onClick={() => {
+              currencyContainer === true
+                ? setCurrencyContainer(false)
+                : setCurrencyContainer(true);
+            }}
+          >
+            {currencyContainer === true ? (
+              <FontAwesomeIcon icon={faXmark} />
+            ) : (
+              <Image
+                src={"/xchangeBig.webp"}
+                width="55"
+                height="55"
+                alt="forex"
+              />
+            )}
             {/* <FontAwesomeIcon icon={faXmark} /> */}
           </button>
         </div>
-        <div className={currencyContainer=== true? styles.currencyListContainer : styles.currencyListContainerOff}>
-            {availableCurrencies.map((currency, index)=>(
-              <button key={index}
-               onClick={()=>{
-                getExchangeRates(teacherCurrency, currency, trialLessonPrice)
+        <div
+          className={
+            currencyContainer === true
+              ? styles.currencyListContainer
+              : styles.currencyListContainerOff
+          }
+        >
+          {availableCurrencies.map((currency, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                getExchangeRates(teacherCurrency, currency, trialLessonPrice);
               }}
-              >
-                <span>{currency}</span>
+            >
+              <span>{currency}</span>
               {/* <Image src={'/forex.png'} width='55' height='55' alt='forex' /> */}
-              </button>
-            ))}
-            
+            </button>
+          ))}
         </div>
-        <div className={styles.pricingContainerHeader} >
-          <h3>
-            Start learning now
-          </h3>
-          <p>with a {studentCurrency}{displayedPrice} trial Lesson!</p>
+        <div className={styles.pricingContainerHeader}>
+          <h3>Start learning now</h3>
+          <p>
+            with a {studentCurrency}
+            {displayedPrice} trial Lesson!
+          </p>
         </div>
-        <Link href='/pricing'>
+        <Link href="/pricing">
           <div className={styles.pricingContainerLink}>
-            <p> <span>MORE ABOUT</span> PRICING</p> 
+            <p>
+              {" "}
+              <span>MORE ABOUT</span> PRICING
+            </p>
           </div>
         </Link>
-        <p className={styles.priceContainerFooter}>Learning materials, homeworks and exercices always included </p>
+        <p className={styles.priceContainerFooter}>
+          Learning materials, homeworks and exercices always included{" "}
+        </p>
       </div>
     </>
-  )
+  );
 }

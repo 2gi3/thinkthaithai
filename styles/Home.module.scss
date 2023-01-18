@@ -2,7 +2,7 @@
 
 @keyframes fadeIn {
   from {
-    opacity: 0
+    opacity: 0;
   }
 
   to {
@@ -14,9 +14,7 @@
   0% {
     transform: translateX(-173%) translateY(-837%);
     opacity: 0;
-
   }
-
 
   100% {
     transform: translateX(0%) translateY(0) scale(1);
@@ -26,13 +24,13 @@
 
 @keyframes contactsLoader {
   0% {
-      opacity: 0;
-    transform: translateY(75vh)
+    opacity: 0;
+    transform: translateY(75vh);
   }
-  30%{
-      opacity: 1;
+  30% {
+    opacity: 1;
   }
-  80%{
+  80% {
     transform: translateY(-40px);
   }
 
@@ -41,11 +39,7 @@
   }
 }
 
-.background {
-  display: none;
-}
-
-.backgroundMobile {
+.background2 {
   position: absolute;
   z-index: -1;
   width: 100vw;
@@ -71,7 +65,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $primaryBackground 40%);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      $primaryBackground 40%
+    );
     width: 100%;
     padding: 0 30px 30px 30px;
     margin-top: 250px;
@@ -107,7 +105,6 @@
           font-size: 19px;
           color: $secondaryColor;
           text-shadow: 1px 1px 1px black;
-
         }
       }
     }
@@ -119,14 +116,23 @@
       border-radius: $borderRadius;
       border: 4px solid $primaryBackground;
       outline: 4px solid $secondaryColor;
-      background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) right;
+      background: linear-gradient(
+          to left,
+          $secondaryColor 30%,
+          $primaryColor 60%
+        )
+        right;
       background-size: 350% 100%;
       transition: all 1500ms ease-in-out;
-      
 
       &:hover {
         cursor: pointer;
-        background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) left;
+        background: linear-gradient(
+            to left,
+            $secondaryColor 30%,
+            $primaryColor 60%
+          )
+          left;
         background-size: 350% 100%;
         outline: 4px solid $primaryColor;
       }
@@ -187,7 +193,6 @@
         border: 5px solid $primaryColor;
         outline: 5px solid $primaryBackground;
         // outline-offset: 5px;
-
       }
 
       h3 {
@@ -214,9 +219,7 @@
       margin-bottom: 50px;
       text-align: center;
     }
-
   }
-
 }
 
 .peopleContainer {
@@ -360,7 +363,6 @@
       }
     }
   }
-
 }
 
 .pricingContainer {
@@ -395,19 +397,15 @@
       // outline-offset: -5px;
       color: $secondaryColor;
       transition: box-shadow 500ms;
-      box-shadow:
-      1px 1px #919191,
-            1px 2px 1px #919191,
-            1px 3px 1px #919191,
-            1px 4px 1px #919191,
-            // 1px 5px 1px #919191,
-            // 1px 6px 1px #919191,
-            // 1px 7px 1px #919191,
-            1px 7px 3px rgb(16 16 16 / 40%),
-            1px 11px 6px rgb(16 16 16 / 20%),
-            1px 15px 15px rgb(16 16 16 / 20%),
-            1px 17px 27px rgb(16 16 16 / 40%); 
-            &:active{
+      box-shadow: 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        // 1px 5px 1px #919191,
+        // 1px 6px 1px #919191,
+        // 1px 7px 1px #919191,
+        1px 7px 3px rgb(16 16 16 / 40%),
+        1px 11px 6px rgb(16 16 16 / 20%), 1px 15px 15px rgb(16 16 16 / 20%),
+        1px 17px 27px rgb(16 16 16 / 40%);
+      &:active {
         box-shadow: none;
       }
 
@@ -421,7 +419,6 @@
         cursor: pointer;
       }
     }
-
   }
 
   .currencyListContainer {
@@ -452,34 +449,30 @@
       font-weight: 900;
       letter-spacing: 1px;
       transition: box-shadow 2s;
-      box-shadow:
-      1px 1px #919191,
-            1px 2px 1px #919191,
-            1px 3px 1px #919191,
-            1px 4px 1px #919191,
-            // 1px 5px 1px #919191,
-            // 1px 6px 1px #919191,
-            // 1px 7px 1px #919191,
-            1px 7px 3px rgb(16 16 16 / 40%),
-            1px 11px 6px rgb(16 16 16 / 20%),
-            1px 15px 15px rgb(16 16 16 / 20%),
-            1px 17px 27px rgb(16 16 16 / 40%); 
+      box-shadow: 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        // 1px 5px 1px #919191,
+        // 1px 6px 1px #919191,
+        // 1px 7px 1px #919191,
+        1px 7px 3px rgb(16 16 16 / 40%),
+        1px 11px 6px rgb(16 16 16 / 20%), 1px 15px 15px rgb(16 16 16 / 20%),
+        1px 17px 27px rgb(16 16 16 / 40%);
 
-      &:nth-child(3n-2){
-        animation: contactsLoader 900ms ease-in  forwards
-    }
-    &:nth-child(3n-1){
-        animation: contactsLoader 950ms ease-in forwards
-    }
-    &:nth-child(3n){
-        animation: contactsLoader 1000ms ease-in  forwards
-    }
+      &:nth-child(3n-2) {
+        animation: contactsLoader 900ms ease-in forwards;
+      }
+      &:nth-child(3n-1) {
+        animation: contactsLoader 950ms ease-in forwards;
+      }
+      &:nth-child(3n) {
+        animation: contactsLoader 1000ms ease-in forwards;
+      }
       &:hover {
         cursor: pointer;
       }
       &:active,
       &:focus,
-      &:focus-visible{
+      &:focus-visible {
         box-shadow: none;
       }
     }
@@ -488,7 +481,6 @@
   .currencyListContainerOff {
     display: none;
   }
-
 
   .pricingContainerHeader {
     h3 {
@@ -510,30 +502,31 @@
     background: $primaryColor;
     border: 4px solid $primaryBackground;
     outline: 4px solid $secondaryColor;
-    background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) right;
+    background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%)
+      right;
     background-size: 350% 100%;
     transition: box-shadow 2000ms;
-    box-shadow:
-      1px 1px #919191,
-      1px 2px 1px #919191,
-      1px 3px 1px #919191,
+    box-shadow: 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
       1px 4px 1px #919191,
       // 1px 5px 1px #919191,
       // 1px 6px 1px #919191,
       // 1px 7px 1px #919191,
       1px 7px 3px rgb(16 16 16 / 40%),
-      1px 11px 6px rgb(16 16 16 / 20%),
-      1px 15px 15px rgb(16 16 16 / 20%),
+      1px 11px 6px rgb(16 16 16 / 20%), 1px 15px 15px rgb(16 16 16 / 20%),
       1px 17px 27px rgb(16 16 16 / 40%);
     transition: all 1500ms ease-in-out;
 
     &:hover {
       cursor: pointer;
-      background: linear-gradient(to left, $secondaryColor 30%, $primaryColor 60%) left;
+      background: linear-gradient(
+          to left,
+          $secondaryColor 30%,
+          $primaryColor 60%
+        )
+        left;
       background-size: 350% 100%;
       outline: 4px solid $primaryColor;
     }
-
 
     p {
       margin: 0;
@@ -551,24 +544,10 @@
   }
 }
 
-
-@media all and (min-width: 361px) and (max-width:768px) {
-
-  // .background {
-  //   width: 70vw;
-  // }
-  .backgroundMobile {
+@media all and (min-width: 361px) and (max-width: 768px) {
+  .background2 {
     height: 500px;
   }
-
-  // .titleContainer{
-  //   .features{
-  //     margin: 10px 0;
-  //     .list{
-  //       padding: 9px 0;
-  //     }
-  //   }
-  // }
 
   .coursesContainer {
     padding: 0 7vw;
@@ -593,29 +572,13 @@
   }
 }
 
-
 @media all and (min-width: 769px) {
-  .background {
-    position: absolute;
-    z-index: -1;
-    // width: 100vw;
-    height: 87vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 0px;
-    // top: 30px;
+  .background2 {
     // opacity: 0.5;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    height: 87vh;
     width: 65vw;
     top: unset;
-    filter:drop-shadow(10px 10px 10px #919191)
-  }
-
-  .backgroundMobile {
-    display: none;
+    filter: drop-shadow(10px 10px 10px #919191);
   }
 
   .container {
@@ -628,7 +591,11 @@
       width: 50%;
       padding: 30px;
       margin-top: 0;
-      background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, $primaryBackground 60%);
+      background: linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 0) 0%,
+        $primaryBackground 60%
+      );
       min-height: auto;
 
       .features {
@@ -652,18 +619,14 @@
         h1 {
           font-size: 4rem;
           color: $secondaryColor;
-          text-shadow:
-      1px 1px #919191,
-            1px 2px 1px #919191,
-            1px 3px 1px #919191,
+          text-shadow: 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
             1px 4px 1px #919191,
             // 1px 5px 1px #919191,
             // 1px 6px 1px #919191,
             // 1px 7px 1px #919191,
             1px 7px 3px rgb(16 16 16 / 40%),
-            1px 11px 6px rgb(16 16 16 / 20%),
-            1px 15px 15px rgb(16 16 16 / 20%),
-            1px 17px 27px rgb(16 16 16 / 40%); 
+            1px 11px 6px rgb(16 16 16 / 20%), 1px 15px 15px rgb(16 16 16 / 20%),
+            1px 17px 27px rgb(16 16 16 / 40%);
         }
       }
 
@@ -695,9 +658,7 @@
     .courses {
       width: 48%;
 
-
       .skills {
-
         .SpeakingAndListening,
         .writingAndReading {
           min-width: 400px;
@@ -747,8 +708,6 @@
       margin-bottom: 1.5rem;
     }
 
-
-
     .teacherVideo {
       width: 85vw;
       max-width: 800px;
@@ -773,7 +732,6 @@
           }
         }
       }
-
     }
 
     .teacher,
@@ -787,7 +745,6 @@
       .studentsTitle {
         font-size: 2.2rem;
       }
-
 
       .feedback {
         .feedbackPicture {
