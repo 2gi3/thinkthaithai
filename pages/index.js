@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
 
   return {
     props: { data },
-    revalidate: 5,
+    revalidate: 60,
   };
 };
 
@@ -136,20 +136,6 @@ export default function Home({ data }) {
         />
         <source srcSet="/heroNoBG.webp 1280w" sizes="1280px" />
         <img loading="eager" src="/heroNoBG.webp" />
-        {/* <source
-          media="max-width: 769px"
-          srcSet="/natMobile.webp"
-          sizes="769px"
-        /> */}
-        {/* <source srcSet="/heroNoBG.webp" /> */}
-        {/* <img
-          src="/heroNoBG.webp"
-          // srcSet="/natMobile.webp 769w, /heroNoBG.webp 770w"
-          // sizes="(max-width: 769px) 769px, 770px"
-          width="448px"
-          height="597"
-          alt="teacher nat"
-        /> */}
       </picture>
       <div ref={targetRef} className={styles.container}>
         <div className={styles.titleContainer}>
